@@ -1,0 +1,213 @@
+.page {
+  min-height: 100vh;
+  background-color: #0d3b0d;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 50px 20px;
+  color: white;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+  gap: 20px;
+}
+
+.logo {
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0;
+  color: white;
+  text-align: center;
+}
+
+.container {
+  background-color: #243424;
+  padding: 30px;
+  border-radius: 15px;
+  width: 100%;
+}
+
+.electionProgress {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #4a5c4a;
+}
+
+.progressText {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.lastUpdated {
+  font-size: 1rem;
+  color: #ccc;
+  margin: 0;
+}
+
+.resultsSection {
+  margin-bottom: 25px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #4a5c4a;
+}
+
+.sectionTitle {
+  font-size: 1.5rem;
+  color: white;
+  margin-bottom: 15px;
+}
+
+.candidateResult {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.candidateName {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.voteInfo {
+  color: #4CAF50;
+  font-weight: bold;
+}
+
+.actionButtons {
+  display: flex;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.refreshButton, .homeButton {
+  flex: 1;
+  padding: 16px;
+  font-size: 18px;
+  border: none;
+  border-radius: 30px;
+  background-color: white;
+  color: #243424;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  text-decoration: none;
+}
+
+.refreshButton:hover, .homeButton:hover {
+  background-color: #1a3c1a;
+  color: white;
+  transform: scale(1.02);
+}
+
+.refreshButton:active, .homeButton:active {
+  transform: scale(0.98);
+}
+
+@media (max-width: 600px) {
+  .actionButtons {
+    flex-direction: column;
+  }
+  
+  .refreshButton, .homeButton {
+    width: 100%;
+  }
+}
+/* ... (keep all existing styles except the button styles) ... */
+
+.actionButtons {
+  display: flex;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.actionButton {
+  flex: 1;
+  padding: 16px;
+  font-size: 18px;
+  border: none;
+  border-radius: 30px;
+  background-color: white;
+  color: #243424;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  text-decoration: none;
+  display: block; /* Added for proper link styling */
+}
+
+.actionButton:hover {
+  background-color: #1a3c1a;
+  color: white;
+  transform: scale(1.02);
+}
+
+.actionButton:active {
+  transform: scale(0.98);
+}
+
+/* Make buttons stack vertically on small screens */
+@media (max-width: 600px) {
+  .actionButtons {
+    flex-direction: column;
+  }
+  
+  .actionButton {
+    width: 100%;
+  }
+}
+/* ... (keep all existing styles) ... */
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px 0;
+}
+
+.dropdownIcon {
+  font-size: 1.5rem;
+  font-weight: bold;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.candidateList {
+  margin-top: 10px;
+  border-top: 1px solid #4a5c4a;
+  padding-top: 10px;
+}
+
+.candidateResult {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px dashed #4a5c4a;
+}
+
+.candidateName {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.voteInfo {
+  color: #4CAF50;
+  font-weight: bold;
+}
+
+/* ... (keep rest of existing styles) ... */

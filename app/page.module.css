@@ -1,0 +1,139 @@
+/* Landing Page Styles - Top-aligned with centered header */
+.page {
+  min-height: 100vh;
+  background-color: #0d3b0d;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.title {
+  color: white;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 15px 0;
+}
+
+.container {
+  background-color: #243424;
+  padding: 30px;
+  border-radius: 30px;
+  width: 100%;
+  margin-top: 0; /* Removed extra top margin */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.tagline {
+  color: #ccc;
+  font-weight: bold;
+  margin-bottom: 30px;
+  font-size: 1.5rem;
+}
+
+/* Keep all other styles the same as before */
+.buttonContainer {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  width: 100%;
+}
+
+.buttonGroup {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.buttonLabel {
+  color: #ddd;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
+
+.button {
+  width: 100%;
+  padding: 18px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 30px;
+  background-color: white;
+  color: #243424;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button:hover {
+  background-color: #1a3c1a;
+  color: white;
+  transform: scale(1.02);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.button:active {
+  transform: scale(0.98);
+}
+
+.iconWrapper {
+  font-size: 1.5rem;
+  display: flex;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .buttonContainer {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+  
+  .tagline {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .page {
+    padding: 15px;
+  }
+  
+  .container {
+    padding: 25px 15px;
+  }
+  
+  .title {
+    font-size: 1.8rem;
+    margin: 10px 0;
+  }
+  
+  .button {
+    padding: 15px;
+    font-size: 1rem;
+  }
+}

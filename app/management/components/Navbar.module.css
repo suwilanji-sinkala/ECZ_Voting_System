@@ -1,0 +1,143 @@
+/* Dashboard and Profile Styling to Match Theme */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #1a3c1a; /* Darker green to match your theme */
+  color: white;
+  width: 100%;
+}
+
+.title {
+  font-size: 1.5rem;
+  margin: 0;
+  color: white;
+}
+
+.menuButton, .profileButton {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: transform 0.2s;
+}
+
+.menuButton:hover, .profileButton:hover {
+  transform: scale(1.1);
+}
+
+/* Navigation Menu */
+.navMenu {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  background-color: #243424; /* Matching your card color */
+  width: 200px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  border-radius: 0 0 15px 0;
+}
+
+.navMenu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navMenu li {
+  padding: 1rem;
+  color: white;
+  cursor: pointer;
+  border-bottom: 1px solid #3a4a3a; /* Subtle border color */
+  transition: background-color 0.3s;
+}
+
+.navMenu li:hover {
+  background-color: #1a3c1a; /* Darker green hover */
+}
+
+/* Profile Menu */
+.profileMenu {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  background-color: #243424; /* Matching your card color */
+  width: 200px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  border-radius: 0 0 0 15px;
+}
+
+.profileMenu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.profileMenu li {
+  padding: 1rem;
+  color: white;
+  cursor: pointer;
+  border-bottom: 1px solid #3a4a3a; /* Subtle border color */
+  transition: background-color 0.3s;
+}
+
+.profileMenu li:hover {
+  background-color: #1a3c1a; /* Darker green hover */
+}
+
+.menuTitle {
+  margin: 0;
+  padding: 1rem;
+  background-color: #1a3c1a; /* Darker green header */
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+/* Additional Dashboard Styling to Match Your Theme */
+.dashboardContent {
+  background-color: #0d3b0d; /* Your page background color */
+  color: white;
+  min-height: calc(100vh - 60px); /* Full height minus header */
+  padding: 20px;
+}
+
+/* Card Styling to Match Your Theme */
+.card {
+  background-color: #243424;
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cardTitle {
+  color: white;
+  font-size: 1.2rem;
+  margin-top: 0;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #3a4a3a;
+  padding-bottom: 10px;
+}
+
+/* Button Styling to Match Your Theme */
+.actionButton {
+  background-color: white;
+  color: #243424;
+  border: none;
+  border-radius: 30px;
+  padding: 12px 24px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.actionButton:hover {
+  background-color: #1a3c1a;
+  color: white;
+  transform: scale(1.02);
+}

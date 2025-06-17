@@ -1,0 +1,2138 @@
+Province_Code,Province_Name,District_Code,District_Name,Constituency_Code,Constituency_Name,Ward_Code,Ward_Name
+1,Central,1,Chibombo,1,Katuba,101001001,Kamaila
+1,Central,1,Chibombo,1,Katuba,101001002,Katuba
+1,Central,1,Chibombo,1,Katuba,101001003,Chunga
+1,Central,1,Chibombo,1,Katuba,101001004,Mungule
+1,Central,1,Chibombo,1,Katuba,101001005,Cholokelo
+1,Central,1,Chibombo,1,Katuba,101001006,Muchenje
+1,Central,1,Chibombo,1,Katuba,101001007,Chilochabalenje
+1,Central,1,Chibombo,1,Katuba,101001008,Kabile
+1,Central,1,Chibombo,2,Keembe,101001008,Kabile
+1,Central,1,Chibombo,2,Keembe,101001009,Keembe
+1,Central,1,Chibombo,2,Keembe,101001010,Kalola
+1,Central,1,Chibombo,2,Keembe,101001011,Chaloshi
+1,Central,1,Chibombo,2,Keembe,101001012,Chibombo
+1,Central,1,Chibombo,2,Keembe,101001013,Chikobo
+1,Central,1,Chibombo,2,Keembe,101001014,Kakoma
+1,Central,1,Chibombo,2,Keembe,101001015,Mashikili
+1,Central,1,Chibombo,2,Keembe,101001016,Malambanyama
+1,Central,1,Chibombo,2,Keembe,101001017,Lunjofwa
+1,Central,1,Chibombo,2,Keembe,101001018,Chitanda
+1,Central,1,Chibombo,2,Keembe,101001019,Muundu
+1,Central,1,Chibombo,2,Keembe,101001020,Ipongo
+1,Central,1,Chibombo,2,Keembe,101001021,Itumbwe
+1,Central,2,Chisamba,2,Keembe,101001021,Itumbwe
+1,Central,2,Chisamba,3,Chisamba,101001021,Itumbwe
+1,Central,2,Chisamba,3,Chisamba,101002001,Liteta
+1,Central,2,Chisamba,3,Chisamba,101002002,Monang
+1,Central,2,Chisamba,3,Chisamba,101002003,Mutenga
+1,Central,2,Chisamba,3,Chisamba,101002004,Chikonkomene
+1,Central,2,Chisamba,3,Chisamba,101002005,Muswishi
+1,Central,2,Chisamba,3,Chisamba,101002006,Mulungushi
+1,Central,2,Chisamba,3,Chisamba,101002007,Mwantaya
+1,Central,2,Chisamba,3,Chisamba,101002008,Mwapula
+1,Central,2,Chisamba,3,Chisamba,101002009,Chamuka
+1,Central,2,Chisamba,3,Chisamba,101002010,Kamano
+1,Central,2,Chisamba,3,Chisamba,101002011,Chisamba
+1,Central,2,Chisamba,3,Chisamba,101002012,Miswa
+1,Central,3,Chitambo,3,Chisamba,101002012,Miswa
+1,Central,3,Chitambo,4,Chitambo,101002012,Miswa
+1,Central,3,Chitambo,4,Chitambo,101003001,Luombwa
+1,Central,3,Chitambo,4,Chitambo,101003002,Katonga
+1,Central,3,Chitambo,4,Chitambo,101003003,Lulimala
+1,Central,3,Chitambo,4,Chitambo,101003004,Mpelembe
+1,Central,3,Chitambo,4,Chitambo,101003005,Chipundu
+1,Central,3,Chitambo,4,Chitambo,101003006,Chalilo
+1,Central,3,Chitambo,4,Chitambo,101003007,Lusenga
+1,Central,3,Chitambo,4,Chitambo,101003008,Muchinka
+1,Central,3,Chitambo,4,Chitambo,101003009,Chitambo
+1,Central,3,Chitambo,4,Chitambo,101003010,Nakatambo
+1,Central,5,Kabwe,4,Chitambo,101003010,Nakatambo
+1,Central,5,Kabwe,6,Bwacha,101003010,Nakatambo
+1,Central,5,Kabwe,6,Bwacha,101005001,Kang'Omba
+1,Central,5,Kabwe,6,Bwacha,101005002,Chinyanja
+1,Central,5,Kabwe,6,Bwacha,101005003,Munyama
+1,Central,5,Kabwe,6,Bwacha,101005004,Munga
+1,Central,5,Kabwe,6,Bwacha,101005005,Chililalila
+1,Central,5,Kabwe,6,Bwacha,101005006,Moomba
+1,Central,5,Kabwe,6,Bwacha,101005007,Zambezi
+1,Central,5,Kabwe,6,Bwacha,101005008,Makululu
+1,Central,5,Kabwe,6,Bwacha,101005009,Ben Kapufi
+1,Central,5,Kabwe,6,Bwacha,101005010,Muwowo West
+1,Central,5,Kabwe,6,Bwacha,101005011,Muwowo East
+1,Central,5,Kabwe,6,Bwacha,101005012,Ngungu
+1,Central,5,Kabwe,6,Bwacha,101005013,Chimanimani
+1,Central,5,Kabwe,6,Bwacha,101005014,Bwacha
+1,Central,5,Kabwe,6,Bwacha,101005015,Kawama
+1,Central,5,Kabwe,7,Kabwe Central,101005015,Kawama
+1,Central,5,Kabwe,7,Kabwe Central,101005016,Luangwa
+1,Central,5,Kabwe,7,Kabwe Central,101005017,Lukanga
+1,Central,5,Kabwe,7,Kabwe Central,101005018,Kalonga
+1,Central,5,Kabwe,7,Kabwe Central,101005019,Nakoli
+1,Central,5,Kabwe,7,Kabwe Central,101005020,Kaputula
+1,Central,5,Kabwe,7,Kabwe Central,101005021,Mpima
+1,Central,5,Kabwe,7,Kabwe Central,101005022,Luansase
+1,Central,5,Kabwe,7,Kabwe Central,101005023,Waya
+1,Central,5,Kabwe,7,Kabwe Central,101005024,Katondo
+1,Central,5,Kabwe,7,Kabwe Central,101005025,Chirwa
+1,Central,5,Kabwe,7,Kabwe Central,101005026,Njanji
+1,Central,5,Kabwe,7,Kabwe Central,101005027,Highridge
+1,Central,5,Kabwe,7,Kabwe Central,101005028,Justine Kabwe
+1,Central,5,Kabwe,7,Kabwe Central,101005029,David Ramushu
+1,Central,6,Kapiri Mposhi,7,Kabwe Central,101005029,David Ramushu
+1,Central,6,Kapiri Mposhi,8,Kapiri Mposhi,101005029,David Ramushu
+1,Central,6,Kapiri Mposhi,8,Kapiri Mposhi,101006001,Kashitu
+1,Central,6,Kapiri Mposhi,8,Kapiri Mposhi,101006002,Kasanta
+1,Central,6,Kapiri Mposhi,8,Kapiri Mposhi,101006003,Mushimbili
+1,Central,6,Kapiri Mposhi,8,Kapiri Mposhi,101006004,Kapiri Mposhi
+1,Central,6,Kapiri Mposhi,8,Kapiri Mposhi,101006005,Muteteshi
+1,Central,6,Kapiri Mposhi,8,Kapiri Mposhi,101006006,Lunchu
+1,Central,6,Kapiri Mposhi,8,Kapiri Mposhi,101006007,Lunsemfwa
+1,Central,6,Kapiri Mposhi,8,Kapiri Mposhi,101006008,Chang'Ondo
+1,Central,6,Kapiri Mposhi,8,Kapiri Mposhi,101006009,Kakwelesa
+1,Central,6,Kapiri Mposhi,8,Kapiri Mposhi,101006010,Mubofwe
+1,Central,6,Kapiri Mposhi,8,Kapiri Mposhi,101006011,Kampumba
+1,Central,6,Kapiri Mposhi,8,Kapiri Mposhi,101006012,Nchembwe
+1,Central,6,Kapiri Mposhi,8,Kapiri Mposhi,101006013,Chibwelelo
+1,Central,6,Kapiri Mposhi,8,Kapiri Mposhi,101006014,Kabwale
+1,Central,6,Kapiri Mposhi,8,Kapiri Mposhi,101006015,Imansa
+1,Central,6,Kapiri Mposhi,8,Kapiri Mposhi,101006016,Lukanga
+1,Central,6,Kapiri Mposhi,8,Kapiri Mposhi,101006017,Mpunde
+1,Central,6,Kapiri Mposhi,8,Kapiri Mposhi,101006018,Munga
+1,Central,7,Luano,8,Kapiri Mposhi,101006018,Munga
+1,Central,7,Luano,9,Mkushi South,101006018,Munga
+1,Central,7,Luano,9,Mkushi South,101007001,Mibanga
+1,Central,7,Luano,9,Mkushi South,101007002,Munda
+1,Central,7,Luano,9,Mkushi South,101007003,Katukutu
+1,Central,7,Luano,9,Mkushi South,101007004,Lwambulu
+1,Central,7,Luano,9,Mkushi South,101007005,Kamimbya
+1,Central,7,Luano,9,Mkushi South,101007006,Lundashi
+1,Central,7,Luano,9,Mkushi South,101007007,Nkomashi
+1,Central,7,Luano,9,Mkushi South,101007008,Muswishi
+1,Central,7,Luano,9,Mkushi South,101007009,Ching
+1,Central,7,Luano,9,Mkushi South,101007010,Chipaba
+1,Central,7,Luano,9,Mkushi South,101007011,Mwalala
+1,Central,7,Luano,9,Mkushi South,101007012,Chimika
+1,Central,8,Mkushi,9,Mkushi South,101007012,Chimika
+1,Central,8,Mkushi,10,Mkushi North,101007012,Chimika
+1,Central,8,Mkushi,10,Mkushi North,101008001,Chitina
+1,Central,8,Mkushi,10,Mkushi North,101008002,Nkumbi
+1,Central,8,Mkushi,10,Mkushi North,101008003,Musofu
+1,Central,8,Mkushi,10,Mkushi North,101008004,Munsakamba
+1,Central,8,Mkushi,10,Mkushi North,101008005,Chibefwe
+1,Central,8,Mkushi,10,Mkushi North,101008006,Upper Lunsenfwa
+1,Central,8,Mkushi,10,Mkushi North,101008007,Nkolonga
+1,Central,8,Mkushi,10,Mkushi North,101008008,Chalata
+1,Central,8,Mkushi,10,Mkushi North,101008009,Kabengeeshi
+1,Central,8,Mkushi,10,Mkushi North,101008010,Nshinso
+1,Central,8,Mkushi,10,Mkushi North,101008011,Kalwa
+1,Central,8,Mkushi,10,Mkushi North,101008012,Nkulumashiba
+1,Central,8,Mkushi,10,Mkushi North,101008013,Chikanda
+1,Central,8,Mkushi,10,Mkushi North,101008014,Matuku
+1,Central,8,Mkushi,10,Mkushi North,101008015,Tembwe
+1,Central,8,Mkushi,10,Mkushi North,101008016,Munshibemba
+1,Central,9,Mumbwa,10,Mkushi North,101008016,Munshibemba
+1,Central,9,Mumbwa,11,Mumbwa,101008016,Munshibemba
+1,Central,9,Mumbwa,11,Mumbwa,101009001,Nalusanga
+1,Central,9,Mumbwa,11,Mumbwa,101009002,Lutale
+1,Central,9,Mumbwa,11,Mumbwa,101009003,Chibolyo
+1,Central,9,Mumbwa,11,Mumbwa,101009004,Nambala
+1,Central,9,Mumbwa,11,Mumbwa,101009005,Shimbizhi
+1,Central,9,Mumbwa,11,Mumbwa,101009006,Naluvwi
+1,Central,9,Mumbwa,11,Mumbwa,101009007,Kalwanyembe
+1,Central,9,Mumbwa,11,Mumbwa,101009008,Mpusu
+1,Central,9,Mumbwa,11,Mumbwa,101009009,Kamilambo
+1,Central,9,Mumbwa,11,Mumbwa,101009010,Mumba
+1,Central,9,Mumbwa,11,Mumbwa,101009011,Mupona
+1,Central,9,Mumbwa,11,Mumbwa,101009012,Makebo
+1,Central,9,Mumbwa,12,Nangoma,101009012,Makebo
+1,Central,9,Mumbwa,12,Nangoma,101009013,Nakasaka
+1,Central,9,Mumbwa,12,Nangoma,101009014,Matala
+1,Central,9,Mumbwa,12,Nangoma,101009015,Nangoma
+1,Central,9,Mumbwa,12,Nangoma,101009016,Chisalu
+1,Central,9,Mumbwa,12,Nangoma,101009017,Keezwa
+1,Central,9,Mumbwa,12,Nangoma,101009018,Choma
+1,Central,9,Mumbwa,12,Nangoma,101009019,Nalubanda
+1,Central,9,Mumbwa,12,Nangoma,101009020,Shichanzu
+1,Central,9,Mumbwa,12,Nangoma,101009021,Myooye
+1,Central,10,Ngabwe,12,Nangoma,101009021,Myooye
+1,Central,10,Ngabwe,13,Lufubu,101009021,Myooye
+1,Central,10,Ngabwe,13,Lufubu,101010001,Ngabwe
+1,Central,10,Ngabwe,13,Lufubu,101010002,Luamala
+1,Central,10,Ngabwe,13,Lufubu,101010003,Chisangwa
+1,Central,10,Ngabwe,13,Lufubu,101010004,Iwonde
+1,Central,10,Ngabwe,13,Lufubu,101010005,Chitumba
+1,Central,10,Ngabwe,13,Lufubu,101010006,Chilwa
+1,Central,10,Ngabwe,13,Lufubu,101010007,Mukubwe
+1,Central,10,Ngabwe,13,Lufubu,101010008,Chisanga
+1,Central,11,Serenje,13,Lufubu,101010008,Chisanga
+1,Central,11,Serenje,14,Muchinga,101010008,Chisanga
+1,Central,11,Serenje,14,Muchinga,101011001,Mweshe
+1,Central,11,Serenje,14,Muchinga,101011002,Kanona
+1,Central,11,Serenje,14,Muchinga,101011003,Mailo
+1,Central,11,Serenje,14,Muchinga,101011004,Lushibashi
+1,Central,11,Serenje,14,Muchinga,101011005,Serenje
+1,Central,11,Serenje,14,Muchinga,101011006,Kabansa
+1,Central,11,Serenje,14,Muchinga,101011007,Chisomo
+1,Central,11,Serenje,14,Muchinga,101011008,Lukusashi
+1,Central,11,Serenje,14,Muchinga,101011009,Sancha
+1,Central,11,Serenje,14,Muchinga,101011010,Chibale
+1,Central,11,Serenje,14,Muchinga,101011011,Kabwe Kupela
+1,Central,11,Serenje,14,Muchinga,101011012,Masaninga
+1,Central,11,Serenje,15,Serenje,101011012,Masaninga
+1,Central,11,Serenje,15,Serenje,101011013,Muchinda
+1,Central,11,Serenje,15,Serenje,101011014,Musangashi
+1,Central,11,Serenje,15,Serenje,101011015,Kashishi
+1,Central,11,Serenje,15,Serenje,101011016,Lupiya
+1,Central,11,Serenje,15,Serenje,101011017,Milenje
+1,Central,11,Serenje,15,Serenje,101011018,Ibolelo
+1,Central,11,Serenje,15,Serenje,101011019,Chisangwa
+1,Central,11,Serenje,15,Serenje,101011020,Mbaswa
+1,Central,11,Serenje,15,Serenje,101011021,Kabamba
+1,Central,12,Shibuyunji,15,Serenje,101011021,Kabamba
+1,Central,12,Shibuyunji,84,Mwembezhi,101011021,Kabamba
+1,Central,12,Shibuyunji,84,Mwembezhi,101012001,Kapyanga West
+1,Central,12,Shibuyunji,84,Mwembezhi,101012002,Kapyanga East
+1,Central,12,Shibuyunji,84,Mwembezhi,101012003,Mukulaikwa
+1,Central,12,Shibuyunji,84,Mwembezhi,101012004,Mutombe
+1,Central,12,Shibuyunji,84,Mwembezhi,101012005,Kalundu
+1,Central,12,Shibuyunji,84,Mwembezhi,101012006,Chabota
+1,Central,12,Shibuyunji,84,Mwembezhi,101012007,Makombwe
+1,Central,12,Shibuyunji,84,Mwembezhi,101012008,Nampeya
+1,Central,12,Shibuyunji,84,Mwembezhi,101012009,Nampundwe
+1,Central,12,Shibuyunji,84,Mwembezhi,101012010,Sala
+1,Central,12,Shibuyunji,84,Mwembezhi,101012011,Chikonka
+1,Central,12,Shibuyunji,84,Mwembezhi,101012012,Nakaiba
+2,Copperbelt,12,Shibuyunji,84,Mwembezhi,101012012,Nakaiba
+2,Copperbelt,1,Chililabombwe,84,Mwembezhi,101012012,Nakaiba
+2,Copperbelt,1,Chililabombwe,16,Chililabombwe,101012012,Nakaiba
+2,Copperbelt,1,Chililabombwe,16,Chililabombwe,102001001,Chilimina
+2,Copperbelt,1,Chililabombwe,16,Chililabombwe,102001002,Miyanda
+2,Copperbelt,1,Chililabombwe,16,Chililabombwe,102001003,Silwizya
+2,Copperbelt,1,Chililabombwe,16,Chililabombwe,102001004,Joseph Mwilwa
+2,Copperbelt,1,Chililabombwe,16,Chililabombwe,102001005,Kasumbalesa
+2,Copperbelt,1,Chililabombwe,16,Chililabombwe,102001006,Anoya Zulu
+2,Copperbelt,1,Chililabombwe,16,Chililabombwe,102001007,Kawama
+2,Copperbelt,1,Chililabombwe,16,Chililabombwe,102001008,Lubansa
+2,Copperbelt,1,Chililabombwe,16,Chililabombwe,102001009,Chitambi
+2,Copperbelt,1,Chililabombwe,16,Chililabombwe,102001010,Kakoso
+2,Copperbelt,1,Chililabombwe,16,Chililabombwe,102001011,Kamenza East
+2,Copperbelt,1,Chililabombwe,16,Chililabombwe,102001012,Mumba
+2,Copperbelt,1,Chililabombwe,16,Chililabombwe,102001013,Kafue
+2,Copperbelt,1,Chililabombwe,16,Chililabombwe,102001014,Nakatindi
+2,Copperbelt,1,Chililabombwe,16,Chililabombwe,102001015,Mvula
+2,Copperbelt,1,Chililabombwe,16,Chililabombwe,102001016,Chitimukulu
+2,Copperbelt,1,Chililabombwe,16,Chililabombwe,102001017,Ilute Yeta
+2,Copperbelt,1,Chililabombwe,16,Chililabombwe,102001018,Ngebe
+2,Copperbelt,1,Chililabombwe,16,Chililabombwe,102001019,Kamima
+2,Copperbelt,1,Chililabombwe,16,Chililabombwe,102001020,Mukuka
+2,Copperbelt,1,Chililabombwe,16,Chililabombwe,102001021,Yotam Muleya
+2,Copperbelt,1,Chililabombwe,16,Chililabombwe,102001022,Helen Kaunda
+2,Copperbelt,1,Chililabombwe,16,Chililabombwe,102001023,James Phiri
+2,Copperbelt,1,Chililabombwe,16,Chililabombwe,102001024,Mathew Nkoloma
+2,Copperbelt,2,Chingola,16,Chililabombwe,102001024,Mathew Nkoloma
+2,Copperbelt,2,Chingola,17,Chingola,102001024,Mathew Nkoloma
+2,Copperbelt,2,Chingola,17,Chingola,102002001,Mutenda
+2,Copperbelt,2,Chingola,17,Chingola,102002002,Muchinshi
+2,Copperbelt,2,Chingola,17,Chingola,102002003,Ipafu
+2,Copperbelt,2,Chingola,17,Chingola,102002004,Kalilo
+2,Copperbelt,2,Chingola,17,Chingola,102002005,Kabungo
+2,Copperbelt,2,Chingola,17,Chingola,102002006,Chiwempala
+2,Copperbelt,2,Chingola,17,Chingola,102002007,Chikola
+2,Copperbelt,2,Chingola,17,Chingola,102002008,Chingola
+2,Copperbelt,2,Chingola,17,Chingola,102002009,Kasompe
+2,Copperbelt,2,Chingola,17,Chingola,102002010,Musenga
+2,Copperbelt,2,Chingola,17,Chingola,102002011,Mimbula
+2,Copperbelt,2,Chingola,17,Chingola,102002012,Lulamba
+2,Copperbelt,2,Chingola,17,Chingola,102002013,Kamuchanga
+2,Copperbelt,2,Chingola,17,Chingola,102002014,Maiteneke
+2,Copperbelt,2,Chingola,17,Chingola,102002015,Chitimukulu
+2,Copperbelt,2,Chingola,17,Chingola,102002016,Chabanyama
+2,Copperbelt,2,Chingola,17,Chingola,102002017,Twatasha
+2,Copperbelt,2,Chingola,17,Chingola,102002018,Gibson Chimfwembe
+2,Copperbelt,2,Chingola,18,Nchanga,102002018,Gibson Chimfwembe
+2,Copperbelt,2,Chingola,18,Nchanga,102002019,Kwacha
+2,Copperbelt,2,Chingola,18,Nchanga,102002020,Nchanga
+2,Copperbelt,2,Chingola,18,Nchanga,102002021,Sekela
+2,Copperbelt,2,Chingola,18,Nchanga,102002022,Nsansa
+2,Copperbelt,2,Chingola,18,Nchanga,102002023,Buntungwa
+2,Copperbelt,2,Chingola,18,Nchanga,102002024,Kabundi
+2,Copperbelt,2,Chingola,18,Nchanga,102002025,Kasala
+2,Copperbelt,2,Chingola,18,Nchanga,102002026,Kabuta
+2,Copperbelt,2,Chingola,18,Nchanga,102002027,Bupalo
+2,Copperbelt,2,Chingola,18,Nchanga,102002028,Luano
+2,Copperbelt,2,Chingola,18,Nchanga,102002029,Kapisha
+2,Copperbelt,3,Kalulushi,18,Nchanga,102002029,Kapisha
+2,Copperbelt,3,Kalulushi,19,Kalulushi,102002029,Kapisha
+2,Copperbelt,3,Kalulushi,19,Kalulushi,102003001,Musakashi
+2,Copperbelt,3,Kalulushi,19,Kalulushi,102003002,Sitwe
+2,Copperbelt,3,Kalulushi,19,Kalulushi,102003003,Chambishi
+2,Copperbelt,3,Kalulushi,19,Kalulushi,102003004,Twaiteka
+2,Copperbelt,3,Kalulushi,19,Kalulushi,102003005,Lukoshi
+2,Copperbelt,3,Kalulushi,19,Kalulushi,102003006,Lulamba
+2,Copperbelt,3,Kalulushi,19,Kalulushi,102003007,Mwambashi
+2,Copperbelt,3,Kalulushi,19,Kalulushi,102003008,Ichimpe
+2,Copperbelt,3,Kalulushi,19,Kalulushi,102003009,Kalanga
+2,Copperbelt,3,Kalulushi,19,Kalulushi,102003010,Lubuto
+2,Copperbelt,3,Kalulushi,19,Kalulushi,102003011,Dongwe
+2,Copperbelt,3,Kalulushi,19,Kalulushi,102003012,Kalungwishi
+2,Copperbelt,3,Kalulushi,19,Kalulushi,102003013,Luapula
+2,Copperbelt,3,Kalulushi,19,Kalulushi,102003014,Kalengwa
+2,Copperbelt,3,Kalulushi,19,Kalulushi,102003015,Buseko
+2,Copperbelt,3,Kalulushi,19,Kalulushi,102003016,Kankonshi
+2,Copperbelt,3,Kalulushi,19,Kalulushi,102003017,Chibuluma
+2,Copperbelt,3,Kalulushi,19,Kalulushi,102003018,Remmy Chisupa
+2,Copperbelt,3,Kalulushi,19,Kalulushi,102003019,Ngweshi
+2,Copperbelt,3,Kalulushi,19,Kalulushi,102003020,Kafue
+2,Copperbelt,3,Kalulushi,19,Kalulushi,102003021,Nsokoloko
+2,Copperbelt,3,Kalulushi,19,Kalulushi,102003022,Lubanga
+2,Copperbelt,3,Kalulushi,19,Kalulushi,102003023,Chembe
+2,Copperbelt,3,Kalulushi,19,Kalulushi,102003024,Chati
+2,Copperbelt,4,Kitwe,19,Kalulushi,102003024,Chati
+2,Copperbelt,4,Kitwe,20,Chimwemwe,102003024,Chati
+2,Copperbelt,4,Kitwe,20,Chimwemwe,102004001,Itimpi
+2,Copperbelt,4,Kitwe,20,Chimwemwe,102004002,Twatasha
+2,Copperbelt,4,Kitwe,20,Chimwemwe,102004003,Kawama
+2,Copperbelt,4,Kitwe,20,Chimwemwe,102004004,Kamatipa
+2,Copperbelt,4,Kitwe,20,Chimwemwe,102004005,Buntungwa
+2,Copperbelt,4,Kitwe,20,Chimwemwe,102004006,Lubuto
+2,Copperbelt,4,Kitwe,20,Chimwemwe,102004007,Chimwemwe
+2,Copperbelt,4,Kitwe,21,Kamfinsa,102004007,Chimwemwe
+2,Copperbelt,4,Kitwe,21,Kamfinsa,102004008,Bupe
+2,Copperbelt,4,Kitwe,21,Kamfinsa,102004009,Ndeke
+2,Copperbelt,4,Kitwe,21,Kamfinsa,102004010,Kafue
+2,Copperbelt,4,Kitwe,21,Kamfinsa,102004011,Kamfinsa
+2,Copperbelt,4,Kitwe,22,Kwacha,102004011,Kamfinsa
+2,Copperbelt,4,Kitwe,22,Kwacha,102004012,Kwacha
+2,Copperbelt,4,Kitwe,22,Kwacha,102004013,Bulangililo
+2,Copperbelt,4,Kitwe,22,Kwacha,102004014,Ipusukilo
+2,Copperbelt,4,Kitwe,22,Kwacha,102004015,Chantete
+2,Copperbelt,4,Kitwe,22,Kwacha,102004016,Musonda
+2,Copperbelt,4,Kitwe,22,Kwacha,102004017,Riverside
+2,Copperbelt,4,Kitwe,22,Kwacha,102004018,Lubwa
+2,Copperbelt,4,Kitwe,23,Nkana,102004018,Lubwa
+2,Copperbelt,4,Kitwe,23,Nkana,102004019,Buchi
+2,Copperbelt,4,Kitwe,23,Nkana,102004020,Parklands
+2,Copperbelt,4,Kitwe,23,Nkana,102004021,Mukuba
+2,Copperbelt,4,Kitwe,23,Nkana,102004022,Rokana
+2,Copperbelt,4,Kitwe,23,Nkana,102004023,Kamakonde
+2,Copperbelt,4,Kitwe,23,Nkana,102004024,Miseshi
+2,Copperbelt,4,Kitwe,23,Nkana,102004025,Mindolo
+2,Copperbelt,4,Kitwe,23,Nkana,102004026,Luyando
+2,Copperbelt,4,Kitwe,24,Wusakile,102004026,Luyando
+2,Copperbelt,4,Kitwe,24,Wusakile,102004027,Wusakile
+2,Copperbelt,4,Kitwe,24,Wusakile,102004028,Chibote
+2,Copperbelt,4,Kitwe,24,Wusakile,102004029,Chamboli
+2,Copperbelt,4,Kitwe,24,Wusakile,102004030,Luangwa
+2,Copperbelt,4,Kitwe,24,Wusakile,102004031,Luto
+2,Copperbelt,4,Kitwe,24,Wusakile,102004032,Limaposa
+2,Copperbelt,5,Luanshya,24,Wusakile,102004032,Limaposa
+2,Copperbelt,5,Luanshya,25,Luanshya,102004032,Limaposa
+2,Copperbelt,5,Luanshya,25,Luanshya,102005001,Baluba
+2,Copperbelt,5,Luanshya,25,Luanshya,102005002,Fisenge
+2,Copperbelt,5,Luanshya,25,Luanshya,102005003,Chitwi
+2,Copperbelt,5,Luanshya,25,Luanshya,102005004,Twashuka
+2,Copperbelt,5,Luanshya,25,Luanshya,102005005,Buntungwa
+2,Copperbelt,5,Luanshya,25,Luanshya,102005006,Kamuchanga
+2,Copperbelt,5,Luanshya,25,Luanshya,102005007,Mwaiseni
+2,Copperbelt,5,Luanshya,25,Luanshya,102005008,Mulungushi
+2,Copperbelt,5,Luanshya,25,Luanshya,102005009,Zambezi
+2,Copperbelt,5,Luanshya,25,Luanshya,102005010,Mikomfwa
+2,Copperbelt,5,Luanshya,25,Luanshya,102005011,Levi Chito
+2,Copperbelt,5,Luanshya,25,Luanshya,102005012,Mipundu
+2,Copperbelt,5,Luanshya,25,Luanshya,102005013,James Phiri
+2,Copperbelt,5,Luanshya,25,Luanshya,102005014,Buteko
+2,Copperbelt,5,Luanshya,25,Luanshya,102005015,Mpelembe
+2,Copperbelt,5,Luanshya,25,Luanshya,102005016,Chawama
+2,Copperbelt,5,Luanshya,26,Roan,102005016,Chawama
+2,Copperbelt,5,Luanshya,26,Roan,102005017,Maposa
+2,Copperbelt,5,Luanshya,26,Roan,102005018,Kawama
+2,Copperbelt,5,Luanshya,26,Roan,102005019,Lumumba
+2,Copperbelt,5,Luanshya,26,Roan,102005020,Nkoloma
+2,Copperbelt,5,Luanshya,26,Roan,102005021,Kafubu
+2,Copperbelt,5,Luanshya,26,Roan,102005022,Chilabula
+2,Copperbelt,5,Luanshya,26,Roan,102005023,Kafue
+2,Copperbelt,5,Luanshya,26,Roan,102005024,Justine Kabwe
+2,Copperbelt,5,Luanshya,26,Roan,102005025,Nkulumashiba
+2,Copperbelt,5,Luanshya,26,Roan,102005026,Mpatamatu
+2,Copperbelt,5,Luanshya,26,Roan,102005027,Milyashi
+2,Copperbelt,5,Luanshya,26,Roan,102005028,Ngebe
+2,Copperbelt,5,Luanshya,26,Roan,102005029,Kansengu
+2,Copperbelt,5,Luanshya,26,Roan,102005030,Buyantanshi
+2,Copperbelt,6,Lufwanyama,26,Roan,102005030,Buyantanshi
+2,Copperbelt,6,Lufwanyama,27,Lufwanyama,102005030,Buyantanshi
+2,Copperbelt,6,Lufwanyama,27,Lufwanyama,102006001,Kansanta
+2,Copperbelt,6,Lufwanyama,27,Lufwanyama,102006002,Milopa
+2,Copperbelt,6,Lufwanyama,27,Lufwanyama,102006003,Kansoka
+2,Copperbelt,6,Lufwanyama,27,Lufwanyama,102006004,Chinemu
+2,Copperbelt,6,Lufwanyama,27,Lufwanyama,102006005,Katembula
+2,Copperbelt,6,Lufwanyama,27,Lufwanyama,102006006,Mitwe
+2,Copperbelt,6,Lufwanyama,27,Lufwanyama,102006007,Kafubu
+2,Copperbelt,6,Lufwanyama,27,Lufwanyama,102006008,Chibanga
+2,Copperbelt,6,Lufwanyama,27,Lufwanyama,102006009,Sokontwe
+2,Copperbelt,6,Lufwanyama,27,Lufwanyama,102006010,Bulaya
+2,Copperbelt,6,Lufwanyama,27,Lufwanyama,102006011,Chantete
+2,Copperbelt,6,Lufwanyama,27,Lufwanyama,102006012,Mibenge
+2,Copperbelt,6,Lufwanyama,27,Lufwanyama,102006013,Mukumbo
+2,Copperbelt,6,Lufwanyama,27,Lufwanyama,102006014,Mwelushi
+2,Copperbelt,6,Lufwanyama,27,Lufwanyama,102006015,Lwabufubo
+2,Copperbelt,6,Lufwanyama,27,Lufwanyama,102006016,Lufwanyama
+2,Copperbelt,6,Lufwanyama,27,Lufwanyama,102006017,Mpindi
+2,Copperbelt,6,Lufwanyama,27,Lufwanyama,102006018,Kabundya
+2,Copperbelt,6,Lufwanyama,27,Lufwanyama,102006019,Luswishi
+2,Copperbelt,6,Lufwanyama,27,Lufwanyama,102006020,Mushingashi
+2,Copperbelt,7,Masaiti,27,Lufwanyama,102006020,Mushingashi
+2,Copperbelt,7,Masaiti,28,Kafulafuta,102006020,Mushingashi
+2,Copperbelt,7,Masaiti,28,Kafulafuta,102007001,Mapalo
+2,Copperbelt,7,Masaiti,28,Kafulafuta,102007002,Mwatishi
+2,Copperbelt,7,Masaiti,28,Kafulafuta,102007003,Majaliwa
+2,Copperbelt,7,Masaiti,28,Kafulafuta,102007004,Chondwe
+2,Copperbelt,7,Masaiti,28,Kafulafuta,102007005,Mutaba
+2,Copperbelt,7,Masaiti,28,Kafulafuta,102007006,Katonte
+2,Copperbelt,7,Masaiti,28,Kafulafuta,102007007,Ishitwe
+2,Copperbelt,7,Masaiti,28,Kafulafuta,102007008,Miengwe
+2,Copperbelt,7,Masaiti,29,Masaiti,102007008,Miengwe
+2,Copperbelt,7,Masaiti,29,Masaiti,102007009,Kamifungo
+2,Copperbelt,7,Masaiti,29,Masaiti,102007010,Miputu
+2,Copperbelt,7,Masaiti,29,Masaiti,102007011,Chilulu
+2,Copperbelt,7,Masaiti,29,Masaiti,102007012,Shimibanga
+2,Copperbelt,7,Masaiti,29,Masaiti,102007013,Katuba
+2,Copperbelt,7,Masaiti,29,Masaiti,102007014,Lumano
+2,Copperbelt,7,Masaiti,29,Masaiti,102007015,Masangano
+2,Copperbelt,7,Masaiti,29,Masaiti,102007016,Mishikishi
+2,Copperbelt,7,Masaiti,29,Masaiti,102007017,Chinondo
+2,Copperbelt,7,Masaiti,29,Masaiti,102007018,Kashitu
+2,Copperbelt,7,Masaiti,29,Masaiti,102007019,Luansobe
+2,Copperbelt,8,Mpongwe,29,Masaiti,102007019,Luansobe
+2,Copperbelt,8,Mpongwe,30,Mpongwe,102007019,Luansobe
+2,Copperbelt,8,Mpongwe,30,Mpongwe,102008001,Luswishi
+2,Copperbelt,8,Mpongwe,30,Mpongwe,102008002,Kasonga
+2,Copperbelt,8,Mpongwe,30,Mpongwe,102008003,Munkumpu
+2,Copperbelt,8,Mpongwe,30,Mpongwe,102008004,Ipumbu
+2,Copperbelt,8,Mpongwe,30,Mpongwe,102008005,Kashiba
+2,Copperbelt,8,Mpongwe,30,Mpongwe,102008006,Mpongwe Central
+2,Copperbelt,8,Mpongwe,30,Mpongwe,102008007,Kanyenda
+2,Copperbelt,8,Mpongwe,30,Mpongwe,102008008,Kasamba
+2,Copperbelt,8,Mpongwe,30,Mpongwe,102008009,Ibenga
+2,Copperbelt,8,Mpongwe,30,Mpongwe,102008010,Chisapa
+2,Copperbelt,8,Mpongwe,30,Mpongwe,102008011,Kalweo
+2,Copperbelt,8,Mpongwe,30,Mpongwe,102008012,Ntanda
+2,Copperbelt,8,Mpongwe,30,Mpongwe,102008013,Mikata
+2,Copperbelt,8,Mpongwe,30,Mpongwe,102008014,Nampamba
+2,Copperbelt,8,Mpongwe,30,Mpongwe,102008015,Musofu
+2,Copperbelt,9,Mufulira,30,Mpongwe,102008015,Musofu
+2,Copperbelt,9,Mufulira,31,Kankoyo,102008015,Musofu
+2,Copperbelt,9,Mufulira,31,Kankoyo,102009001,Luansobe
+2,Copperbelt,9,Mufulira,31,Kankoyo,102009002,Butondo
+2,Copperbelt,9,Mufulira,31,Kankoyo,102009003,Mpelembe
+2,Copperbelt,9,Mufulira,31,Kankoyo,102009004,Fibusa
+2,Copperbelt,9,Mufulira,31,Kankoyo,102009005,Bufuke
+2,Copperbelt,9,Mufulira,31,Kankoyo,102009006,Kwacha
+2,Copperbelt,9,Mufulira,31,Kankoyo,102009007,Buntungwa
+2,Copperbelt,9,Mufulira,31,Kankoyo,102009008,John Kampengele
+2,Copperbelt,9,Mufulira,31,Kankoyo,102009009,Kangwa Nsuluka
+2,Copperbelt,9,Mufulira,32,Kantanshi,102009009,Kangwa Nsuluka
+2,Copperbelt,9,Mufulira,32,Kantanshi,102009010,Minambe
+2,Copperbelt,9,Mufulira,32,Kantanshi,102009011,Mokambo
+2,Copperbelt,9,Mufulira,32,Kantanshi,102009012,Murundu
+2,Copperbelt,9,Mufulira,32,Kantanshi,102009013,Mupambe
+2,Copperbelt,9,Mufulira,32,Kantanshi,102009014,David Kaunda
+2,Copperbelt,9,Mufulira,32,Kantanshi,102009015,Maina Soko
+2,Copperbelt,9,Mufulira,32,Kantanshi,102009016,Leya Mukutu
+2,Copperbelt,9,Mufulira,32,Kantanshi,102009017,Bwafwano
+2,Copperbelt,9,Mufulira,32,Kantanshi,102009018,Mulungushi
+2,Copperbelt,9,Mufulira,32,Kantanshi,102009019,Shinde
+2,Copperbelt,9,Mufulira,32,Kantanshi,102009020,Bwembya Silwizya
+2,Copperbelt,9,Mufulira,33,Mufulira,102009020,Bwembya Silwizya
+2,Copperbelt,9,Mufulira,33,Mufulira,102009021,Kafue
+2,Copperbelt,9,Mufulira,33,Mufulira,102009022,Kansuswa
+2,Copperbelt,9,Mufulira,33,Mufulira,102009023,Kawama
+2,Copperbelt,9,Mufulira,33,Mufulira,102009024,Hanky Kalanga
+2,Copperbelt,9,Mufulira,33,Mufulira,102009025,Kasempa
+2,Copperbelt,9,Mufulira,33,Mufulira,102009026,Kamuchanga
+2,Copperbelt,9,Mufulira,33,Mufulira,102009027,Chachacha
+2,Copperbelt,9,Mufulira,33,Mufulira,102009028,David Lunda
+2,Copperbelt,9,Mufulira,33,Mufulira,102009029,Bwananyina
+2,Copperbelt,9,Mufulira,33,Mufulira,102009030,Mutundu
+2,Copperbelt,10,Ndola,33,Mufulira,102009030,Mutundu
+2,Copperbelt,10,Ndola,34,Bwana Mkubwa,102009030,Mutundu
+2,Copperbelt,10,Ndola,34,Bwana Mkubwa,102010001,Chichele
+2,Copperbelt,10,Ndola,34,Bwana Mkubwa,102010002,Kantolomba
+2,Copperbelt,10,Ndola,34,Bwana Mkubwa,102010003,Mushili
+2,Copperbelt,10,Ndola,34,Bwana Mkubwa,102010004,Lupili
+2,Copperbelt,10,Ndola,34,Bwana Mkubwa,102010005,Twashuka
+2,Copperbelt,10,Ndola,34,Bwana Mkubwa,102010006,Itawa
+2,Copperbelt,10,Ndola,34,Bwana Mkubwa,102010007,Munkulungwe
+2,Copperbelt,10,Ndola,34,Bwana Mkubwa,102010008,Kavu
+2,Copperbelt,10,Ndola,35,Chifubu,102010008,Kavu
+2,Copperbelt,10,Ndola,35,Chifubu,102010009,Kaniki
+2,Copperbelt,10,Ndola,35,Chifubu,102010010,Kamba
+2,Copperbelt,10,Ndola,35,Chifubu,102010011,Kawama
+2,Copperbelt,10,Ndola,35,Chifubu,102010012,Kanyanje
+2,Copperbelt,10,Ndola,35,Chifubu,102010013,Pamodzi
+2,Copperbelt,10,Ndola,35,Chifubu,102010014,Fibobe
+2,Copperbelt,10,Ndola,35,Chifubu,102010015,Chifubu
+2,Copperbelt,10,Ndola,36,Kabushi,102010015,Chifubu
+2,Copperbelt,10,Ndola,36,Kabushi,102010016,Lubuto
+2,Copperbelt,10,Ndola,36,Kabushi,102010017,Mukuba
+2,Copperbelt,10,Ndola,36,Kabushi,102010018,Kafubu
+2,Copperbelt,10,Ndola,36,Kabushi,102010019,Skyways
+2,Copperbelt,10,Ndola,36,Kabushi,102010020,Masala
+2,Copperbelt,10,Ndola,36,Kabushi,102010021,Kaloko
+2,Copperbelt,10,Ndola,36,Kabushi,102010022,Kabushi
+2,Copperbelt,10,Ndola,36,Kabushi,102010023,Toka
+2,Copperbelt,10,Ndola,37,Ndola Central,102010023,Toka
+2,Copperbelt,10,Ndola,37,Ndola Central,102010024,Dag Hammersjoeld
+2,Copperbelt,10,Ndola,37,Ndola Central,102010025,Twapia
+2,Copperbelt,10,Ndola,37,Ndola Central,102010026,Kanini
+2,Copperbelt,10,Ndola,37,Ndola Central,102010027,Kansenshi
+2,Copperbelt,10,Ndola,37,Ndola Central,102010028,Nkwazi
+2,Copperbelt,10,Ndola,37,Ndola Central,102010029,Yengwe
+2,Copperbelt,10,Ndola,37,Ndola Central,102010030,Mapalo
+3,Eastern,10,Ndola,37,Ndola Central,102010030,Mapalo
+3,Eastern,1,Chadiza,37,Ndola Central,102010030,Mapalo
+3,Eastern,1,Chadiza,38,Chadiza,102010030,Mapalo
+3,Eastern,1,Chadiza,38,Chadiza,103001001,Tikondane
+3,Eastern,1,Chadiza,38,Chadiza,103001002,Mangwe
+3,Eastern,1,Chadiza,38,Chadiza,103001003,Nsadzu
+3,Eastern,1,Chadiza,38,Chadiza,103001004,Chanjowe
+3,Eastern,1,Chadiza,38,Chadiza,103001005,Chadiza
+3,Eastern,1,Chadiza,38,Chadiza,103001006,Kapachi
+3,Eastern,1,Chadiza,38,Chadiza,103001007,Manje
+3,Eastern,1,Chadiza,38,Chadiza,103001008,Bwanunkha
+3,Eastern,1,Chadiza,38,Chadiza,103001009,Kaluma
+3,Eastern,1,Chadiza,38,Chadiza,103001010,Khumba
+3,Eastern,1,Chadiza,38,Chadiza,103001011,Ngala
+3,Eastern,1,Chadiza,38,Chadiza,103001012,Mwangazi
+3,Eastern,1,Chadiza,38,Chadiza,103001013,Kabvumo
+3,Eastern,1,Chadiza,38,Chadiza,103001014,Kandabwako
+3,Eastern,1,Chadiza,38,Chadiza,103001015,Chilenga
+3,Eastern,1,Chadiza,38,Chadiza,103001016,Naviluri
+3,Eastern,1,Chadiza,38,Chadiza,103001017,Chamandala
+3,Eastern,1,Chadiza,38,Chadiza,103001018,Kampini
+3,Eastern,1,Chadiza,38,Chadiza,103001019,Taferansoni
+3,Eastern,1,Chadiza,38,Chadiza,103001020,Ambidzi
+3,Eastern,2,Chipata,38,Chadiza,103001020,Ambidzi
+3,Eastern,2,Chipata,40,Chipata Central,103001020,Ambidzi
+3,Eastern,2,Chipata,40,Chipata Central,103002001,Kanjala
+3,Eastern,2,Chipata,40,Chipata Central,103002002,Masupe
+3,Eastern,2,Chipata,40,Chipata Central,103002003,Msanga
+3,Eastern,2,Chipata,40,Chipata Central,103002004,Kapata
+3,Eastern,2,Chipata,40,Chipata Central,103002005,Dilika
+3,Eastern,2,Chipata,42,Luangeni,103002005,Dilika
+3,Eastern,2,Chipata,42,Luangeni,103002006,Nsingo
+3,Eastern,2,Chipata,42,Luangeni,103002007,Mwami
+3,Eastern,2,Chipata,42,Luangeni,103002008,Khova
+3,Eastern,2,Chipata,42,Luangeni,103002009,Makangila
+3,Eastern,2,Chipata,42,Luangeni,103002010,Chikando
+3,Eastern,2,Chipata,42,Luangeni,103002011,Kazimule
+3,Eastern,3,Katete,42,Luangeni,103002011,Kazimule
+3,Eastern,3,Katete,43,Milanzi,103002011,Kazimule
+3,Eastern,3,Katete,43,Milanzi,103003011,Kazakaloba
+3,Eastern,3,Katete,43,Milanzi,103003012,Kamphambe
+3,Eastern,3,Katete,43,Milanzi,103003013,Katiula
+3,Eastern,3,Katete,43,Milanzi,103003014,Kazala
+3,Eastern,3,Katete,43,Milanzi,103003015,Yowoyani
+3,Eastern,3,Katete,43,Milanzi,103003016,Kafumbwe
+3,Eastern,3,Katete,43,Milanzi,103003017,Milanzi
+3,Eastern,3,Katete,43,Milanzi,103003018,Kapoche
+3,Eastern,3,Katete,43,Milanzi,103003019,Chindwale
+3,Eastern,3,Katete,43,Milanzi,103003020,Kapangulula
+3,Eastern,3,Katete,43,Milanzi,103003021,Kasambandola
+3,Eastern,3,Katete,43,Milanzi,103003022,Dole
+3,Eastern,3,Katete,44,Mkaika,103003022,Dole
+3,Eastern,3,Katete,44,Mkaika,103003001,Vulamkoko
+3,Eastern,3,Katete,44,Mkaika,103003002,Kadula
+3,Eastern,3,Katete,44,Mkaika,103003003,Chavuka
+3,Eastern,3,Katete,44,Mkaika,103003004,Chimtende
+3,Eastern,3,Katete,44,Mkaika,103003005,Lukweta
+3,Eastern,3,Katete,44,Mkaika,103003006,Chilongamabwe
+3,Eastern,3,Katete,44,Mkaika,103003007,Mkaika
+3,Eastern,3,Katete,44,Mkaika,103003008,Kamiza
+3,Eastern,3,Katete,44,Mkaika,103003009,Matunga
+3,Eastern,3,Katete,44,Mkaika,103003010,Mphangwe
+3,Eastern,4,Lundazi,44,Mkaika,103003010,Mphangwe
+3,Eastern,4,Lundazi,47,Lundazi,103003010,Mphangwe
+3,Eastern,4,Lundazi,47,Lundazi,103004001,Vuu
+3,Eastern,4,Lundazi,47,Lundazi,103004002,Mphamba
+3,Eastern,4,Lundazi,47,Lundazi,103004003,Mnyamazi
+3,Eastern,4,Lundazi,47,Lundazi,103004004,Msuzi
+3,Eastern,4,Lundazi,47,Lundazi,103004005,Ndonda
+3,Eastern,4,Lundazi,47,Lundazi,103004006,Chilola
+3,Eastern,4,Lundazi,47,Lundazi,103004007,Chimaliro
+3,Eastern,4,Lundazi,47,Lundazi,103004008,Lunevwa
+3,Eastern,4,Lundazi,47,Lundazi,103004009,Mkomba
+3,Eastern,4,Lundazi,47,Lundazi,103004010,Nthitimila
+3,Eastern,5,Mambwe,47,Lundazi,103004010,Nthitimila
+3,Eastern,5,Mambwe,48,Malambo,103004010,Nthitimila
+3,Eastern,5,Mambwe,48,Malambo,103005001,Nsefu
+3,Eastern,5,Mambwe,48,Malambo,103005002,Mnkhanya
+3,Eastern,5,Mambwe,48,Malambo,103005003,Ncheka
+3,Eastern,5,Mambwe,48,Malambo,103005004,Chipako
+3,Eastern,5,Mambwe,48,Malambo,103005005,Malama
+3,Eastern,5,Mambwe,48,Malambo,103005006,Kakumbi
+3,Eastern,5,Mambwe,48,Malambo,103005007,Jumbe
+3,Eastern,5,Mambwe,48,Malambo,103005008,Chipapa
+3,Eastern,5,Mambwe,48,Malambo,103005009,Chisengu
+3,Eastern,5,Mambwe,48,Malambo,103005010,Mphomwa
+3,Eastern,5,Mambwe,48,Malambo,103005011,Chikowa
+3,Eastern,5,Mambwe,48,Malambo,103005012,Msoro
+3,Eastern,5,Mambwe,48,Malambo,103005013,Nyakatokoli
+3,Eastern,5,Mambwe,48,Malambo,103005014,Kasamanda
+3,Eastern,5,Mambwe,48,Malambo,103005015,Mdima
+3,Eastern,6,Nyimba,48,Malambo,103005015,Mdima
+3,Eastern,6,Nyimba,49,Nyimba,103005015,Mdima
+3,Eastern,6,Nyimba,49,Nyimba,103006001,Luangwa
+3,Eastern,6,Nyimba,49,Nyimba,103006002,Chinambi
+3,Eastern,6,Nyimba,49,Nyimba,103006003,Nyimba
+3,Eastern,6,Nyimba,49,Nyimba,103006004,Kaliwe
+3,Eastern,6,Nyimba,49,Nyimba,103006005,Msima
+3,Eastern,6,Nyimba,49,Nyimba,103006006,Chiweza
+3,Eastern,6,Nyimba,49,Nyimba,103006007,Mombe
+3,Eastern,6,Nyimba,49,Nyimba,103006008,Chamilala
+3,Eastern,6,Nyimba,49,Nyimba,103006009,Chinsimbwe
+3,Eastern,6,Nyimba,49,Nyimba,103006010,Katipa
+3,Eastern,6,Nyimba,49,Nyimba,103006011,Mphundwe
+3,Eastern,6,Nyimba,49,Nyimba,103006012,Vizimumba
+3,Eastern,6,Nyimba,49,Nyimba,103006013,Ngozi
+3,Eastern,6,Nyimba,49,Nyimba,103006014,Lwezi
+3,Eastern,6,Nyimba,49,Nyimba,103006015,Mtilizi
+3,Eastern,7,Petauke,49,Nyimba,103006015,Mtilizi
+3,Eastern,7,Petauke,50,Kaumbwe,103006015,Mtilizi
+3,Eastern,7,Petauke,50,Kaumbwe,103007014,Lusinde
+3,Eastern,7,Petauke,50,Kaumbwe,103007015,Kaumbwe
+3,Eastern,7,Petauke,50,Kaumbwe,103007016,Manjazi
+3,Eastern,7,Petauke,50,Kaumbwe,103007017,Kanyanga
+3,Eastern,7,Petauke,50,Kaumbwe,103007018,Manyane
+3,Eastern,7,Petauke,52,Petauke,103007018,Manyane
+3,Eastern,7,Petauke,52,Petauke,103007006,Nsimbo
+3,Eastern,7,Petauke,52,Petauke,103007007,Nyika
+3,Eastern,7,Petauke,52,Petauke,103007008,Chilimanyama
+3,Eastern,7,Petauke,52,Petauke,103007009,Kovyane
+3,Eastern,7,Petauke,52,Petauke,103007010,Mbala
+3,Eastern,7,Petauke,52,Petauke,103007011,Msumbazi
+3,Eastern,7,Petauke,52,Petauke,103007012,Minga
+3,Eastern,7,Petauke,52,Petauke,103007013,Ongolwe
+3,Eastern,8,Sinda,52,Petauke,103007013,Ongolwe
+3,Eastern,8,Sinda,53,Kapoche,103007013,Ongolwe
+3,Eastern,8,Sinda,53,Kapoche,103008001,Luandazi
+3,Eastern,8,Sinda,53,Kapoche,103008002,Chamakuwi
+3,Eastern,8,Sinda,53,Kapoche,103008003,Nchingilizya
+3,Eastern,8,Sinda,53,Kapoche,103008004,Kamwaza
+3,Eastern,8,Sinda,53,Kapoche,103008005,Ching
+3,Eastern,8,Sinda,53,Kapoche,103008006,Siwva
+3,Eastern,8,Sinda,53,Kapoche,103008007,Kapoche
+3,Eastern,8,Sinda,53,Kapoche,103008008,Mwangaila
+3,Eastern,8,Sinda,53,Kapoche,103008009,Nchembwe
+3,Eastern,8,Sinda,53,Kapoche,103008010,Matambazi
+3,Eastern,8,Sinda,53,Kapoche,103008011,Kapungwe
+3,Eastern,8,Sinda,54,Sinda,103008011,Kapungwe
+3,Eastern,8,Sinda,54,Sinda,103008012,Nyamasonkho
+3,Eastern,8,Sinda,54,Sinda,103008013,Chilongozi
+3,Eastern,8,Sinda,54,Sinda,103008014,Mng
+3,Eastern,8,Sinda,54,Sinda,103008015,Chitawe
+3,Eastern,8,Sinda,54,Sinda,103008016,Mnyamanzi
+3,Eastern,8,Sinda,54,Sinda,103008017,Kasangazi
+3,Eastern,8,Sinda,54,Sinda,103008018,Sinda
+3,Eastern,8,Sinda,54,Sinda,103008019,Chiwuyu
+3,Eastern,9,Vubwi,54,Sinda,103008019,Chiwuyu
+3,Eastern,9,Vubwi,55,Vubwi,103008019,Chiwuyu
+3,Eastern,9,Vubwi,55,Vubwi,103009001,Mbozi
+3,Eastern,9,Vubwi,55,Vubwi,103009002,Vubwi
+3,Eastern,9,Vubwi,55,Vubwi,103009003,Mbande
+3,Eastern,9,Vubwi,55,Vubwi,103009004,Matemba
+3,Eastern,9,Vubwi,55,Vubwi,103009005,Chisiya
+3,Eastern,9,Vubwi,55,Vubwi,103009006,Chimphanje
+3,Eastern,9,Vubwi,55,Vubwi,103009007,Mlawe
+3,Eastern,9,Vubwi,55,Vubwi,103009008,Zozwe
+3,Eastern,9,Vubwi,55,Vubwi,103009009,Sindemisale
+3,Eastern,10,Chasefu,55,Vubwi,103009009,Sindemisale
+3,Eastern,10,Chasefu,45,Chasefu,103009009,Sindemisale
+3,Eastern,10,Chasefu,45,Chasefu,103010001,Manda Hill
+3,Eastern,10,Chasefu,45,Chasefu,103010002,Susa
+3,Eastern,10,Chasefu,45,Chasefu,103010003,Magodi
+3,Eastern,10,Chasefu,45,Chasefu,103010004,Kajilime
+3,Eastern,10,Chasefu,45,Chasefu,103010005,Luwerezi
+3,Eastern,10,Chasefu,45,Chasefu,103010006,Kapilisanga
+3,Eastern,10,Chasefu,45,Chasefu,103010007,Membe
+3,Eastern,10,Chasefu,45,Chasefu,103010008,Chaboli
+3,Eastern,10,Chasefu,45,Chasefu,103010009,Nkhanga
+3,Eastern,10,Chasefu,45,Chasefu,103010010,Chizingizi
+3,Eastern,11,Chipangali,45,Chasefu,103010010,Chizingizi
+3,Eastern,11,Chipangali,39,Chipangali,103010010,Chizingizi
+3,Eastern,11,Chipangali,39,Chipangali,103011001,Sisinje
+3,Eastern,11,Chipangali,39,Chipangali,103011002,Lunkhuswe
+3,Eastern,11,Chipangali,39,Chipangali,103011003,Nthope
+3,Eastern,11,Chipangali,39,Chipangali,103011004,Madziatuba
+3,Eastern,11,Chipangali,39,Chipangali,103011005,Chipangali
+3,Eastern,11,Chipangali,39,Chipangali,103011006,Rukuzye
+3,Eastern,11,Chipangali,39,Chipangali,103011007,Kasenga
+3,Eastern,11,Chipangali,39,Chipangali,103011008,Msandile
+3,Eastern,12,Kasenengwa,39,Chipangali,103011008,Msandile
+3,Eastern,12,Kasenengwa,41,Kasenengwa,103011008,Msandile
+3,Eastern,12,Kasenengwa,41,Kasenengwa,103012001,Kwenje
+3,Eastern,12,Kasenengwa,41,Kasenengwa,103012002,Mpunza
+3,Eastern,12,Kasenengwa,41,Kasenengwa,103012003,Ngongwe
+3,Eastern,12,Kasenengwa,41,Kasenengwa,103012004,Chingazi
+3,Eastern,12,Kasenengwa,41,Kasenengwa,103012005,Makungwa
+3,Eastern,12,Kasenengwa,41,Kasenengwa,103012006,Mboza
+3,Eastern,12,Kasenengwa,41,Kasenengwa,103012007,Mkowe
+3,Eastern,12,Kasenengwa,41,Kasenengwa,103012008,Chiparamba
+3,Eastern,13,Lumezi,41,Kasenengwa,103012008,Chiparamba
+3,Eastern,13,Lumezi,46,Lumezi,103012008,Chiparamba
+3,Eastern,13,Lumezi,46,Lumezi,103013001,Chibande
+3,Eastern,13,Lumezi,46,Lumezi,103013002,Lukusuzi
+3,Eastern,13,Lumezi,46,Lumezi,103013003,Lumimba
+3,Eastern,13,Lumezi,46,Lumezi,103013004,Kazembe
+3,Eastern,13,Lumezi,46,Lumezi,103013005,Kapangala
+3,Eastern,13,Lumezi,46,Lumezi,103013006,Kaikumbe
+3,Eastern,13,Lumezi,46,Lumezi,103013007,Wachitangachi
+3,Eastern,13,Lumezi,46,Lumezi,103013008,Chamtowa
+3,Eastern,13,Lumezi,46,Lumezi,103013009,Kachama
+3,Eastern,13,Lumezi,46,Lumezi,103013010,Kamimba
+3,Eastern,13,Lumezi,46,Lumezi,103013011,Diwa
+3,Eastern,14,Lusangazi,46,Lumezi,103013011,Diwa
+3,Eastern,14,Lusangazi,51,Msanzala,103013011,Diwa
+3,Eastern,14,Lusangazi,51,Msanzala,103007001,Chingolo
+3,Eastern,14,Lusangazi,51,Msanzala,103007002,Mateyo Mzeka
+3,Eastern,14,Lusangazi,51,Msanzala,103007003,Lutwazi
+3,Eastern,14,Lusangazi,51,Msanzala,103007004,Singozi
+3,Eastern,14,Lusangazi,51,Msanzala,103007005,Nyakawise
+3,Eastern,14,Lusangazi,51,Msanzala,103014001,Mawanda
+3,Eastern,14,Lusangazi,51,Msanzala,103014002,Chikowa
+3,Eastern,14,Lusangazi,51,Msanzala,103014003,Lusangazi
+3,Eastern,14,Lusangazi,51,Msanzala,103014004,Mudonsa
+3,Eastern,14,Lusangazi,51,Msanzala,103014005,Chisangu
+3,Eastern,14,Lusangazi,51,Msanzala,103014006,Ukwimi
+3,Eastern,1,Chama,51,Msanzala,103014006,Ukwimi
+3,Eastern,1,Chama,85,Chama North,103014006,Ukwimi
+3,Eastern,1,Chama,85,Chama North,106001001,Muchinga
+3,Eastern,1,Chama,85,Chama North,106001002,Mazonde
+3,Eastern,1,Chama,85,Chama North,106001003,Nkhankha
+3,Eastern,1,Chama,85,Chama North,106001004,Luangwa
+3,Eastern,1,Chama,85,Chama North,106001005,Chisunga
+3,Eastern,1,Chama,85,Chama North,106001006,Mwalala
+3,Eastern,1,Chama,85,Chama North,106001007,Ndunda
+3,Eastern,1,Chama,85,Chama North,106001008,Mbazi
+3,Eastern,1,Chama,85,Chama North,106001009,Manthepa
+3,Eastern,1,Chama,85,Chama North,106001010,Kalinkhu
+3,Eastern,1,Chama,85,Chama North,106001011,Kaozi
+3,Eastern,1,Chama,85,Chama North,106001012,Mphalausenga
+3,Eastern,1,Chama,85,Chama North,106001013,Kamphemba
+3,Eastern,1,Chama,86,Chama South,106001013,Kamphemba
+3,Eastern,1,Chama,86,Chama South,106001014,Bazimu
+3,Eastern,1,Chama,86,Chama South,106001015,Mabinga
+3,Eastern,1,Chama,86,Chama South,106001016,Lupamazi
+3,Eastern,1,Chama,86,Chama South,106001017,Chibungwe
+3,Eastern,1,Chama,86,Chama South,106001018,Chilubaluba
+3,Eastern,1,Chama,86,Chama South,106001019,Lumezi
+3,Eastern,1,Chama,86,Chama South,106001020,Lunzi
+3,Eastern,1,Chama,86,Chama South,106001021,Chipala
+3,Eastern,1,Chama,86,Chama South,106001022,Vilimukulu
+3,Eastern,1,Chama,86,Chama South,106001023,Chilenje
+3,Eastern,1,Chama,86,Chama South,106001024,Mapamba
+4,Luapula,1,Chama,86,Chama South,106001024,Mapamba
+4,Luapula,1,Chembe,86,Chama South,106001024,Mapamba
+4,Luapula,1,Chembe,56,Chembe,106001024,Mapamba
+4,Luapula,1,Chembe,56,Chembe,104001001,Kundamfumu
+4,Luapula,1,Chembe,56,Chembe,104001002,Lukola
+4,Luapula,1,Chembe,56,Chembe,104001003,Kasomalwela
+4,Luapula,1,Chembe,56,Chembe,104001004,Mushingwa
+4,Luapula,1,Chembe,56,Chembe,104001005,Luapula
+4,Luapula,1,Chembe,56,Chembe,104001006,Luwo
+4,Luapula,1,Chembe,56,Chembe,104001007,Kapwepwe
+4,Luapula,1,Chembe,56,Chembe,104001008,Mumfula
+4,Luapula,2,Chienge,56,Chembe,104001008,Mumfula
+4,Luapula,2,Chienge,57,Chienge,104001008,Mumfula
+4,Luapula,2,Chienge,57,Chienge,104002001,Lunchinda
+4,Luapula,2,Chienge,57,Chienge,104002002,Chibamba
+4,Luapula,2,Chienge,57,Chienge,104002003,Chipungu
+4,Luapula,2,Chienge,57,Chienge,104002004,Luau
+4,Luapula,2,Chienge,57,Chienge,104002005,Chitunda
+4,Luapula,2,Chienge,57,Chienge,104002006,Lambwe Chomba
+4,Luapula,2,Chienge,57,Chienge,104002007,Chienge
+4,Luapula,2,Chienge,57,Chienge,104002008,Katete
+4,Luapula,2,Chienge,57,Chienge,104002009,Ifuna
+4,Luapula,2,Chienge,57,Chienge,104002010,Chipamba
+4,Luapula,2,Chienge,57,Chienge,104002011,Kalobwa
+4,Luapula,2,Chienge,57,Chienge,104002012,Chitutu
+4,Luapula,2,Chienge,57,Chienge,104002013,Kalungwishi
+4,Luapula,2,Chienge,57,Chienge,104002014,Munwa
+4,Luapula,2,Chienge,57,Chienge,104002015,Mununga
+4,Luapula,3,Chipili,57,Chienge,104002015,Mununga
+4,Luapula,3,Chipili,58,Chipili,104002015,Mununga
+4,Luapula,3,Chipili,58,Chipili,104003001,Makabe
+4,Luapula,3,Chipili,58,Chipili,104003002,Nsenga
+4,Luapula,3,Chipili,58,Chipili,104003003,Mweshi
+4,Luapula,3,Chipili,58,Chipili,104003004,Mumbwe
+4,Luapula,3,Chipili,58,Chipili,104003005,Kabuta
+4,Luapula,3,Chipili,58,Chipili,104003006,Lufubu
+4,Luapula,3,Chipili,58,Chipili,104003007,Chibalashi
+4,Luapula,3,Chipili,58,Chipili,104003008,Kanshimba
+4,Luapula,3,Chipili,58,Chipili,104003009,Nalupembe
+4,Luapula,3,Chipili,58,Chipili,104003010,Nkonge
+4,Luapula,3,Chipili,58,Chipili,104003011,Musufya
+4,Luapula,3,Chipili,58,Chipili,104003012,Chulu Luongo
+4,Luapula,4,Kawambwa,58,Chipili,104003012,Chulu Luongo
+4,Luapula,4,Kawambwa,59,Kawambwa,104003012,Chulu Luongo
+4,Luapula,4,Kawambwa,59,Kawambwa,104004001,Iyanga
+4,Luapula,4,Kawambwa,59,Kawambwa,104004002,Lushiba
+4,Luapula,4,Kawambwa,59,Kawambwa,104004003,Fisaka
+4,Luapula,4,Kawambwa,59,Kawambwa,104004004,Ng
+4,Luapula,4,Kawambwa,59,Kawambwa,104004005,Kawambwa
+4,Luapula,4,Kawambwa,59,Kawambwa,104004006,Ntumbachushi
+4,Luapula,4,Kawambwa,59,Kawambwa,104004007,Senga
+4,Luapula,4,Kawambwa,59,Kawambwa,104004008,Kala
+4,Luapula,4,Kawambwa,59,Kawambwa,104004009,Luena
+4,Luapula,4,Kawambwa,60,Pambashe,104004009,Luena
+4,Luapula,4,Kawambwa,60,Pambashe,104004010,Kabanse
+4,Luapula,4,Kawambwa,60,Pambashe,104004011,Ilombe
+4,Luapula,4,Kawambwa,60,Pambashe,104004012,Pambashe
+4,Luapula,4,Kawambwa,60,Pambashe,104004013,Filenge
+4,Luapula,4,Kawambwa,60,Pambashe,104004014,Mulunda
+4,Luapula,4,Kawambwa,60,Pambashe,104004015,Chibote
+4,Luapula,4,Kawambwa,60,Pambashe,104004016,Chikanda
+4,Luapula,4,Kawambwa,60,Pambashe,104004017,Chimpili
+4,Luapula,4,Kawambwa,60,Pambashe,104004018,Luongo
+4,Luapula,5,Lunga,60,Pambashe,104004018,Luongo
+4,Luapula,5,Lunga,61,Luapula,104004018,Luongo
+4,Luapula,5,Lunga,61,Luapula,104005001,Mweshi
+4,Luapula,5,Lunga,61,Luapula,104005002,Lunga
+4,Luapula,5,Lunga,61,Luapula,104005003,Itala
+4,Luapula,5,Lunga,61,Luapula,104005004,Mashiba
+4,Luapula,5,Lunga,61,Luapula,104005005,Lubale
+4,Luapula,5,Lunga,61,Luapula,104005006,Nsalushi
+4,Luapula,5,Lunga,61,Luapula,104005007,Chumbwe
+4,Luapula,5,Lunga,61,Luapula,104005008,Shinga
+4,Luapula,5,Lunga,61,Luapula,104005009,Ncheta
+4,Luapula,5,Lunga,61,Luapula,104005010,Nkutila
+4,Luapula,6,Mansa,61,Luapula,104005010,Nkutila
+4,Luapula,6,Mansa,62,Bahati,104005010,Nkutila
+4,Luapula,6,Mansa,62,Bahati,104006001,Mutuna
+4,Luapula,6,Mansa,62,Bahati,104006002,Kampemba
+4,Luapula,6,Mansa,62,Bahati,104006003,Mushipashi
+4,Luapula,6,Mansa,62,Bahati,104006004,Kaole
+4,Luapula,6,Mansa,62,Bahati,104006005,Chofoshi
+4,Luapula,6,Mansa,62,Bahati,104006006,Misakalala
+4,Luapula,6,Mansa,62,Bahati,104006007,Mansa
+4,Luapula,6,Mansa,62,Bahati,104006008,Myulu
+4,Luapula,6,Mansa,62,Bahati,104006009,Chipoka
+4,Luapula,6,Mansa,62,Bahati,104006010,Katangashi
+4,Luapula,6,Mansa,63,Mansa Central,104006010,Katangashi
+4,Luapula,6,Mansa,63,Mansa Central,104006011,Musaba
+4,Luapula,6,Mansa,63,Mansa Central,104006012,Lwingishi
+4,Luapula,6,Mansa,63,Mansa Central,104006013,Chansunsu
+4,Luapula,6,Mansa,63,Mansa Central,104006014,Namwandwe
+4,Luapula,6,Mansa,63,Mansa Central,104006015,Chilyapa
+4,Luapula,6,Mansa,63,Mansa Central,104006016,Muchinka
+4,Luapula,6,Mansa,63,Mansa Central,104006017,Mulenshi
+4,Luapula,6,Mansa,63,Mansa Central,104006018,Lukangaba
+4,Luapula,6,Mansa,63,Mansa Central,104006019,Fimpulu
+4,Luapula,6,Mansa,63,Mansa Central,104006020,Chibeleka
+4,Luapula,7,Milenge,63,Mansa Central,104006020,Chibeleka
+4,Luapula,7,Milenge,64,Milenge,104006020,Chibeleka
+4,Luapula,7,Milenge,64,Milenge,104007001,Matontola
+4,Luapula,7,Milenge,64,Milenge,104007002,Lwela
+4,Luapula,7,Milenge,64,Milenge,104007003,Fishikwa
+4,Luapula,7,Milenge,64,Milenge,104007004,Mulumbi
+4,Luapula,7,Milenge,64,Milenge,104007005,Fibalala
+4,Luapula,7,Milenge,64,Milenge,104007006,Lusumbwe
+4,Luapula,7,Milenge,64,Milenge,104007007,Nsaka
+4,Luapula,7,Milenge,64,Milenge,104007008,Milambo
+4,Luapula,7,Milenge,64,Milenge,104007009,Nsunga
+4,Luapula,7,Milenge,64,Milenge,104007010,Chipundu
+4,Luapula,7,Milenge,64,Milenge,104007011,Sokontwe
+4,Luapula,7,Milenge,64,Milenge,104007012,Mikula
+4,Luapula,7,Milenge,64,Milenge,104007013,Katena
+4,Luapula,7,Milenge,64,Milenge,104007014,Kapalala
+4,Luapula,7,Milenge,64,Milenge,104007015,Mumbotuta
+4,Luapula,8,Mwansabombwe,64,Milenge,104007015,Mumbotuta
+4,Luapula,8,Mwansabombwe,65,Mwansabombwe,104007015,Mumbotuta
+4,Luapula,8,Mwansabombwe,65,Mwansabombwe,104008001,Kayo
+4,Luapula,8,Mwansabombwe,65,Mwansabombwe,104008002,Mbereshi
+4,Luapula,8,Mwansabombwe,65,Mwansabombwe,104008003,Kabalenge
+4,Luapula,8,Mwansabombwe,65,Mwansabombwe,104008004,Kakose
+4,Luapula,8,Mwansabombwe,65,Mwansabombwe,104008005,Kazembe
+4,Luapula,8,Mwansabombwe,65,Mwansabombwe,104008006,Chipita
+4,Luapula,8,Mwansabombwe,65,Mwansabombwe,104008007,Mwansabombwe
+4,Luapula,8,Mwansabombwe,65,Mwansabombwe,104008008,Pembe
+4,Luapula,8,Mwansabombwe,65,Mwansabombwe,104008009,Lufubu
+4,Luapula,8,Mwansabombwe,65,Mwansabombwe,104008010,Mulele
+4,Luapula,8,Mwansabombwe,65,Mwansabombwe,104008011,Salanga
+4,Luapula,8,Mwansabombwe,65,Mwansabombwe,104008012,Mununshi
+4,Luapula,9,Mwense,65,Mwansabombwe,104008012,Mununshi
+4,Luapula,9,Mwense,66,Mambilima,104008012,Mununshi
+4,Luapula,9,Mwense,66,Mambilima,104009001,Michelo
+4,Luapula,9,Mwense,66,Mambilima,104009002,Mpasa
+4,Luapula,9,Mwense,66,Mambilima,104009003,Chibembe
+4,Luapula,9,Mwense,66,Mambilima,104009004,Musonda
+4,Luapula,9,Mwense,66,Mambilima,104009005,Lundashi
+4,Luapula,9,Mwense,66,Mambilima,104009006,Mambilima
+4,Luapula,9,Mwense,66,Mambilima,104009007,Munwa
+4,Luapula,9,Mwense,66,Mambilima,104009008,Nsomfi
+4,Luapula,9,Mwense,66,Mambilima,104009009,Chansha
+4,Luapula,9,Mwense,66,Mambilima,104009010,Kalanga
+4,Luapula,9,Mwense,67,Mwense,104009010,Kalanga
+4,Luapula,9,Mwense,67,Mwense,104009011,Mwense
+4,Luapula,9,Mwense,67,Mwense,104009012,Kasengu
+4,Luapula,9,Mwense,67,Mwense,104009013,Katiti
+4,Luapula,9,Mwense,67,Mwense,104009014,Chachacha
+4,Luapula,9,Mwense,67,Mwense,104009015,Kapela
+4,Luapula,9,Mwense,67,Mwense,104009016,Pebekabesa
+4,Luapula,9,Mwense,67,Mwense,104009017,Luche
+4,Luapula,9,Mwense,67,Mwense,104009018,Kapamba
+4,Luapula,9,Mwense,67,Mwense,104009019,Chiwasha
+4,Luapula,9,Mwense,67,Mwense,104009020,Nkanga
+4,Luapula,9,Mwense,67,Mwense,104009021,Kaombe
+4,Luapula,10,Nchelenge,67,Mwense,104009021,Kaombe
+4,Luapula,10,Nchelenge,68,Nchelenge,104009021,Kaombe
+4,Luapula,10,Nchelenge,68,Nchelenge,104010001,Kabuta
+4,Luapula,10,Nchelenge,68,Nchelenge,104010002,Munkombwe
+4,Luapula,10,Nchelenge,68,Nchelenge,104010003,Mwatishi
+4,Luapula,10,Nchelenge,68,Nchelenge,104010004,Chilongo
+4,Luapula,10,Nchelenge,68,Nchelenge,104010005,Kashikishi
+4,Luapula,10,Nchelenge,68,Nchelenge,104010006,Nsembaishe
+4,Luapula,10,Nchelenge,68,Nchelenge,104010007,Kilwa
+4,Luapula,10,Nchelenge,68,Nchelenge,104010008,Isokwe
+4,Luapula,10,Nchelenge,68,Nchelenge,104010009,Nchelenge
+4,Luapula,10,Nchelenge,68,Nchelenge,104010010,Kasamba
+4,Luapula,10,Nchelenge,68,Nchelenge,104010011,Chisenga
+4,Luapula,10,Nchelenge,68,Nchelenge,104010012,Mulwe
+4,Luapula,10,Nchelenge,68,Nchelenge,104010013,Shabo
+4,Luapula,10,Nchelenge,68,Nchelenge,104010014,Mofwe
+4,Luapula,10,Nchelenge,68,Nchelenge,104010015,Katofyo
+4,Luapula,11,Samfya,68,Nchelenge,104010015,Katofyo
+4,Luapula,11,Samfya,69,Bangweulu,104010015,Katofyo
+4,Luapula,11,Samfya,69,Bangweulu,104011001,Lumamya
+4,Luapula,11,Samfya,69,Bangweulu,104011002,Kapilibila
+4,Luapula,11,Samfya,69,Bangweulu,104011003,Lufwishi
+4,Luapula,11,Samfya,69,Bangweulu,104011004,Musaba
+4,Luapula,11,Samfya,69,Bangweulu,104011005,Isamba
+4,Luapula,11,Samfya,69,Bangweulu,104011006,Kapata
+4,Luapula,11,Samfya,69,Bangweulu,104011007,Katanshya
+4,Luapula,11,Samfya,69,Bangweulu,104011008,Mano
+4,Luapula,11,Samfya,69,Bangweulu,104011009,Lupili
+4,Luapula,11,Samfya,69,Bangweulu,104011010,Chimana
+4,Luapula,12,Chifunabuli,69,Bangweulu,104011010,Chimana
+4,Luapula,12,Chifunabuli,70,Chifunabuli,104011010,Chimana
+4,Luapula,12,Chifunabuli,70,Chifunabuli,104012001,Mbabala
+4,Luapula,12,Chifunabuli,70,Chifunabuli,104012002,Chishi
+4,Luapula,12,Chifunabuli,70,Chifunabuli,104012003,Kafumbo
+4,Luapula,12,Chifunabuli,70,Chifunabuli,104012004,Lubwe
+4,Luapula,12,Chifunabuli,70,Chifunabuli,104012005,Chifunabuli
+4,Luapula,12,Chifunabuli,70,Chifunabuli,104012006,Kasongole
+4,Luapula,12,Chifunabuli,70,Chifunabuli,104012007,Mubansenshi
+4,Luapula,12,Chifunabuli,70,Chifunabuli,104012008,Masonde
+4,Luapula,12,Chifunabuli,70,Chifunabuli,104012009,Chinkutila
+4,Luapula,12,Chifunabuli,70,Chifunabuli,104012010,Kasansa
+4,Luapula,12,Chifunabuli,70,Chifunabuli,104012011,Kasaba
+4,Luapula,12,Chifunabuli,70,Chifunabuli,104012012,Kapamba
+4,Luapula,12,Chifunabuli,70,Chifunabuli,104012013,Kapeshi
+5,Lusaka,12,Chifunabuli,70,Chifunabuli,104012013,Kapeshi
+5,Lusaka,1,Chilanga,70,Chifunabuli,104012013,Kapeshi
+5,Lusaka,1,Chilanga,71,Chilanga,104012013,Kapeshi
+5,Lusaka,1,Chilanga,71,Chilanga,105001001,Mwembeshi
+5,Lusaka,1,Chilanga,71,Chilanga,105001002,Chinyanja
+5,Lusaka,1,Chilanga,71,Chilanga,105001003,Mondengwa
+5,Lusaka,1,Chilanga,71,Chilanga,105001004,Nyemba
+5,Lusaka,1,Chilanga,71,Chilanga,105001005,Kasupe
+5,Lusaka,1,Chilanga,71,Chilanga,105001006,Namalombwe
+5,Lusaka,1,Chilanga,71,Chilanga,105001007,New Farms
+5,Lusaka,1,Chilanga,71,Chilanga,105001008,Chilanga
+5,Lusaka,1,Chilanga,71,Chilanga,105001009,Mount Makulu
+5,Lusaka,1,Chilanga,71,Chilanga,105001010,Chilongolo
+5,Lusaka,1,Chilanga,71,Chilanga,105001011,Nakachenje
+5,Lusaka,1,Chilanga,71,Chilanga,105001012,Kalundu
+5,Lusaka,3,Chongwe,71,Chilanga,105001012,Kalundu
+5,Lusaka,3,Chongwe,73,Chongwe,105001012,Kalundu
+5,Lusaka,3,Chongwe,73,Chongwe,105003001,Kasenga
+5,Lusaka,3,Chongwe,73,Chongwe,105003002,Kasisi
+5,Lusaka,3,Chongwe,73,Chongwe,105003003,Chinkuli
+5,Lusaka,3,Chongwe,73,Chongwe,105003004,Ntandabale
+5,Lusaka,3,Chongwe,73,Chongwe,105003005,Palabana
+5,Lusaka,3,Chongwe,73,Chongwe,105003006,Madido
+5,Lusaka,3,Chongwe,73,Chongwe,105003007,Ngwerere
+5,Lusaka,3,Chongwe,73,Chongwe,105003008,Kapwayambale
+5,Lusaka,3,Chongwe,73,Chongwe,105003009,Kanakantapa
+5,Lusaka,3,Chongwe,73,Chongwe,105003010,Kapete
+5,Lusaka,3,Chongwe,73,Chongwe,105003011,Mulenje
+5,Lusaka,3,Chongwe,73,Chongwe,105003012,Chalimbana
+5,Lusaka,3,Chongwe,73,Chongwe,105003013,Chongwe
+5,Lusaka,3,Chongwe,73,Chongwe,105003014,Chainda
+5,Lusaka,3,Chongwe,73,Chongwe,105003015,Manyika
+5,Lusaka,3,Chongwe,73,Chongwe,105003016,Mwalumina
+5,Lusaka,3,Chongwe,73,Chongwe,105003017,Lwimba
+5,Lusaka,3,Chongwe,73,Chongwe,105003018,Katoba
+5,Lusaka,3,Chongwe,73,Chongwe,105003019,Njolwe
+5,Lusaka,3,Chongwe,73,Chongwe,105003020,Nakatindi
+5,Lusaka,3,Chongwe,73,Chongwe,105003021,Nchute
+5,Lusaka,4,Kafue,73,Chongwe,105003021,Nchute
+5,Lusaka,4,Kafue,74,Kafue,105003021,Nchute
+5,Lusaka,4,Kafue,74,Kafue,105004001,Magoba
+5,Lusaka,4,Kafue,74,Kafue,105004002,Chikupi
+5,Lusaka,4,Kafue,74,Kafue,105004003,Mungu
+5,Lusaka,4,Kafue,74,Kafue,105004004,Kabweza
+5,Lusaka,4,Kafue,74,Kafue,105004005,Kasenje
+5,Lusaka,4,Kafue,74,Kafue,105004006,Shikoswe
+5,Lusaka,4,Kafue,74,Kafue,105004007,Shabusale
+5,Lusaka,4,Kafue,74,Kafue,105004008,Matanda
+5,Lusaka,4,Kafue,74,Kafue,105004009,Kafue
+5,Lusaka,4,Kafue,74,Kafue,105004010,Lukolongo
+5,Lusaka,4,Kafue,74,Kafue,105004011,Shimabala
+5,Lusaka,4,Kafue,74,Kafue,105004012,Malundu
+5,Lusaka,4,Kafue,74,Kafue,105004013,Chisankane
+5,Lusaka,4,Kafue,74,Kafue,105004014,Chifwema
+5,Lusaka,4,Kafue,74,Kafue,105004015,Chisakila
+5,Lusaka,4,Kafue,74,Kafue,105004016,Kambale
+5,Lusaka,4,Kafue,74,Kafue,105004017,Chitende
+5,Lusaka,4,Kafue,74,Kafue,105004018,Chiyaba
+5,Lusaka,5,Luangwa,74,Kafue,105004018,Chiyaba
+5,Lusaka,5,Luangwa,75,Feira,105004018,Chiyaba
+5,Lusaka,5,Luangwa,75,Feira,105005001,Mankhokwe
+5,Lusaka,5,Luangwa,75,Feira,105005002,Kaluluzi
+5,Lusaka,5,Luangwa,75,Feira,105005003,Mwalilia
+5,Lusaka,5,Luangwa,75,Feira,105005004,Chikoma
+5,Lusaka,5,Luangwa,75,Feira,105005005,Lunya
+5,Lusaka,5,Luangwa,75,Feira,105005006,Katondwe
+5,Lusaka,5,Luangwa,75,Feira,105005007,Mburuma
+5,Lusaka,5,Luangwa,75,Feira,105005008,Kaunga
+5,Lusaka,5,Luangwa,75,Feira,105005009,Chiriwe
+5,Lusaka,5,Luangwa,75,Feira,105005010,Kapoche
+5,Lusaka,5,Luangwa,75,Feira,105005011,Mphuka
+5,Lusaka,5,Luangwa,75,Feira,105005012,Phwazi
+5,Lusaka,5,Luangwa,75,Feira,105005013,Mandombe
+5,Lusaka,5,Luangwa,75,Feira,105005014,Dzalo
+5,Lusaka,5,Luangwa,75,Feira,105005015,Kavuula
+5,Lusaka,5,Luangwa,75,Feira,105005016,M'Kaliva
+5,Lusaka,5,Luangwa,75,Feira,105005017,Kabowo
+5,Lusaka,6,Lusaka,75,Feira,105005017,Kabowo
+5,Lusaka,6,Lusaka,76,Chawama,105005017,Kabowo
+5,Lusaka,6,Lusaka,76,Chawama,105006001,Nkoloma
+5,Lusaka,6,Lusaka,76,Chawama,105006002,Chawama
+5,Lusaka,6,Lusaka,76,Chawama,105006003,John Howard
+5,Lusaka,6,Lusaka,76,Chawama,105006004,Lilayi
+5,Lusaka,6,Lusaka,77,Kabwata,105006004,Lilayi
+5,Lusaka,6,Lusaka,77,Kabwata,105006005,Kamwala
+5,Lusaka,6,Lusaka,77,Kabwata,105006006,Kabwata
+5,Lusaka,6,Lusaka,77,Kabwata,105006007,Libala
+5,Lusaka,6,Lusaka,77,Kabwata,105006008,Chilenje
+5,Lusaka,6,Lusaka,77,Kabwata,105006009,Kamulanga
+5,Lusaka,6,Lusaka,78,Kanyama,105006009,Kamulanga
+5,Lusaka,6,Lusaka,78,Kanyama,105006010,Garden Park
+5,Lusaka,6,Lusaka,78,Kanyama,105006011,Chinika
+5,Lusaka,6,Lusaka,78,Kanyama,105006012,Harry Mwaanga Nkumbula
+5,Lusaka,6,Lusaka,78,Kanyama,105006013,Kanyama
+5,Lusaka,6,Lusaka,78,Kanyama,105006014,Makeni Villa
+5,Lusaka,6,Lusaka,78,Kanyama,105006015,Munkolo
+5,Lusaka,6,Lusaka,79,Lusaka Central,105006015,Munkolo
+5,Lusaka,6,Lusaka,79,Lusaka Central,105006016,Silwizya
+5,Lusaka,6,Lusaka,79,Lusaka Central,105006017,Independence
+5,Lusaka,6,Lusaka,79,Lusaka Central,105006018,Lubwa
+5,Lusaka,6,Lusaka,79,Lusaka Central,105006019,Kabulonga
+5,Lusaka,6,Lusaka,80,Mandevu,105006019,Kabulonga
+5,Lusaka,6,Lusaka,80,Mandevu,105006020,Roma
+5,Lusaka,6,Lusaka,80,Mandevu,105006021,Mulungushi
+5,Lusaka,6,Lusaka,80,Mandevu,105006022,Ngwerere
+5,Lusaka,6,Lusaka,80,Mandevu,105006023,Chaisa
+5,Lusaka,6,Lusaka,80,Mandevu,105006024,Justine Kabwe
+5,Lusaka,6,Lusaka,80,Mandevu,105006025,Raphael Chota
+5,Lusaka,6,Lusaka,80,Mandevu,105006026,Mpulungu
+5,Lusaka,6,Lusaka,80,Mandevu,105006027,Kabanana
+5,Lusaka,6,Lusaka,81,Matero,105006027,Kabanana
+5,Lusaka,6,Lusaka,81,Matero,105006028,Muchinga
+5,Lusaka,6,Lusaka,81,Matero,105006029,Kapwepwe
+5,Lusaka,6,Lusaka,81,Matero,105006030,Lima
+5,Lusaka,6,Lusaka,81,Matero,105006031,Mwembeshi
+5,Lusaka,6,Lusaka,81,Matero,105006032,Matero
+5,Lusaka,6,Lusaka,82,Munali,105006032,Matero
+5,Lusaka,6,Lusaka,82,Munali,105006033,Kalingalinga
+5,Lusaka,6,Lusaka,82,Munali,105006034,Munali
+5,Lusaka,6,Lusaka,82,Munali,105006035,Chakunkula
+5,Lusaka,6,Lusaka,82,Munali,105006036,Chainda
+5,Lusaka,6,Lusaka,82,Munali,105006037,Kalikiliki
+5,Lusaka,6,Lusaka,82,Munali,105006038,Mtendere
+5,Lusaka,7,Rufunsa,82,Munali,105006038,Mtendere
+5,Lusaka,7,Rufunsa,83,Rufunsa,105006038,Mtendere
+5,Lusaka,7,Rufunsa,83,Rufunsa,105007001,Kabuyu
+5,Lusaka,7,Rufunsa,83,Rufunsa,105007002,Bundabunda
+5,Lusaka,7,Rufunsa,83,Rufunsa,105007003,Nyamanongo
+5,Lusaka,7,Rufunsa,83,Rufunsa,105007004,Mwachilele
+5,Lusaka,7,Rufunsa,83,Rufunsa,105007005,Chamulimba
+5,Lusaka,7,Rufunsa,83,Rufunsa,105007006,Nyangwena
+5,Lusaka,7,Rufunsa,83,Rufunsa,105007007,Kankumba
+5,Lusaka,7,Rufunsa,83,Rufunsa,105007008,Mulamba
+5,Lusaka,7,Rufunsa,83,Rufunsa,105007009,Rufunsa
+5,Lusaka,7,Rufunsa,83,Rufunsa,105007010,Shikabeta
+5,Lusaka,7,Rufunsa,83,Rufunsa,105007011,Mankhanda
+5,Lusaka,7,Rufunsa,83,Rufunsa,105007012,Chintimbwi
+6,Muchinga,7,Rufunsa,83,Rufunsa,105007012,Chintimbwi
+6,Muchinga,2,Chinsali,83,Rufunsa,105007012,Chintimbwi
+6,Muchinga,2,Chinsali,87,Chinsali,105007012,Chintimbwi
+6,Muchinga,2,Chinsali,87,Chinsali,106002001,Itapa
+6,Muchinga,2,Chinsali,87,Chinsali,106002002,Chunga
+6,Muchinga,2,Chinsali,87,Chinsali,106002003,Chilunda
+6,Muchinga,2,Chinsali,87,Chinsali,106002004,Chilinda
+6,Muchinga,2,Chinsali,87,Chinsali,106002005,Mikunku
+6,Muchinga,2,Chinsali,87,Chinsali,106002006,Milemba
+6,Muchinga,2,Chinsali,87,Chinsali,106002007,Kaunga
+6,Muchinga,2,Chinsali,87,Chinsali,106002008,Malalo
+6,Muchinga,2,Chinsali,87,Chinsali,106002009,Chipanga
+6,Muchinga,2,Chinsali,87,Chinsali,106002010,Lubu
+6,Muchinga,2,Chinsali,87,Chinsali,106002011,Munwakubili
+6,Muchinga,2,Chinsali,87,Chinsali,106002012,Ituntwe
+6,Muchinga,2,Chinsali,87,Chinsali,106002013,Nkakula
+6,Muchinga,2,Chinsali,87,Chinsali,106002014,Lubwa
+6,Muchinga,2,Chinsali,87,Chinsali,106002015,Ichinga
+6,Muchinga,2,Chinsali,87,Chinsali,106002016,Chinsali
+6,Muchinga,2,Chinsali,87,Chinsali,106002017,Chambeshi
+6,Muchinga,3,Isoka,87,Chinsali,106002017,Chambeshi
+6,Muchinga,3,Isoka,88,Isoka,106002017,Chambeshi
+6,Muchinga,3,Isoka,88,Isoka,106003001,Milongo
+6,Muchinga,3,Isoka,88,Isoka,106003002,Itukuta
+6,Muchinga,3,Isoka,88,Isoka,106003003,Chinyonga
+6,Muchinga,3,Isoka,88,Isoka,106003004,Kasoka
+6,Muchinga,3,Isoka,88,Isoka,106003005,Kawenga
+6,Muchinga,3,Isoka,88,Isoka,106003006,Kantenshya
+6,Muchinga,3,Isoka,88,Isoka,106003007,Kapililonga
+6,Muchinga,3,Isoka,88,Isoka,106003008,Kalungu
+6,Muchinga,3,Isoka,88,Isoka,106003009,Sansamwenje
+6,Muchinga,3,Isoka,88,Isoka,106003010,Mpungu
+6,Muchinga,3,Isoka,88,Isoka,106003011,Kanyala
+6,Muchinga,3,Isoka,88,Isoka,106003012,Kabandama
+6,Muchinga,3,Isoka,88,Isoka,106003013,Luangwa
+6,Muchinga,3,Isoka,88,Isoka,106003014,Nkombwa
+6,Muchinga,4,Mafinga,88,Isoka,106003014,Nkombwa
+6,Muchinga,4,Mafinga,89,Mafinga,106003014,Nkombwa
+6,Muchinga,4,Mafinga,89,Mafinga,106004001,Mafinga
+6,Muchinga,4,Mafinga,89,Mafinga,106004002,Musipizi
+6,Muchinga,4,Mafinga,89,Mafinga,106004003,Senje
+6,Muchinga,4,Mafinga,89,Mafinga,106004004,Ntonga
+6,Muchinga,4,Mafinga,89,Mafinga,106004005,Thendere
+6,Muchinga,4,Mafinga,89,Mafinga,106004006,Mululu
+6,Muchinga,4,Mafinga,89,Mafinga,106004007,Bemba
+6,Muchinga,4,Mafinga,89,Mafinga,106004008,Kakoma
+6,Muchinga,4,Mafinga,89,Mafinga,106004009,Mahobe
+6,Muchinga,4,Mafinga,89,Mafinga,106004010,Kalanga
+6,Muchinga,4,Mafinga,89,Mafinga,106004011,Vumbo
+6,Muchinga,4,Mafinga,89,Mafinga,106004012,Luhoka
+6,Muchinga,4,Mafinga,89,Mafinga,106004013,Mukutu
+6,Muchinga,5,Mpika,89,Mafinga,106004013,Mukutu
+6,Muchinga,5,Mpika,92,Mpika,106004013,Mukutu
+6,Muchinga,5,Mpika,92,Mpika,106005001,Chipembele
+6,Muchinga,5,Mpika,92,Mpika,106005002,Mutekwe
+6,Muchinga,5,Mpika,92,Mpika,106005003,Kapamba
+6,Muchinga,5,Mpika,92,Mpika,106005004,Chifungwe
+6,Muchinga,5,Mpika,92,Mpika,106005005,Muchinga
+6,Muchinga,5,Mpika,92,Mpika,106005006,Nachikufu
+6,Muchinga,5,Mpika,92,Mpika,106005007,Chishibesonde
+6,Muchinga,5,Mpika,92,Mpika,106005008,Lubambala
+6,Muchinga,5,Mpika,92,Mpika,106005009,Musakanya
+6,Muchinga,5,Mpika,92,Mpika,106005010,Mukungwa
+6,Muchinga,5,Mpika,92,Mpika,106005011,Lwitikila
+6,Muchinga,5,Mpika,92,Mpika,106005012,Mutamba
+6,Muchinga,6,Nakonde,92,Mpika,106005012,Mutamba
+6,Muchinga,6,Nakonde,93,Nakonde,106005012,Mutamba
+6,Muchinga,6,Nakonde,93,Nakonde,106006001,Mwanga
+6,Muchinga,6,Nakonde,93,Nakonde,106006002,Mulalo
+6,Muchinga,6,Nakonde,93,Nakonde,106006003,Luchinde
+6,Muchinga,6,Nakonde,93,Nakonde,106006004,Ng'Umba
+6,Muchinga,6,Nakonde,93,Nakonde,106006005,Popomozi
+6,Muchinga,6,Nakonde,93,Nakonde,106006006,Musyani
+6,Muchinga,6,Nakonde,93,Nakonde,106006007,Ikumbi
+6,Muchinga,6,Nakonde,93,Nakonde,106006008,Nakonde
+6,Muchinga,6,Nakonde,93,Nakonde,106006009,Isunda
+6,Muchinga,6,Nakonde,93,Nakonde,106006010,Old Fife
+6,Muchinga,6,Nakonde,93,Nakonde,106006011,Musele
+6,Muchinga,6,Nakonde,93,Nakonde,106006012,Mpande
+6,Muchinga,6,Nakonde,93,Nakonde,106006013,Mukulika
+6,Muchinga,6,Nakonde,93,Nakonde,106006014,Chiwanza
+6,Muchinga,6,Nakonde,93,Nakonde,106006015,Ilonda
+6,Muchinga,7,Shiwang'andu,93,Nakonde,106006015,Ilonda
+6,Muchinga,7,Shiwang'andu,94,Shiwang'andu,106006015,Ilonda
+6,Muchinga,7,Shiwang'andu,94,Shiwang'andu,106007001,Nkulungwe
+6,Muchinga,7,Shiwang'andu,94,Shiwang'andu,106007002,Nyimbwe
+6,Muchinga,7,Shiwang'andu,94,Shiwang'andu,106007003,Chimpundu
+6,Muchinga,7,Shiwang'andu,94,Shiwang'andu,106007004,Kalebe
+6,Muchinga,7,Shiwang'andu,94,Shiwang'andu,106007005,Mwilakabuswe
+6,Muchinga,7,Shiwang'andu,94,Shiwang'andu,106007006,Muchinga
+6,Muchinga,7,Shiwang'andu,94,Shiwang'andu,106007007,Mwambwa
+6,Muchinga,7,Shiwang'andu,94,Shiwang'andu,106007008,Chamusenga
+6,Muchinga,7,Shiwang'andu,94,Shiwang'andu,106007009,Chandaula
+6,Muchinga,7,Shiwang'andu,94,Shiwang'andu,106007010,Manshya
+6,Muchinga,7,Shiwang'andu,94,Shiwang'andu,106007011,Mukumbi
+6,Muchinga,7,Shiwang'andu,94,Shiwang'andu,106007012,Kulamwele
+6,Muchinga,7,Shiwang'andu,94,Shiwang'andu,106007013,Lukalashi
+6,Muchinga,7,Shiwang'andu,94,Shiwang'andu,106007014,Mayembe
+6,Muchinga,7,Shiwang'andu,94,Shiwang'andu,106007015,Chibinda
+6,Muchinga,7,Shiwang'andu,94,Shiwang'andu,106007016,Ichingo
+6,Muchinga,7,Shiwang'andu,94,Shiwang'andu,106007017,Mwiche
+6,Muchinga,8,Kanchibiya,94,Shiwang'andu,106007017,Mwiche
+6,Muchinga,8,Kanchibiya,90,Kanchibiya,106007017,Mwiche
+6,Muchinga,8,Kanchibiya,90,Kanchibiya,106008001,Chambeshi
+6,Muchinga,8,Kanchibiya,90,Kanchibiya,106008002,Mansha
+6,Muchinga,8,Kanchibiya,90,Kanchibiya,106008003,Mumbubu
+6,Muchinga,8,Kanchibiya,90,Kanchibiya,106008004,Lubaleshi
+6,Muchinga,8,Kanchibiya,90,Kanchibiya,106008005,Chibwa
+6,Muchinga,8,Kanchibiya,90,Kanchibiya,106008006,Chewe Shimfwamba
+6,Muchinga,8,Kanchibiya,90,Kanchibiya,106008007,Chinama
+6,Muchinga,8,Kanchibiya,90,Kanchibiya,106008008,Munikashi
+6,Muchinga,8,Kanchibiya,90,Kanchibiya,106008009,Lulingila
+6,Muchinga,8,Kanchibiya,90,Kanchibiya,106008010,Mbati
+6,Muchinga,9,Lavushimanda,90,Kanchibiya,106008010,Mbati
+6,Muchinga,9,Lavushimanda,91,Mfuwe,106008010,Mbati
+6,Muchinga,9,Lavushimanda,91,Mfuwe,106009001,Lulimala
+6,Muchinga,9,Lavushimanda,91,Mfuwe,106009002,Lukulu
+6,Muchinga,9,Lavushimanda,91,Mfuwe,106009003,Lupembashi
+6,Muchinga,9,Lavushimanda,91,Mfuwe,106009004,Mutinondo
+6,Muchinga,9,Lavushimanda,91,Mfuwe,106009005,Mupamadzi
+6,Muchinga,9,Lavushimanda,91,Mfuwe,106009006,Chikanda
+7,Northern,9,Lavushimanda,91,Mfuwe,106009006,Chikanda
+7,Northern,1,Chilubi,91,Mfuwe,106009006,Chikanda
+7,Northern,1,Chilubi,95,Chilubi,106009006,Chikanda
+7,Northern,1,Chilubi,95,Chilubi,107001001,Chinkundu
+7,Northern,1,Chilubi,95,Chilubi,107001002,Kanama
+7,Northern,1,Chilubi,95,Chilubi,107001003,Mubemba
+7,Northern,1,Chilubi,95,Chilubi,107001004,Kawena
+7,Northern,1,Chilubi,95,Chilubi,107001005,Nguni
+7,Northern,1,Chilubi,95,Chilubi,107001006,Kapoka
+7,Northern,1,Chilubi,95,Chilubi,107001007,Kanchindi
+7,Northern,1,Chilubi,95,Chilubi,107001008,Mpanshya
+7,Northern,1,Chilubi,95,Chilubi,107001009,Kashitu
+7,Northern,1,Chilubi,95,Chilubi,107001010,Kambashi
+7,Northern,1,Chilubi,95,Chilubi,107001011,Muteka
+7,Northern,1,Chilubi,95,Chilubi,107001012,Katamba
+7,Northern,1,Chilubi,95,Chilubi,107001013,Ndela
+7,Northern,1,Chilubi,95,Chilubi,107001014,Mulanda
+7,Northern,1,Chilubi,95,Chilubi,107001015,Chifwenge
+7,Northern,1,Chilubi,95,Chilubi,107001016,Bulilo
+7,Northern,1,Chilubi,95,Chilubi,107001017,Lwenda
+7,Northern,1,Chilubi,95,Chilubi,107001018,Chiloba
+7,Northern,1,Chilubi,95,Chilubi,107001019,Mofu
+7,Northern,1,Chilubi,95,Chilubi,107001020,Chisupa
+7,Northern,1,Chilubi,95,Chilubi,107001021,Lumfwi
+7,Northern,1,Chilubi,95,Chilubi,107001022,Chishiba
+7,Northern,1,Chilubi,95,Chilubi,107001023,Bumba
+7,Northern,1,Chilubi,95,Chilubi,107001024,Luangwa
+7,Northern,2,Kaputa,95,Chilubi,107001024,Luangwa
+7,Northern,2,Kaputa,96,Kaputa,107001024,Luangwa
+7,Northern,2,Kaputa,96,Kaputa,107002001,Munkonge
+7,Northern,2,Kaputa,96,Kaputa,107002002,Mwawe
+7,Northern,2,Kaputa,96,Kaputa,107002003,Kapulwa
+7,Northern,2,Kaputa,96,Kaputa,107002004,Kaleulu
+7,Northern,2,Kaputa,96,Kaputa,107002005,Lubendwa
+7,Northern,2,Kaputa,96,Kaputa,107002006,Mowa
+7,Northern,2,Kaputa,96,Kaputa,107002007,Miyonga
+7,Northern,2,Kaputa,96,Kaputa,107002008,Chitandala
+7,Northern,2,Kaputa,96,Kaputa,107002009,Choma
+7,Northern,2,Kaputa,96,Kaputa,107002010,Chipili
+7,Northern,2,Kaputa,96,Kaputa,107002011,Nkonta
+7,Northern,2,Kaputa,96,Kaputa,107002012,Kayamba
+7,Northern,2,Kaputa,96,Kaputa,107002013,Chiyilunda
+7,Northern,2,Kaputa,96,Kaputa,107002014,Chisoko
+7,Northern,2,Kaputa,96,Kaputa,107002015,Mofwe
+7,Northern,2,Kaputa,96,Kaputa,107002016,Kalungwishi
+7,Northern,2,Kaputa,96,Kaputa,107002017,Luntomfwe
+7,Northern,3,Kasama,96,Kaputa,107002017,Luntomfwe
+7,Northern,3,Kasama,97,Kasama Central,107002017,Luntomfwe
+7,Northern,3,Kasama,97,Kasama Central,107003001,Lukulu
+7,Northern,3,Kasama,97,Kasama Central,107003002,Kasenga
+7,Northern,3,Kasama,97,Kasama Central,107003003,Bululu
+7,Northern,3,Kasama,97,Kasama Central,107003004,Ituna
+7,Northern,3,Kasama,97,Kasama Central,107003005,Chilunga
+7,Northern,3,Kasama,97,Kasama Central,107003006,Lukupa
+7,Northern,3,Kasama,97,Kasama Central,107003007,Julia Chikamoneka
+7,Northern,3,Kasama,97,Kasama Central,107003008,Mulilansolo
+7,Northern,3,Kasama,97,Kasama Central,107003009,Buseko
+7,Northern,3,Kasama,98,Lukashya,107003009,Buseko
+7,Northern,3,Kasama,98,Lukashya,107003010,Kupumaula
+7,Northern,3,Kasama,98,Lukashya,107003011,Chiba
+7,Northern,3,Kasama,98,Lukashya,107003012,Lualuo
+7,Northern,3,Kasama,98,Lukashya,107003013,Kapongolo
+7,Northern,3,Kasama,98,Lukashya,107003014,Chibundu
+7,Northern,3,Kasama,98,Lukashya,107003015,Chumba
+7,Northern,3,Kasama,98,Lukashya,107003016,Musowa
+7,Northern,3,Kasama,98,Lukashya,107003017,Mukanga
+7,Northern,3,Kasama,98,Lukashya,107003018,Lusenga
+7,Northern,3,Kasama,98,Lukashya,107003019,Kapanda
+7,Northern,4,Luwingu,98,Lukashya,107003019,Kapanda
+7,Northern,4,Luwingu,99,Lubansenshi,107003019,Kapanda
+7,Northern,4,Luwingu,99,Lubansenshi,107004001,Mushishe
+7,Northern,4,Luwingu,99,Lubansenshi,107004002,Mwela Wamangu
+7,Northern,4,Luwingu,99,Lubansenshi,107004003,Ipusukilo
+7,Northern,4,Luwingu,99,Lubansenshi,107004004,Katopola
+7,Northern,4,Luwingu,99,Lubansenshi,107004005,Namukolo
+7,Northern,4,Luwingu,99,Lubansenshi,107004006,Chulungoma
+7,Northern,4,Luwingu,99,Lubansenshi,107004007,Masonde
+7,Northern,4,Luwingu,99,Lubansenshi,107004008,Lukutu
+7,Northern,4,Luwingu,99,Lubansenshi,107004009,Chifwile
+7,Northern,4,Luwingu,99,Lubansenshi,107004010,Isansa
+7,Northern,4,Luwingu,99,Lubansenshi,107004011,Mushitu-Wamboo
+7,Northern,4,Luwingu,99,Lubansenshi,107004012,Lwata
+7,Northern,4,Luwingu,99,Lubansenshi,107004013,Isangano
+7,Northern,5,Mbala,99,Lubansenshi,107004013,Isangano
+7,Northern,5,Mbala,101,Mbala,107004013,Isangano
+7,Northern,5,Mbala,101,Mbala,107005001,Mwambezi
+7,Northern,5,Mbala,101,Mbala,107005002,Kazimolwa
+7,Northern,5,Mbala,101,Mbala,107005003,Motomoto
+7,Northern,5,Mbala,101,Mbala,107005004,Kalambo Falls
+7,Northern,5,Mbala,101,Mbala,107005005,Intala
+7,Northern,5,Mbala,101,Mbala,107005006,Kawimbe
+7,Northern,5,Mbala,101,Mbala,107005007,Mwamba
+7,Northern,5,Mbala,101,Mbala,107005008,Lwandi
+7,Northern,5,Mbala,101,Mbala,107005009,Nsunzu
+7,Northern,6,Mporokoso,101,Mbala,107005009,Nsunzu
+7,Northern,6,Mporokoso,104,Mporokoso,107005009,Nsunzu
+7,Northern,6,Mporokoso,104,Mporokoso,107006001,Chikulu
+7,Northern,6,Mporokoso,104,Mporokoso,107006002,Lumangwe
+7,Northern,6,Mporokoso,104,Mporokoso,107006003,Chimbofuma
+7,Northern,6,Mporokoso,104,Mporokoso,107006004,Mumbulama
+7,Northern,6,Mporokoso,104,Mporokoso,107006005,Chimpolonge
+7,Northern,6,Mporokoso,104,Mporokoso,107006006,Kapumo
+7,Northern,6,Mporokoso,104,Mporokoso,107006007,Njalamimba
+7,Northern,6,Mporokoso,104,Mporokoso,107006008,Chishamwamba
+7,Northern,6,Mporokoso,104,Mporokoso,107006009,Mikomba
+7,Northern,6,Mporokoso,104,Mporokoso,107006010,Muchinga
+7,Northern,6,Mporokoso,104,Mporokoso,107006011,Mutotoshi
+7,Northern,6,Mporokoso,104,Mporokoso,107006012,Mabale
+7,Northern,7,Mpulungu,104,Mporokoso,107006012,Mabale
+7,Northern,7,Mpulungu,105,Mpulungu,107006012,Mabale
+7,Northern,7,Mpulungu,105,Mpulungu,107007001,Kapembwa
+7,Northern,7,Mpulungu,105,Mpulungu,107007002,Chibulula
+7,Northern,7,Mpulungu,105,Mpulungu,107007003,Mpulungu Central
+7,Northern,7,Mpulungu,105,Mpulungu,107007004,Namukale
+7,Northern,7,Mpulungu,105,Mpulungu,107007005,Chilumba
+7,Northern,7,Mpulungu,105,Mpulungu,107007006,Isoko
+7,Northern,7,Mpulungu,105,Mpulungu,107007007,Mankonga
+7,Northern,7,Mpulungu,105,Mpulungu,107007008,Tanganyika
+7,Northern,7,Mpulungu,105,Mpulungu,107007009,Iyendwe
+7,Northern,7,Mpulungu,105,Mpulungu,107007010,Itimbwe
+7,Northern,7,Mpulungu,105,Mpulungu,107007011,Mumila
+7,Northern,7,Mpulungu,105,Mpulungu,107007012,Chitimbwa
+7,Northern,7,Mpulungu,105,Mpulungu,107007013,Musengezi
+7,Northern,7,Mpulungu,105,Mpulungu,107007014,Vyamba
+7,Northern,7,Mpulungu,105,Mpulungu,107007015,Chisha
+7,Northern,7,Mpulungu,105,Mpulungu,107007016,Lwambazi
+7,Northern,7,Mpulungu,105,Mpulungu,107007017,Isunga
+7,Northern,8,Mungwi,105,Mpulungu,107007017,Isunga
+7,Northern,8,Mungwi,106,Malole,107007017,Isunga
+7,Northern,8,Mungwi,106,Malole,107008001,Fibwe
+7,Northern,8,Mungwi,106,Malole,107008002,Kabisha
+7,Northern,8,Mungwi,106,Malole,107008003,Luchewe
+7,Northern,8,Mungwi,106,Malole,107008004,Lubala
+7,Northern,8,Mungwi,106,Malole,107008005,Mpanda
+7,Northern,8,Mungwi,106,Malole,107008006,Kalungu
+7,Northern,8,Mungwi,106,Malole,107008007,Iyaya
+7,Northern,8,Mungwi,106,Malole,107008008,Fube
+7,Northern,8,Mungwi,106,Malole,107008009,Chamfubu
+7,Northern,8,Mungwi,106,Malole,107008010,Katumba
+7,Northern,8,Mungwi,106,Malole,107008011,Ngulula
+7,Northern,8,Mungwi,106,Malole,107008012,Mungwi
+7,Northern,8,Mungwi,106,Malole,107008013,Mabula
+7,Northern,8,Mungwi,106,Malole,107008014,Mfinshe
+7,Northern,8,Mungwi,106,Malole,107008015,Chambeshi
+7,Northern,9,Nsama,106,Malole,107008015,Chambeshi
+7,Northern,9,Nsama,107,Chimbamilonga,107008015,Chambeshi
+7,Northern,9,Nsama,107,Chimbamilonga,107009001,Kapisha
+7,Northern,9,Nsama,107,Chimbamilonga,107009002,Nsumbu
+7,Northern,9,Nsama,107,Chimbamilonga,107009003,Katwatwa
+7,Northern,9,Nsama,107,Chimbamilonga,107009004,Chishela
+7,Northern,9,Nsama,107,Chimbamilonga,107009005,Munwa
+7,Northern,9,Nsama,107,Chimbamilonga,107009006,Mikose
+7,Northern,9,Nsama,107,Chimbamilonga,107009007,Kampinda
+7,Northern,9,Nsama,107,Chimbamilonga,107009008,Mululu
+7,Northern,9,Nsama,107,Chimbamilonga,107009009,Lunsangwe
+7,Northern,9,Nsama,107,Chimbamilonga,107009010,Fungwa
+7,Northern,9,Nsama,107,Chimbamilonga,107009011,Mwambeshi
+7,Northern,9,Nsama,107,Chimbamilonga,107009012,Chubo
+7,Northern,9,Nsama,107,Chimbamilonga,107009013,Chishi
+7,Northern,9,Nsama,107,Chimbamilonga,107009014,Kakoma
+7,Northern,9,Nsama,107,Chimbamilonga,107009015,Mukubwe
+7,Northern,9,Nsama,107,Chimbamilonga,107009016,Kashikishi
+7,Northern,9,Nsama,107,Chimbamilonga,107009017,Kakusu
+7,Northern,10,Senga Hill,107,Chimbamilonga,107009017,Kakusu
+7,Northern,10,Senga Hill,102,Senga Hill,107009017,Kakusu
+7,Northern,10,Senga Hill,102,Senga Hill,107010001,Mwiluzi
+7,Northern,10,Senga Hill,102,Senga Hill,107010002,Chela
+7,Northern,10,Senga Hill,102,Senga Hill,107010003,Chimbili
+7,Northern,10,Senga Hill,102,Senga Hill,107010004,Luombe
+7,Northern,10,Senga Hill,102,Senga Hill,107010005,Chinyika
+7,Northern,10,Senga Hill,102,Senga Hill,107010006,Malamba
+7,Northern,10,Senga Hill,102,Senga Hill,107010007,Lapisha
+7,Northern,10,Senga Hill,102,Senga Hill,107010008,Mukololo
+7,Northern,10,Senga Hill,102,Senga Hill,107010009,Ipembe
+7,Northern,10,Senga Hill,102,Senga Hill,107010010,Chozi
+7,Northern,11,Lunte,102,Senga Hill,107010010,Chozi
+7,Northern,11,Lunte,103,Lunte,107010010,Chozi
+7,Northern,11,Lunte,103,Lunte,107011001,Chewe
+7,Northern,11,Lunte,103,Lunte,107011002,Luangwa
+7,Northern,11,Lunte,103,Lunte,107011003,Kasanshi
+7,Northern,11,Lunte,103,Lunte,107011004,Isenga
+7,Northern,11,Lunte,103,Lunte,107011005,Nchelenje
+7,Northern,11,Lunte,103,Lunte,107011006,Myangaluba
+7,Northern,11,Lunte,103,Lunte,107011007,Malaila
+7,Northern,11,Lunte,103,Lunte,107011008,Malambwa
+7,Northern,11,Lunte,103,Lunte,107011009,Kalungwishi
+7,Northern,11,Lunte,103,Lunte,107011010,Kanyanta
+7,Northern,11,Lunte,103,Lunte,107011011,Lubushi
+7,Northern,11,Lunte,103,Lunte,107011012,Lunte
+7,Northern,11,Lunte,103,Lunte,107011013,Masonde
+7,Northern,11,Lunte,103,Lunte,107011014,Bwandela
+7,Northern,12,Lupososhi,103,Lunte,107011014,Bwandela
+7,Northern,12,Lupososhi,100,Lupososhi,107011014,Bwandela
+7,Northern,12,Lupososhi,100,Lupososhi,107012001,Intandashi
+7,Northern,12,Lupososhi,100,Lupososhi,107012002,Kaela
+7,Northern,12,Lupososhi,100,Lupososhi,107012003,Kalinga
+7,Northern,12,Lupososhi,100,Lupososhi,107012004,Munshinga
+7,Northern,12,Lupososhi,100,Lupososhi,107012005,Katilye
+7,Northern,12,Lupososhi,100,Lupososhi,107012006,Kafinsa
+7,Northern,12,Lupososhi,100,Lupososhi,107012007,Kampemba
+7,Northern,12,Lupososhi,100,Lupososhi,107012008,Mulalashi
+7,Northern,12,Lupososhi,100,Lupososhi,107012009,Mufili
+7,Northern,12,Lupososhi,100,Lupososhi,107012010,Ilambo
+7,Northern,12,Lupososhi,100,Lupososhi,107012011,Ibale
+7,Northern,12,Lupososhi,100,Lupososhi,107012012,Bwalinde
+7,Northern,12,Lupososhi,100,Lupososhi,107012013,Lubwa
+8,North,12,Lupososhi,100,Lupososhi,107012013,Lubwa
+8,North,1,Chavuma,100,Lupososhi,107012013,Lubwa
+8,North,1,Chavuma,108,Chavuma,107012013,Lubwa
+8,North,1,Chavuma,108,Chavuma,108001001,Nguvu Mukuku
+8,North,1,Chavuma,108,Chavuma,108001002,Nyatanda
+8,North,1,Chavuma,108,Chavuma,108001003,Nyambingila
+8,North,1,Chavuma,108,Chavuma,108001004,Chambi Mandalo
+8,North,1,Chavuma,108,Chavuma,108001005,Sanjongo Mavili
+8,North,1,Chavuma,108,Chavuma,108001006,Chavuma Central
+8,North,1,Chavuma,108,Chavuma,108001007,Sewe Mungole
+8,North,1,Chavuma,108,Chavuma,108001008,Chiyeke
+8,North,1,Chavuma,108,Chavuma,108001009,Kakhoma
+8,North,1,Chavuma,108,Chavuma,108001010,Lingelengenda Chinwandumba
+8,North,1,Chavuma,108,Chavuma,108001011,Kalombo Kamisamba
+8,North,1,Chavuma,108,Chavuma,108001012,Chivombo Mbalango
+8,North,1,Chavuma,108,Chavuma,108001013,Lingundu Kayinda
+8,North,1,Chavuma,108,Chavuma,108001014,Lukolwe Musunga
+8,North,1,Chavuma,108,Chavuma,108001015,Kambuya Mukelangombe
+8,North,2,Ikelenge,108,Chavuma,108001015,Kambuya Mukelangombe
+8,North,2,Ikelenge,109,Ikeleng,108001015,Kambuya Mukelangombe
+8,North,2,Ikelenge,109,Ikeleng,108002001,Mwininyilamba
+8,North,2,Ikelenge,109,Ikeleng,108002002,Kafweku
+8,North,2,Ikelenge,109,Ikeleng,108002003,Mwilombi
+8,North,2,Ikelenge,109,Ikeleng,108002004,Jimbe
+8,North,2,Ikelenge,109,Ikeleng,108002005,Chanachamuhing'A
+8,North,2,Ikelenge,109,Ikeleng,108002006,Nyakaseya
+8,North,2,Ikelenge,109,Ikeleng,108002007,Sakeji
+8,North,2,Ikelenge,109,Ikeleng,108002008,Ikeleng'I
+8,North,2,Ikelenge,109,Ikeleng,108002009,Mukang'Ala
+8,North,2,Ikelenge,109,Ikeleng,108002010,Lwakela
+8,North,3,Kabompo,109,Ikeleng,108002010,Lwakela
+8,North,3,Kabompo,110,Kabompo,108002010,Lwakela
+8,North,3,Kabompo,110,Kabompo,108003001,Kayombo
+8,North,3,Kabompo,110,Kabompo,108003002,Chikonkwelo
+8,North,3,Kabompo,110,Kabompo,108003003,Luli
+8,North,3,Kabompo,110,Kabompo,108003004,Kamafwafwa
+8,North,3,Kabompo,110,Kabompo,108003005,Kabompo
+8,North,3,Kabompo,110,Kabompo,108003006,Litoya
+8,North,3,Kabompo,110,Kabompo,108003007,Chifuwe
+8,North,3,Kabompo,110,Kabompo,108003008,Kamisombo
+8,North,3,Kabompo,110,Kabompo,108003009,Nkulwashi
+8,North,3,Kabompo,110,Kabompo,108003010,Kabulamema
+8,North,3,Kabompo,110,Kabompo,108003011,Kamisamba
+8,North,3,Kabompo,110,Kabompo,108003012,Mumbeji
+8,North,3,Kabompo,110,Kabompo,108003013,Maveve
+8,North,3,Kabompo,110,Kabompo,108003014,Kalwilo
+8,North,3,Kabompo,110,Kabompo,108003015,Chikenge
+8,North,3,Kabompo,110,Kabompo,108003016,Katuva
+8,North,3,Kabompo,110,Kabompo,108003017,Lunyiwe
+8,North,4,Kasempa,110,Kabompo,108003017,Lunyiwe
+8,North,4,Kasempa,111,Kasempa,108003017,Lunyiwe
+8,North,4,Kasempa,111,Kasempa,108004001,Kamakuku
+8,North,4,Kasempa,111,Kasempa,108004002,Nselauke
+8,North,4,Kasempa,111,Kasempa,108004003,Ingwe
+8,North,4,Kasempa,111,Kasempa,108004004,Kaimbwe
+8,North,4,Kasempa,111,Kasempa,108004005,Kamatete
+8,North,4,Kasempa,111,Kasempa,108004006,Mukema
+8,North,4,Kasempa,111,Kasempa,108004007,Mukinda
+8,North,4,Kasempa,111,Kasempa,108004008,Nyoka
+8,North,4,Kasempa,111,Kasempa,108004009,Maako
+8,North,4,Kasempa,111,Kasempa,108004010,Lubofu
+8,North,4,Kasempa,111,Kasempa,108004011,Kelongwa
+8,North,4,Kasempa,111,Kasempa,108004012,Kamakechi
+8,North,4,Kasempa,111,Kasempa,108004013,Jifumpa
+8,North,4,Kasempa,111,Kasempa,108004014,Mukunashi
+8,North,4,Kasempa,111,Kasempa,108004015,Kanongo
+8,North,4,Kasempa,111,Kasempa,108004016,Mpungu
+8,North,4,Kasempa,111,Kasempa,108004017,Kantenda
+8,North,4,Kasempa,111,Kasempa,108004018,Shibende
+8,North,4,Kasempa,111,Kasempa,108004019,Nkenyauna
+8,North,4,Kasempa,111,Kasempa,108004020,Kikonkomene
+8,North,4,Kasempa,111,Kasempa,108004021,Njenga
+8,North,4,Kasempa,111,Kasempa,108004022,Kalombe
+8,North,4,Kasempa,111,Kasempa,108004023,Dengwe
+8,North,4,Kasempa,111,Kasempa,108004024,Kamusongolwa
+8,North,5,Manyinga,111,Kasempa,108004024,Kamusongolwa
+8,North,5,Manyinga,112,Manyinga,108004024,Kamusongolwa
+8,North,5,Manyinga,112,Manyinga,108005001,Chiteve
+8,North,5,Manyinga,112,Manyinga,108005002,Loloma
+8,North,5,Manyinga,112,Manyinga,108005003,Sikufele
+8,North,5,Manyinga,112,Manyinga,108005004,Kaula
+8,North,5,Manyinga,112,Manyinga,108005005,Kawanda
+8,North,5,Manyinga,112,Manyinga,108005006,Kasamba
+8,North,5,Manyinga,112,Manyinga,108005007,Chongo
+8,North,5,Manyinga,112,Manyinga,108005008,Chifuwe North
+8,North,5,Manyinga,112,Manyinga,108005009,Manyinga
+8,North,5,Manyinga,112,Manyinga,108005010,Mukosho
+8,North,5,Manyinga,112,Manyinga,108005011,Kachikenge
+8,North,5,Manyinga,112,Manyinga,108005012,Dihamba
+8,North,5,Manyinga,112,Manyinga,108005013,Lunsong'Wa
+8,North,5,Manyinga,112,Manyinga,108005014,Kashinakaji
+8,North,6,Mufumbwe,112,Manyinga,108005014,Kashinakaji
+8,North,6,Mufumbwe,113,Mufumbwe,108005014,Kashinakaji
+8,North,6,Mufumbwe,113,Mufumbwe,108006001,Kashima West
+8,North,6,Mufumbwe,113,Mufumbwe,108006002,Kashima East
+8,North,6,Mufumbwe,113,Mufumbwe,108006003,Matushi
+8,North,6,Mufumbwe,113,Mufumbwe,108006004,Kamabuta
+8,North,6,Mufumbwe,113,Mufumbwe,108006005,Kalambu
+8,North,6,Mufumbwe,113,Mufumbwe,108006006,Chizela
+8,North,6,Mufumbwe,113,Mufumbwe,108006007,Shukwe
+8,North,6,Mufumbwe,113,Mufumbwe,108006008,Kikonge
+8,North,6,Mufumbwe,113,Mufumbwe,108006009,Kalengwa
+8,North,6,Mufumbwe,113,Mufumbwe,108006010,Munyambala
+8,North,6,Mufumbwe,113,Mufumbwe,108006011,Kabipupu
+8,North,6,Mufumbwe,113,Mufumbwe,108006012,Musonweji
+8,North,6,Mufumbwe,113,Mufumbwe,108006013,Kilale
+8,North,6,Mufumbwe,113,Mufumbwe,108006014,Mushima
+8,North,6,Mufumbwe,113,Mufumbwe,108006015,Kaminzekenzeke
+8,North,6,Mufumbwe,113,Mufumbwe,108006016,Lalafuta
+8,North,6,Mufumbwe,113,Mufumbwe,108006017,Shimpandanga
+8,North,6,Mufumbwe,113,Mufumbwe,108006018,Miluji
+8,North,7,Mwinilunga,113,Mufumbwe,108006018,Miluji
+8,North,7,Mwinilunga,114,Mwinilunga,108006018,Miluji
+8,North,7,Mwinilunga,114,Mwinilunga,108007001,Kanzenzi
+8,North,7,Mwinilunga,114,Mwinilunga,108007002,Chibwika
+8,North,7,Mwinilunga,114,Mwinilunga,108007003,Kamapanda
+8,North,7,Mwinilunga,114,Mwinilunga,108007004,Kanongesha
+8,North,7,Mwinilunga,114,Mwinilunga,108007005,Kawiku
+8,North,7,Mwinilunga,114,Mwinilunga,108007006,Kabanda
+8,North,7,Mwinilunga,114,Mwinilunga,108007007,Mulumbi
+8,North,7,Mwinilunga,114,Mwinilunga,108007008,Kampemba
+8,North,7,Mwinilunga,114,Mwinilunga,108007009,Mudanyama
+8,North,7,Mwinilunga,114,Mwinilunga,108007010,Mundwiji
+8,North,7,Mwinilunga,114,Mwinilunga,108007011,Kapundu
+8,North,7,Mwinilunga,114,Mwinilunga,108007012,Kanyama
+8,North,7,Mwinilunga,114,Mwinilunga,108007013,Kakoma
+8,North,7,Mwinilunga,114,Mwinilunga,108007014,Kasampula
+8,North,7,Mwinilunga,114,Mwinilunga,108007015,Lumwana
+8,North,7,Mwinilunga,114,Mwinilunga,108007016,Chisasa
+8,North,7,Mwinilunga,114,Mwinilunga,108007017,Makuya
+8,North,7,Mwinilunga,114,Mwinilunga,108007018,Ntambu
+8,North,7,Mwinilunga,114,Mwinilunga,108007019,Sailunga
+8,North,7,Mwinilunga,114,Mwinilunga,108007020,Samuteba
+8,North,7,Mwinilunga,114,Mwinilunga,108007021,Kanyikomboshi
+8,North,8,Solwezi,114,Mwinilunga,108007021,Kanyikomboshi
+8,North,8,Solwezi,115,Solwezi Central,108007021,Kanyikomboshi
+8,North,8,Solwezi,115,Solwezi Central,108008001,Kimasala
+8,North,8,Solwezi,115,Solwezi Central,108008002,Kamalamba
+8,North,8,Solwezi,115,Solwezi Central,108008003,Kapijimpanga
+8,North,8,Solwezi,115,Solwezi Central,108008004,Sandang'Ombe
+8,North,8,Solwezi,115,Solwezi Central,108008005,Kyalalankuba
+8,North,8,Solwezi,115,Solwezi Central,108008006,Kyawama
+8,North,8,Solwezi,115,Solwezi Central,108008007,Tumvwang'Anai
+8,North,8,Solwezi,115,Solwezi Central,108008008,Kazhiba
+8,North,8,Solwezi,115,Solwezi Central,108008009,Kivuku
+8,North,8,Solwezi,115,Solwezi Central,108008010,Kyafukuma
+8,North,8,Solwezi,115,Solwezi Central,108008011,Kimale
+8,North,8,Solwezi,115,Solwezi Central,108008012,Kifubwa
+8,North,9,Zambezi,115,Solwezi Central,108008012,Kifubwa
+8,North,9,Zambezi,118,Zambezi East,108008012,Kifubwa
+8,North,9,Zambezi,118,Zambezi East,108009001,Nyakuleng'A
+8,North,9,Zambezi,118,Zambezi East,108009002,Lwitadi Lwatembo
+8,North,9,Zambezi,118,Zambezi East,108009003,Mpidi Kakong
+8,North,9,Zambezi,118,Zambezi East,108009004,Chitokoloki
+8,North,9,Zambezi,118,Zambezi East,108009005,Kasesi Chivweji
+8,North,9,Zambezi,118,Zambezi East,108009006,Zambezi
+8,North,9,Zambezi,118,Zambezi East,108009007,Chileng
+8,North,9,Zambezi,118,Zambezi East,108009008,Mukanda Nkunda
+8,North,9,Zambezi,118,Zambezi East,108009009,Dipalata
+8,North,9,Zambezi,118,Zambezi East,108009010,Lunkunyi
+8,North,9,Zambezi,119,Zambezi West,108009010,Lunkunyi
+8,North,9,Zambezi,119,Zambezi West,108009011,Mapachi Chinyingi
+8,North,9,Zambezi,119,Zambezi West,108009012,Likungu
+8,North,9,Zambezi,119,Zambezi West,108009013,Liyovu
+8,North,9,Zambezi,119,Zambezi West,108009014,Muyembe
+8,North,9,Zambezi,119,Zambezi West,108009015,Mwange Nyawanda
+8,North,9,Zambezi,119,Zambezi West,108009016,Matondo Nyachikayi
+8,North,10,Kalumbila,119,Zambezi West,108009016,Matondo Nyachikayi
+8,North,10,Kalumbila,117,Solwezi West,108009016,Matondo Nyachikayi
+8,North,10,Kalumbila,117,Solwezi West,108010001,Kibanza
+8,North,10,Kalumbila,117,Solwezi West,108010002,Mwajimambwe
+8,North,10,Kalumbila,117,Solwezi West,108010003,Wabituwo
+8,North,10,Kalumbila,117,Solwezi West,108010004,Shilenda
+8,North,10,Kalumbila,117,Solwezi West,108010005,Mumena
+8,North,10,Kalumbila,117,Solwezi West,108010006,Matebo
+8,North,10,Kalumbila,117,Solwezi West,108010007,Chovwe
+8,North,10,Kalumbila,117,Solwezi West,108010008,Musele
+8,North,10,Kalumbila,117,Solwezi West,108010009,Kisasa
+8,North,10,Kalumbila,117,Solwezi West,108010010,Chitung'U
+8,North,10,Kalumbila,117,Solwezi West,108010011,Mukumbi
+8,North,10,Kalumbila,117,Solwezi West,108010012,Mumbezhi
+8,North,11,Mushindamo,117,Solwezi West,108010012,Mumbezhi
+8,North,11,Mushindamo,116,Solwezi East,108010012,Mumbezhi
+8,North,11,Mushindamo,116,Solwezi East,108011001,Kilumba
+8,North,11,Mushindamo,116,Solwezi East,108011002,Mulonga
+8,North,11,Mushindamo,116,Solwezi East,108011003,Musaka
+8,North,11,Mushindamo,116,Solwezi East,108011004,Kikola
+8,North,11,Mushindamo,116,Solwezi East,108011005,Kangwena
+8,North,11,Mushindamo,116,Solwezi East,108011006,Kalilele
+8,North,11,Mushindamo,116,Solwezi East,108011007,Mapunga
+8,North,11,Mushindamo,116,Solwezi East,108011008,Mujimanzovu
+9,Southern,11,Mushindamo,116,Solwezi East,108011008,Mujimanzovu
+9,Southern,4,Itezhi,116,Solwezi East,108011008,Mujimanzovu
+9,Southern,4,Itezhi,5,Itezh,108011008,Mujimanzovu
+9,Southern,4,Itezhi,5,Itezh,101004001,Itezhi-Tezhi
+9,Southern,4,Itezhi,5,Itezh,101004002,Itumbi
+9,Southern,4,Itezhi,5,Itezh,101004003,Kaanzwa
+9,Southern,4,Itezhi,5,Itezh,101004004,Masemu
+9,Southern,4,Itezhi,5,Itezh,101004005,Babizhi
+9,Southern,4,Itezhi,5,Itezh,101004006,Lubanda
+9,Southern,4,Itezhi,5,Itezh,101004007,Banamwaze
+9,Southern,4,Itezhi,5,Itezh,101004008,Makunku
+9,Southern,4,Itezhi,5,Itezh,101004009,Nyambo
+9,Southern,4,Itezhi,5,Itezh,101004010,Kabulungwe
+9,Southern,4,Itezhi,5,Itezh,101004011,Basanga
+9,Southern,4,Itezhi,5,Itezh,101004012,Luubwe
+9,Southern,4,Itezhi,5,Itezh,101004013,Mbila
+9,Southern,4,Itezhi,5,Itezh,101004014,Shambala
+9,Southern,4,Itezhi,5,Itezh,101004015,Luchena
+9,Southern,2,Chirundu,5,Itezh,101004015,Luchena
+9,Southern,2,Chirundu,72,Chirundu,101004015,Luchena
+9,Southern,2,Chirundu,72,Chirundu,105002001,Musaya
+9,Southern,2,Chirundu,72,Chirundu,105002002,Kapululira
+9,Southern,2,Chirundu,72,Chirundu,105002003,Chirundu
+9,Southern,2,Chirundu,72,Chirundu,105002004,Chirundu West
+9,Southern,2,Chirundu,72,Chirundu,105002005,Mushungu
+9,Southern,2,Chirundu,72,Chirundu,105002006,Njame
+9,Southern,2,Chirundu,72,Chirundu,105002007,Ng'Ombe Ilede
+9,Southern,2,Chirundu,72,Chirundu,105002008,Nkandabwe
+9,Southern,2,Chirundu,72,Chirundu,105002009,Lusitu
+9,Southern,2,Chirundu,72,Chirundu,105002010,Kanyanga
+9,Southern,2,Chirundu,72,Chirundu,105002011,Sikoongo
+9,Southern,2,Chirundu,72,Chirundu,105002012,Ibbwemunyama
+9,Southern,1,Chikankata,72,Chirundu,105002012,Ibbwemunyama
+9,Southern,1,Chikankata,120,Chikankata,105002012,Ibbwemunyama
+9,Southern,1,Chikankata,120,Chikankata,109001001,Kasengo
+9,Southern,1,Chikankata,120,Chikankata,109001002,Nansenga
+9,Southern,1,Chikankata,120,Chikankata,109001003,Turnpike
+9,Southern,1,Chikankata,120,Chikankata,109001004,Namalundu
+9,Southern,1,Chikankata,120,Chikankata,109001005,Musaya
+9,Southern,1,Chikankata,120,Chikankata,109001006,Chikani
+9,Southern,1,Chikankata,120,Chikankata,109001007,Nzingu
+9,Southern,1,Chikankata,120,Chikankata,109001008,Chitete
+9,Southern,1,Chikankata,120,Chikankata,109001009,Malala
+9,Southern,1,Chikankata,120,Chikankata,109001010,Chikombola
+9,Southern,1,Chikankata,120,Chikankata,109001011,Munyomenzyi
+9,Southern,1,Chikankata,120,Chikankata,109001012,Mabwetuba
+9,Southern,1,Chikankata,120,Chikankata,109001013,Upper Kaleya
+9,Southern,1,Chikankata,120,Chikankata,109001014,Chakanza
+9,Southern,2,Choma,120,Chikankata,109001014,Chakanza
+9,Southern,2,Choma,121,Choma Central,109001014,Chakanza
+9,Southern,2,Choma,121,Choma Central,109002001,Namuswa
+9,Southern,2,Choma,121,Choma Central,109002002,Masuku
+9,Southern,2,Choma,121,Choma Central,109002003,Siasikabole
+9,Southern,2,Choma,121,Choma Central,109002004,Singani
+9,Southern,2,Choma,121,Choma Central,109002005,Nakeempa
+9,Southern,2,Choma,121,Choma Central,109002006,Mutandalike
+9,Southern,2,Choma,121,Choma Central,109002007,Mubula
+9,Southern,2,Choma,121,Choma Central,109002008,Sikalundu
+9,Southern,2,Choma,121,Choma Central,109002009,Stateland
+9,Southern,2,Choma,121,Choma Central,109002010,Kulundana
+9,Southern,2,Choma,121,Choma Central,109002011,Simacheche
+9,Southern,2,Choma,121,Choma Central,109002012,Siamambo
+9,Southern,2,Choma,121,Choma Central,109002013,Sikalongo
+9,Southern,2,Choma,121,Choma Central,109002014,Batoka
+9,Southern,2,Choma,121,Choma Central,109002015,Moomba
+9,Southern,2,Choma,121,Choma Central,109002016,Simamvwa
+9,Southern,2,Choma,122,Mbabala,109002016,Simamvwa
+9,Southern,2,Choma,122,Mbabala,109002017,Ng'Onga
+9,Southern,2,Choma,122,Mbabala,109002018,Kabimba
+9,Southern,2,Choma,122,Mbabala,109002019,Mutanga
+9,Southern,2,Choma,122,Mbabala,109002020,Macha
+9,Southern,2,Choma,122,Mbabala,109002021,Kabanze-Mayobo
+9,Southern,2,Choma,122,Mbabala,109002022,Simaubi
+9,Southern,2,Choma,122,Mbabala,109002023,Chilalantambo
+9,Southern,2,Choma,122,Mbabala,109002024,Mapanza
+9,Southern,2,Choma,122,Mbabala,109002025,Kalundu
+9,Southern,2,Choma,122,Mbabala,109002026,Nchembe
+9,Southern,2,Choma,122,Mbabala,109002027,Mang
+9,Southern,2,Choma,122,Mbabala,109002028,Mbabala
+9,Southern,3,Gwembe,122,Mbabala,109002028,Mbabala
+9,Southern,3,Gwembe,123,Gwembe,109002028,Mbabala
+9,Southern,3,Gwembe,123,Gwembe,109003001,Jongola
+9,Southern,3,Gwembe,123,Gwembe,109003002,Fumbo
+9,Southern,3,Gwembe,123,Gwembe,109003003,Makuyu
+9,Southern,3,Gwembe,123,Gwembe,109003004,Lukonde
+9,Southern,3,Gwembe,123,Gwembe,109003005,Bbondo
+9,Southern,3,Gwembe,123,Gwembe,109003006,Chaamwe
+9,Southern,3,Gwembe,123,Gwembe,109003007,Luumbo
+9,Southern,3,Gwembe,123,Gwembe,109003008,Kkole
+9,Southern,3,Gwembe,123,Gwembe,109003009,Siampande
+9,Southern,3,Gwembe,123,Gwembe,109003010,Kkota Kkota
+9,Southern,3,Gwembe,123,Gwembe,109003011,Chibuwe
+9,Southern,3,Gwembe,123,Gwembe,109003012,Syambabala
+9,Southern,3,Gwembe,123,Gwembe,109003013,Kkoma
+9,Southern,3,Gwembe,123,Gwembe,109003014,Sinafala
+9,Southern,3,Gwembe,123,Gwembe,109003015,Chisanga
+9,Southern,3,Gwembe,123,Gwembe,109003016,Jumbo Sompani
+9,Southern,4,Kalomo,123,Gwembe,109003016,Jumbo Sompani
+9,Southern,4,Kalomo,124,Dundumwezi,109003016,Jumbo Sompani
+9,Southern,4,Kalomo,124,Dundumwezi,109004001,Kasukwe
+9,Southern,4,Kalomo,124,Dundumwezi,109004002,Naluja
+9,Southern,4,Kalomo,124,Dundumwezi,109004003,Bbilili
+9,Southern,4,Kalomo,124,Dundumwezi,109004004,Katanda
+9,Southern,4,Kalomo,124,Dundumwezi,109004005,Omba
+9,Southern,4,Kalomo,124,Dundumwezi,109004006,Mikata
+9,Southern,4,Kalomo,124,Dundumwezi,109004007,Chikanta
+9,Southern,4,Kalomo,124,Dundumwezi,109004008,Chamuka
+9,Southern,4,Kalomo,125,Kalomo Central,109004008,Chamuka
+9,Southern,4,Kalomo,125,Kalomo Central,109004009,Chifusa
+9,Southern,4,Kalomo,125,Kalomo Central,109004010,Siachitema
+9,Southern,4,Kalomo,125,Kalomo Central,109004011,Kalonda
+9,Southern,4,Kalomo,125,Kalomo Central,109004012,Choonga
+9,Southern,4,Kalomo,125,Kalomo Central,109004013,Mwaata
+9,Southern,4,Kalomo,125,Kalomo Central,109004014,Chilesha
+9,Southern,4,Kalomo,125,Kalomo Central,109004015,Mayoba
+9,Southern,4,Kalomo,125,Kalomo Central,109004016,Namwianga
+9,Southern,4,Kalomo,125,Kalomo Central,109004017,Sipatunyana
+9,Southern,4,Kalomo,125,Kalomo Central,109004018,Chawila
+9,Southern,4,Kalomo,125,Kalomo Central,109004019,Simayakwe
+9,Southern,4,Kalomo,125,Kalomo Central,109004020,Nachikungu
+9,Southern,5,Kazungula,125,Kalomo Central,109004020,Nachikungu
+9,Southern,5,Kazungula,126,Katombola,109004020,Nachikungu
+9,Southern,5,Kazungula,126,Katombola,109005001,Moomba
+9,Southern,5,Kazungula,126,Katombola,109005002,Chooma
+9,Southern,5,Kazungula,126,Katombola,109005003,Nguba
+9,Southern,5,Kazungula,126,Katombola,109005004,Kauwe
+9,Southern,5,Kazungula,126,Katombola,109005005,Nyawa
+9,Southern,5,Kazungula,126,Katombola,109005006,Bombwe
+9,Southern,5,Kazungula,126,Katombola,109005007,Sikaunzwe
+9,Southern,5,Kazungula,126,Katombola,109005008,Kazungula Central
+9,Southern,5,Kazungula,126,Katombola,109005009,Mandia
+9,Southern,5,Kazungula,126,Katombola,109005010,Sekute
+9,Southern,5,Kazungula,126,Katombola,109005011,Ngwezi
+9,Southern,5,Kazungula,126,Katombola,109005012,Kanchele
+9,Southern,5,Kazungula,126,Katombola,109005013,Simango
+9,Southern,5,Kazungula,126,Katombola,109005014,Musokotwane
+9,Southern,5,Kazungula,126,Katombola,109005015,Katapazi
+9,Southern,5,Kazungula,126,Katombola,109005016,Mukuni
+9,Southern,6,Livingstone,126,Katombola,109005016,Mukuni
+9,Southern,6,Livingstone,127,Livingstone,109005016,Mukuni
+9,Southern,6,Livingstone,127,Livingstone,109006001,Freedom
+9,Southern,6,Livingstone,127,Livingstone,109006002,Musi-Oa-Tunya
+9,Southern,6,Livingstone,127,Livingstone,109006003,Akapelwa
+9,Southern,6,Livingstone,127,Livingstone,109006004,Lizuma
+9,Southern,6,Livingstone,127,Livingstone,109006005,Dambwa Central
+9,Southern,6,Livingstone,127,Livingstone,109006006,Zambezi
+9,Southern,6,Livingstone,127,Livingstone,109006007,Nakatindi
+9,Southern,6,Livingstone,127,Livingstone,109006008,Simonga
+9,Southern,6,Livingstone,127,Livingstone,109006009,Dr
+9,Southern,6,Livingstone,127,Livingstone,109006010,Kasiya
+9,Southern,6,Livingstone,127,Livingstone,109006011,Simatobolo
+9,Southern,6,Livingstone,127,Livingstone,109006012,Libuyu
+9,Southern,6,Livingstone,127,Livingstone,109006013,Kabila
+9,Southern,6,Livingstone,127,Livingstone,109006014,Shungu
+9,Southern,6,Livingstone,127,Livingstone,109006015,Nansanzu
+9,Southern,6,Livingstone,127,Livingstone,109006016,Kariba
+9,Southern,6,Livingstone,127,Livingstone,109006017,Maramba
+9,Southern,6,Livingstone,127,Livingstone,109006018,Mulungushi
+9,Southern,6,Livingstone,127,Livingstone,109006019,Mwalibonena
+9,Southern,6,Livingstone,127,Livingstone,109006020,Namatama
+9,Southern,7,Mazabuka,127,Livingstone,109006020,Namatama
+9,Southern,7,Mazabuka,128,Magoye,109006020,Namatama
+9,Southern,7,Mazabuka,128,Magoye,109007001,Nkonkola
+9,Southern,7,Mazabuka,128,Magoye,109007002,Chivuna
+9,Southern,7,Mazabuka,128,Magoye,109007003,Mbaya
+9,Southern,7,Mazabuka,128,Magoye,109007004,Musuma
+9,Southern,7,Mazabuka,128,Magoye,109007005,Munjile
+9,Southern,7,Mazabuka,128,Magoye,109007006,Ngwezi
+9,Southern,7,Mazabuka,128,Magoye,109007007,Nachipooma
+9,Southern,7,Mazabuka,128,Magoye,109007008,Mwanachingwala
+9,Southern,7,Mazabuka,128,Magoye,109007009,Munenga
+9,Southern,7,Mazabuka,128,Magoye,109007010,Kalama
+9,Southern,7,Mazabuka,128,Magoye,109007011,Itebe
+9,Southern,7,Mazabuka,129,Mazabuka Central,109007011,Itebe
+9,Southern,7,Mazabuka,129,Mazabuka Central,109007012,Siyoowi
+9,Southern,7,Mazabuka,129,Mazabuka Central,109007013,Mazabuka Central
+9,Southern,7,Mazabuka,129,Mazabuka Central,109007014,Bennie Mwiinga
+9,Southern,7,Mazabuka,129,Mazabuka Central,109007015,Chizobo
+9,Southern,7,Mazabuka,129,Mazabuka Central,109007016,Kaonga
+9,Southern,7,Mazabuka,129,Mazabuka Central,109007017,Nakambala
+9,Southern,7,Mazabuka,129,Mazabuka Central,109007018,Nega Nega
+9,Southern,7,Mazabuka,129,Mazabuka Central,109007019,Lubombo
+9,Southern,7,Mazabuka,129,Mazabuka Central,109007020,Mugoto
+9,Southern,8,Monze,129,Mazabuka Central,109007020,Mugoto
+9,Southern,8,Monze,130,Bweengwa,109007020,Mugoto
+9,Southern,8,Monze,130,Bweengwa,109008001,Malundu
+9,Southern,8,Monze,130,Bweengwa,109008002,Hamusonde
+9,Southern,8,Monze,130,Bweengwa,109008003,Kaila
+9,Southern,8,Monze,130,Bweengwa,109008004,Keemba
+9,Southern,8,Monze,130,Bweengwa,109008005,Choongo East
+9,Southern,8,Monze,130,Bweengwa,109008006,Choongo West
+9,Southern,8,Monze,130,Bweengwa,109008007,Bweengwa
+9,Southern,8,Monze,130,Bweengwa,109008008,Hamangaba
+9,Southern,8,Monze,131,Monze Central,109008008,Hamangaba
+9,Southern,8,Monze,131,Monze Central,109008009,Hamamvwa
+9,Southern,8,Monze,131,Monze Central,109008010,Katimba
+9,Southern,8,Monze,131,Monze Central,109008011,Bbombo
+9,Southern,8,Monze,131,Monze Central,109008012,Hatontola
+9,Southern,8,Monze,131,Monze Central,109008013,Hufwa-Hamapande
+9,Southern,8,Monze,131,Monze Central,109008014,Mayaba
+9,Southern,8,Monze,131,Monze Central,109008015,Chisekese
+9,Southern,8,Monze,131,Monze Central,109008016,Ufwenuka
+9,Southern,8,Monze,131,Monze Central,109008017,Singonya
+9,Southern,8,Monze,131,Monze Central,109008018,Chipembele
+9,Southern,8,Monze,131,Monze Central,109008019,Manungu
+9,Southern,8,Monze,131,Monze Central,109008020,Monze Urban
+9,Southern,8,Monze,132,Moomba,109008020,Monze Urban
+9,Southern,8,Monze,132,Moomba,109008021,Mwanza West
+9,Southern,8,Monze,132,Moomba,109008022,Mwanza Central
+9,Southern,8,Monze,132,Moomba,109008023,Mwanza East
+9,Southern,8,Monze,132,Moomba,109008024,Chona
+9,Southern,8,Monze,132,Moomba,109008025,Moomba
+9,Southern,9,Namwala,132,Moomba,109008025,Moomba
+9,Southern,9,Namwala,133,Namwala,109008025,Moomba
+9,Southern,9,Namwala,133,Namwala,109009001,Moobola
+9,Southern,9,Namwala,133,Namwala,109009002,Namakube
+9,Southern,9,Namwala,133,Namwala,109009003,Itapa
+9,Southern,9,Namwala,133,Namwala,109009004,Ichila
+9,Southern,9,Namwala,133,Namwala,109009005,Ngabo
+9,Southern,9,Namwala,133,Namwala,109009006,Namwala Central
+9,Southern,9,Namwala,133,Namwala,109009007,Baambwe
+9,Southern,9,Namwala,133,Namwala,109009008,Maala
+9,Southern,9,Namwala,133,Namwala,109009009,Namusonde
+9,Southern,9,Namwala,133,Namwala,109009010,Kabulamwanda
+9,Southern,9,Namwala,133,Namwala,109009011,Kantengwa
+9,Southern,9,Namwala,133,Namwala,109009012,Mandondo
+9,Southern,9,Namwala,133,Namwala,109009013,Mbeza
+9,Southern,9,Namwala,133,Namwala,109009014,Nakamboma
+9,Southern,9,Namwala,133,Namwala,109009015,Chitongo
+9,Southern,9,Namwala,133,Namwala,109009016,Ndema
+9,Southern,10,Pemba,133,Namwala,109009016,Ndema
+9,Southern,10,Pemba,134,Pemba,109009016,Ndema
+9,Southern,10,Pemba,134,Pemba,109010001,Kasiya
+9,Southern,10,Pemba,134,Pemba,109010002,Pemba
+9,Southern,10,Pemba,134,Pemba,109010003,Hamaundu
+9,Southern,10,Pemba,134,Pemba,109010004,Demu
+9,Southern,10,Pemba,134,Pemba,109010005,Kasikili
+9,Southern,10,Pemba,134,Pemba,109010006,Maambo
+9,Southern,10,Pemba,134,Pemba,109010007,Kauba
+9,Southern,10,Pemba,134,Pemba,109010008,Yotam Muleya
+9,Southern,10,Pemba,134,Pemba,109010009,Habunkululu
+9,Southern,10,Pemba,134,Pemba,109010010,Dobo
+9,Southern,10,Pemba,134,Pemba,109010011,Nachibanga
+9,Southern,10,Pemba,134,Pemba,109010012,Muzoka
+9,Southern,11,Siavonga,134,Pemba,109010012,Muzoka
+9,Southern,11,Siavonga,135,Siavonga,109010012,Muzoka
+9,Southern,11,Siavonga,135,Siavonga,109011001,Manchamvwa Inland
+9,Southern,11,Siavonga,135,Siavonga,109011002,Sinadambwe
+9,Southern,11,Siavonga,135,Siavonga,109011003,Lusangazi
+9,Southern,11,Siavonga,135,Siavonga,109011004,Mulimya
+9,Southern,11,Siavonga,135,Siavonga,109011005,Mutuba
+9,Southern,11,Siavonga,135,Siavonga,109011006,Nabuteezi
+9,Southern,11,Siavonga,135,Siavonga,109011007,Nanyanga
+9,Southern,11,Siavonga,135,Siavonga,109011008,Simamba
+9,Southern,11,Siavonga,135,Siavonga,109011009,Kariba
+9,Southern,11,Siavonga,135,Siavonga,109011010,Namuzunga
+9,Southern,11,Siavonga,135,Siavonga,109011011,Munyama
+9,Southern,11,Siavonga,135,Siavonga,109011012,Manchamvwa Lake Shore
+9,Southern,12,Sinazongwe,135,Siavonga,109011012,Manchamvwa Lake Shore
+9,Southern,12,Sinazongwe,136,Sinazongwe,109011012,Manchamvwa Lake Shore
+9,Southern,12,Sinazongwe,136,Sinazongwe,109012001,Chiyabi
+9,Southern,12,Sinazongwe,136,Sinazongwe,109012002,Malima
+9,Southern,12,Sinazongwe,136,Sinazongwe,109012003,Sinenge
+9,Southern,12,Sinazongwe,136,Sinazongwe,109012004,Nang'Ombe
+9,Southern,12,Sinazongwe,136,Sinazongwe,109012005,Nkandabbwe
+9,Southern,12,Sinazongwe,136,Sinazongwe,109012006,Sinazongwe
+9,Southern,12,Sinazongwe,136,Sinazongwe,109012007,Mweezya
+9,Southern,12,Sinazongwe,136,Sinazongwe,109012008,Maamba
+9,Southern,12,Sinazongwe,136,Sinazongwe,109012009,Muchekwa
+9,Southern,12,Sinazongwe,136,Sinazongwe,109012010,Mweemba
+9,Southern,12,Sinazongwe,136,Sinazongwe,109012011,Muuka
+9,Southern,12,Sinazongwe,136,Sinazongwe,109012012,Tekelo
+9,Southern,12,Sinazongwe,136,Sinazongwe,109012013,Mweenda
+9,Southern,12,Sinazongwe,136,Sinazongwe,109012014,Siameja
+9,Southern,12,Sinazongwe,136,Sinazongwe,109012015,Namazambwe
+9,Southern,12,Sinazongwe,136,Sinazongwe,109012016,Mabinga
+9,Southern,13,Zimba,136,Sinazongwe,109012016,Mabinga
+9,Southern,13,Zimba,137,Mapatizya,109012016,Mabinga
+9,Southern,13,Zimba,137,Mapatizya,109013001,Zimba
+9,Southern,13,Zimba,137,Mapatizya,109013002,Mangonda
+9,Southern,13,Zimba,137,Mapatizya,109013003,Chuundwe
+9,Southern,13,Zimba,137,Mapatizya,109013004,Mafumba
+9,Southern,13,Zimba,137,Mapatizya,109013005,Luyaba
+9,Southern,13,Zimba,137,Mapatizya,109013006,Chidi
+9,Southern,13,Zimba,137,Mapatizya,109013007,Mulamfu
+9,Southern,13,Zimba,137,Mapatizya,109013008,Mbwiko
+9,Southern,13,Zimba,137,Mapatizya,109013009,Simwatachela
+9,Southern,13,Zimba,137,Mapatizya,109013010,Siamafumba
+9,Southern,13,Zimba,137,Mapatizya,109013011,Chalimongela
+9,Southern,13,Zimba,137,Mapatizya,109013012,Kanyanga
+0,Western,13,Zimba,137,Mapatizya,109013012,Kanyanga
+0,Western,1,Kalabo,137,Mapatizya,109013012,Kanyanga
+0,Western,1,Kalabo,138,Kalabo Central,109013012,Kanyanga
+0,Western,1,Kalabo,138,Kalabo Central,110001001,Muchatanga
+0,Western,1,Kalabo,138,Kalabo Central,110001002,Luanginga
+0,Western,1,Kalabo,138,Kalabo Central,110001003,Mapungu
+0,Western,1,Kalabo,138,Kalabo Central,110001004,Buleya
+0,Western,1,Kalabo,138,Kalabo Central,110001005,Ndoka
+0,Western,1,Kalabo,138,Kalabo Central,110001006,Lukona
+0,Western,1,Kalabo,138,Kalabo Central,110001007,Namulilo
+0,Western,1,Kalabo,138,Kalabo Central,110001008,Ng'Uma
+0,Western,1,Kalabo,138,Kalabo Central,110001009,Mitwi
+0,Western,1,Kalabo,138,Kalabo Central,110001010,Kandambo
+0,Western,1,Kalabo,138,Kalabo Central,110001011,Chilele
+0,Western,1,Kalabo,138,Kalabo Central,110001012,Lutwi
+0,Western,1,Kalabo,138,Kalabo Central,110001013,Liumba
+0,Western,1,Kalabo,138,Kalabo Central,110001014,Yuka
+0,Western,1,Kalabo,139,Liuwa,110001014,Yuka
+0,Western,1,Kalabo,139,Liuwa,110001015,Salunda
+0,Western,1,Kalabo,139,Liuwa,110001016,Luola
+0,Western,1,Kalabo,139,Liuwa,110001017,Siluwe
+0,Western,1,Kalabo,139,Liuwa,110001018,Likulundundu
+0,Western,1,Kalabo,139,Liuwa,110001019,Upangoma
+0,Western,1,Kalabo,139,Liuwa,110001020,Kuuli
+0,Western,1,Kalabo,139,Liuwa,110001021,Mishulundu
+0,Western,1,Kalabo,139,Liuwa,110001022,Sishekanu
+0,Western,1,Kalabo,139,Liuwa,110001023,Libonda
+0,Western,1,Kalabo,139,Liuwa,110001024,Ng'Unyama
+0,Western,2,Kaoma,139,Liuwa,110001024,Ng'Unyama
+0,Western,2,Kaoma,140,Kaoma Central,110001024,Ng'Unyama
+0,Western,2,Kaoma,140,Kaoma Central,110002001,Lunyati
+0,Western,2,Kaoma,140,Kaoma Central,110002002,Kalumwange
+0,Western,2,Kaoma,140,Kaoma Central,110002003,Shitwa
+0,Western,2,Kaoma,140,Kaoma Central,110002004,Namaloba
+0,Western,2,Kaoma,140,Kaoma Central,110002005,Longe
+0,Western,2,Kaoma,140,Kaoma Central,110002006,Mulamatila
+0,Western,2,Kaoma,140,Kaoma Central,110002007,Kashamu
+0,Western,2,Kaoma,140,Kaoma Central,110002008,Naliele
+0,Western,2,Kaoma,140,Kaoma Central,110002009,Shilombo
+0,Western,2,Kaoma,141,Mangango,110002009,Shilombo
+0,Western,2,Kaoma,141,Mangango,110002010,Shikombwe
+0,Western,2,Kaoma,141,Mangango,110002011,Mangango
+0,Western,2,Kaoma,141,Mangango,110002012,Mushwala
+0,Western,2,Kaoma,141,Mangango,110002013,Kapili
+0,Western,2,Kaoma,141,Mangango,110002014,Luambuwa
+0,Western,2,Kaoma,141,Mangango,110002015,Nalulembwe
+0,Western,2,Kaoma,141,Mangango,110002016,Namafulo
+0,Western,2,Kaoma,141,Mangango,110002017,Lukute
+0,Western,2,Kaoma,141,Mangango,110002018,Winda
+0,Western,3,Limulunga,141,Mangango,110002018,Winda
+0,Western,3,Limulunga,142,Luena,110002018,Winda
+0,Western,3,Limulunga,142,Luena,110003001,Limulunga West
+0,Western,3,Limulunga,142,Luena,110003002,Makuku
+0,Western,3,Limulunga,142,Luena,110003003,Mabili
+0,Western,3,Limulunga,142,Luena,110003004,Ushaa
+0,Western,3,Limulunga,142,Luena,110003005,Ikwichi
+0,Western,3,Limulunga,142,Luena,110003006,Limulunga East
+0,Western,3,Limulunga,142,Luena,110003007,Namboma
+0,Western,3,Limulunga,142,Luena,110003008,Miulwe
+0,Western,3,Limulunga,142,Luena,110003009,Nangula
+0,Western,3,Limulunga,142,Luena,110003010,Sitoya
+0,Western,3,Limulunga,142,Luena,110003011,Simaa
+0,Western,3,Limulunga,142,Luena,110003012,Ndanda
+0,Western,3,Limulunga,142,Luena,110003013,Ituku
+0,Western,4,Luampa,142,Luena,110003013,Ituku
+0,Western,4,Luampa,143,Luampa,110003013,Ituku
+0,Western,4,Luampa,143,Luampa,110004001,Lububa
+0,Western,4,Luampa,143,Luampa,110004002,Lui
+0,Western,4,Luampa,143,Luampa,110004003,Mbanyutu
+0,Western,4,Luampa,143,Luampa,110004004,Nkenga
+0,Western,4,Luampa,143,Luampa,110004005,Mwanawasa
+0,Western,4,Luampa,143,Luampa,110004006,Namando
+0,Western,4,Luampa,143,Luampa,110004007,Kahumbu
+0,Western,4,Luampa,143,Luampa,110004008,Luampa
+0,Western,4,Luampa,143,Luampa,110004009,Mulwa
+0,Western,4,Luampa,143,Luampa,110004010,Nakayembe
+0,Western,4,Luampa,143,Luampa,110004011,Nyambi
+0,Western,4,Luampa,143,Luampa,110004012,Inkunikila
+0,Western,5,Lukulu,143,Luampa,110004012,Inkunikila
+0,Western,5,Lukulu,144,Lukulu East,110004012,Inkunikila
+0,Western,5,Lukulu,144,Lukulu East,110005001,Simakumba
+0,Western,5,Lukulu,144,Lukulu East,110005002,Kamilende
+0,Western,5,Lukulu,144,Lukulu East,110005003,Kaluwawa
+0,Western,5,Lukulu,144,Lukulu East,110005004,Dongwe
+0,Western,5,Lukulu,144,Lukulu East,110005005,Kashamba
+0,Western,5,Lukulu,144,Lukulu East,110005006,Mwito
+0,Western,5,Lukulu,144,Lukulu East,110005007,Shizize
+0,Western,5,Lukulu,144,Lukulu East,110005008,Kang'Oti
+0,Western,5,Lukulu,144,Lukulu East,110005009,Luanchuma
+0,Western,5,Lukulu,144,Lukulu East,110005010,Namayula
+0,Western,5,Lukulu,144,Lukulu East,110005011,Mwandi
+0,Western,5,Lukulu,144,Lukulu East,110005012,Ngimbu
+0,Western,5,Lukulu,144,Lukulu East,110005013,Kawaya
+0,Western,5,Lukulu,144,Lukulu East,110005014,Lukau
+0,Western,5,Lukulu,144,Lukulu East,110005015,Mbanga
+0,Western,5,Lukulu,144,Lukulu East,110005016,Lyambai
+0,Western,5,Lukulu,144,Lukulu East,110005017,Likapai
+0,Western,6,Mitete,144,Lukulu East,110005017,Likapai
+0,Western,6,Mitete,145,Mitete,110005017,Likapai
+0,Western,6,Mitete,145,Mitete,110006001,Mataba
+0,Western,6,Mitete,145,Mitete,110006002,Lwambimba
+0,Western,6,Mitete,145,Mitete,110006003,Lupui
+0,Western,6,Mitete,145,Mitete,110006004,Kakwacha
+0,Western,6,Mitete,145,Mitete,110006005,Lutembwe
+0,Western,6,Mitete,145,Mitete,110006006,Mitete
+0,Western,6,Mitete,145,Mitete,110006007,Kashizhi
+0,Western,6,Mitete,145,Mitete,110006008,Lungwevungu
+0,Western,6,Mitete,145,Mitete,110006009,Chinonwe
+0,Western,6,Mitete,145,Mitete,110006010,Kakulunda
+0,Western,6,Mitete,145,Mitete,110006011,Mumbumbu
+0,Western,6,Mitete,145,Mitete,110006012,Muyondoti
+0,Western,6,Mitete,145,Mitete,110006013,Nyaala
+0,Western,7,Mongu,145,Mitete,110006013,Nyaala
+0,Western,7,Mongu,146,Mongu Central,110006013,Nyaala
+0,Western,7,Mongu,146,Mongu Central,110007001,Mulambwa
+0,Western,7,Mongu,146,Mongu Central,110007002,Katongo
+0,Western,7,Mongu,146,Mongu Central,110007003,Yeta
+0,Western,7,Mongu,146,Mongu Central,110007004,Namushekende
+0,Western,7,Mongu,146,Mongu Central,110007005,Namasho
+0,Western,7,Mongu,146,Mongu Central,110007006,Kama
+0,Western,7,Mongu,146,Mongu Central,110007007,Lumbo
+0,Western,7,Mongu,146,Mongu Central,110007008,Lealui Lower
+0,Western,7,Mongu,146,Mongu Central,110007009,Mabumbu
+0,Western,7,Mongu,146,Mongu Central,110007010,Lealui Upper
+0,Western,7,Mongu,146,Mongu Central,110007011,Kanyonyo
+0,Western,7,Mongu,146,Mongu Central,110007012,Lewanika
+0,Western,7,Mongu,146,Mongu Central,110007013,Imwiko
+0,Western,7,Mongu,146,Mongu Central,110007014,Kambule
+0,Western,7,Mongu,146,Mongu Central,110007015,Ilute
+0,Western,7,Mongu,146,Mongu Central,110007016,Kaande
+0,Western,7,Mongu,147,Nalikwanda,110007016,Kaande
+0,Western,7,Mongu,147,Nalikwanda,110007017,Nakato
+0,Western,7,Mongu,147,Nalikwanda,110007018,Looma
+0,Western,7,Mongu,147,Nalikwanda,110007019,Nalwei
+0,Western,7,Mongu,147,Nalikwanda,110007020,Siyowe
+0,Western,7,Mongu,147,Nalikwanda,110007021,Lukalanya
+0,Western,7,Mongu,147,Nalikwanda,110007022,Imalyo
+0,Western,7,Mongu,147,Nalikwanda,110007023,Mutondo
+0,Western,7,Mongu,147,Nalikwanda,110007024,Namengo
+0,Western,7,Mongu,147,Nalikwanda,110007025,Litawa
+0,Western,7,Mongu,147,Nalikwanda,110007026,Nakanyaa
+0,Western,7,Mongu,147,Nalikwanda,110007027,Mbekise
+0,Western,8,Mulobezi,147,Nalikwanda,110007027,Mbekise
+0,Western,8,Mulobezi,148,Mulobezi,110007027,Mbekise
+0,Western,8,Mulobezi,148,Mulobezi,110008001,Kasompa
+0,Western,8,Mulobezi,148,Mulobezi,110008002,Kamanga
+0,Western,8,Mulobezi,148,Mulobezi,110008003,Luamuloba
+0,Western,8,Mulobezi,148,Mulobezi,110008004,Nawinda
+0,Western,8,Mulobezi,148,Mulobezi,110008005,Kabanga
+0,Western,8,Mulobezi,148,Mulobezi,110008006,Sichili
+0,Western,8,Mulobezi,148,Mulobezi,110008007,Mulobezi
+0,Western,8,Mulobezi,148,Mulobezi,110008008,Machile
+0,Western,8,Mulobezi,148,Mulobezi,110008009,Salumbwe
+0,Western,9,Mwandi,148,Mulobezi,110008009,Salumbwe
+0,Western,9,Mwandi,149,Mwandi,110008009,Salumbwe
+0,Western,9,Mwandi,149,Mwandi,110009001,Chisu
+0,Western,9,Mwandi,149,Mwandi,110009002,Mushukula
+0,Western,9,Mwandi,149,Mwandi,110009003,Kalundu
+0,Western,9,Mwandi,149,Mwandi,110009004,Lwazamba
+0,Western,9,Mwandi,149,Mwandi,110009005,Magumwi
+0,Western,9,Mwandi,149,Mwandi,110009006,Adonsi
+0,Western,9,Mwandi,149,Mwandi,110009007,Lutaba
+0,Western,9,Mwandi,149,Mwandi,110009008,Sankolonga
+0,Western,9,Mwandi,149,Mwandi,110009009,Mabumbu
+0,Western,9,Mwandi,149,Mwandi,110009010,Mwandi
+0,Western,9,Mwandi,149,Mwandi,110009011,Simungoma
+0,Western,9,Mwandi,149,Mwandi,110009012,Loanja
+0,Western,10,Nalolo,149,Mwandi,110009012,Loanja
+0,Western,10,Nalolo,150,Nalolo,110009012,Loanja
+0,Western,10,Nalolo,150,Nalolo,110010001,Mukukutu
+0,Western,10,Nalolo,150,Nalolo,110010002,Kataba
+0,Western,10,Nalolo,150,Nalolo,110010003,Lubosi
+0,Western,10,Nalolo,150,Nalolo,110010004,Nanjucha
+0,Western,10,Nalolo,150,Nalolo,110010005,Muoyo
+0,Western,10,Nalolo,150,Nalolo,110010006,Ukolo
+0,Western,10,Nalolo,150,Nalolo,110010007,Kambai
+0,Western,10,Nalolo,150,Nalolo,110010008,Makoka
+0,Western,10,Nalolo,150,Nalolo,110010009,Lyamakumba
+0,Western,10,Nalolo,150,Nalolo,110010010,Silowana
+0,Western,10,Nalolo,150,Nalolo,110010011,Likulwe
+0,Western,10,Nalolo,150,Nalolo,110010012,Shekela
+0,Western,11,Nkeyema,150,Nalolo,110010012,Shekela
+0,Western,11,Nkeyema,151,Nkeyema,110010012,Shekela
+0,Western,11,Nkeyema,151,Nkeyema,110011001,Buloto
+0,Western,11,Nkeyema,151,Nkeyema,110011002,Shishamba
+0,Western,11,Nkeyema,151,Nkeyema,110011003,Namilangi
+0,Western,11,Nkeyema,151,Nkeyema,110011004,Munkuye
+0,Western,11,Nkeyema,151,Nkeyema,110011005,Lombelombe
+0,Western,11,Nkeyema,151,Nkeyema,110011006,Nkeyema
+0,Western,11,Nkeyema,151,Nkeyema,110011007,Shimano
+0,Western,11,Nkeyema,151,Nkeyema,110011008,Litoya
+0,Western,12,Senanga,151,Nkeyema,110011008,Litoya
+0,Western,12,Senanga,152,Senanga,110011008,Litoya
+0,Western,12,Senanga,152,Senanga,110012001,Lumbe Nanyezu
+0,Western,12,Senanga,152,Senanga,110012002,Mata
+0,Western,12,Senanga,152,Senanga,110012003,Namukokoba
+0,Western,12,Senanga,152,Senanga,110012004,Muweswa
+0,Western,12,Senanga,152,Senanga,110012005,Sibukali
+0,Western,12,Senanga,152,Senanga,110012006,Lumbe
+0,Western,12,Senanga,152,Senanga,110012007,Silwizi
+0,Western,12,Senanga,152,Senanga,110012008,Naluywa
+0,Western,12,Senanga,152,Senanga,110012009,Wanyau
+0,Western,12,Senanga,152,Senanga,110012010,Imatanda
+0,Western,12,Senanga,152,Senanga,110012011,Imatongo
+0,Western,12,Senanga,152,Senanga,110012012,Lipuwe
+0,Western,12,Senanga,152,Senanga,110012013,Mwanambuyu
+0,Western,12,Senanga,152,Senanga,110012014,Liangati
+0,Western,13,Sesheke,152,Senanga,110012014,Liangati
+0,Western,13,Sesheke,153,Sesheke,110012014,Liangati
+0,Western,13,Sesheke,153,Sesheke,110013001,Nangombe
+0,Western,13,Sesheke,153,Sesheke,110013002,Luampungu
+0,Western,13,Sesheke,153,Sesheke,110013003,Lusu
+0,Western,13,Sesheke,153,Sesheke,110013004,Maondo
+0,Western,13,Sesheke,153,Sesheke,110013005,Nakatindi
+0,Western,13,Sesheke,153,Sesheke,110013006,Mulimambango
+0,Western,13,Sesheke,153,Sesheke,110013007,Katima Mulilo
+0,Western,13,Sesheke,153,Sesheke,110013008,Kalobelelwa
+0,Western,13,Sesheke,153,Sesheke,110013009,Silumbu
+0,Western,13,Sesheke,153,Sesheke,110013010,Imusho
+0,Western,14,Shangombo,153,Sesheke,110013010,Imusho
+0,Western,14,Shangombo,154,Shangombo,110013010,Imusho
+0,Western,14,Shangombo,154,Shangombo,110014001,Sipuma
+0,Western,14,Shangombo,154,Shangombo,110014002,Lilondo
+0,Western,14,Shangombo,154,Shangombo,110014003,Simu
+0,Western,14,Shangombo,154,Shangombo,110014004,Mambolomoka
+0,Western,14,Shangombo,154,Shangombo,110014005,Mulangu
+0,Western,14,Shangombo,154,Shangombo,110014006,Keyana
+0,Western,14,Shangombo,154,Shangombo,110014007,Namono
+0,Western,14,Shangombo,154,Shangombo,110014008,Nalitengeya
+0,Western,14,Shangombo,154,Shangombo,110014009,Mulonga
+0,Western,14,Shangombo,154,Shangombo,110014010,Beshe
+0,Western,14,Shangombo,154,Shangombo,110014011,State Ranch
+0,Western,14,Shangombo,154,Shangombo,110014012,Kaunga Mashi
+0,Western,15,Sikongo,154,Shangombo,110014012,Kaunga Mashi
+0,Western,15,Sikongo,155,Sikongo,110014012,Kaunga Mashi
+0,Western,15,Sikongo,155,Sikongo,110015001,Nengu
+0,Western,15,Sikongo,155,Sikongo,110015002,Mutala
+0,Western,15,Sikongo,155,Sikongo,110015003,Mwenyi
+0,Western,15,Sikongo,155,Sikongo,110015004,Lubuta
+0,Western,15,Sikongo,155,Sikongo,110015005,Lwambi
+0,Western,15,Sikongo,155,Sikongo,110015006,Natalui
+0,Western,15,Sikongo,155,Sikongo,110015007,Licha
+0,Western,15,Sikongo,155,Sikongo,110015008,Maala
+0,Western,15,Sikongo,155,Sikongo,110015009,Liumena
+0,Western,15,Sikongo,155,Sikongo,110015010,Tuuwa
+0,Western,15,Sikongo,155,Sikongo,110015011,Malamo
+0,Western,15,Sikongo,155,Sikongo,110015012,Lumbamba
+0,Western,15,Sikongo,155,Sikongo,110015013,Lueti
+0,Western,15,Sikongo,155,Sikongo,110015014,Ng'Umbele
+0,Western,16,Sioma,155,Sikongo,110015014,Ng'Umbele
+0,Western,16,Sioma,156,Sioma,110015014,Ng'Umbele
+0,Western,16,Sioma,156,Sioma,110016001,Kalongola
+0,Western,16,Sioma,156,Sioma,110016002,Watembo
+0,Western,16,Sioma,156,Sioma,110016003,Nalwashi
+0,Western,16,Sioma,156,Sioma,110016004,Nangweshi
+0,Western,16,Sioma,156,Sioma,110016005,Mbeta
+0,Western,16,Sioma,156,Sioma,110016006,Sioma
+0,Western,16,Sioma,156,Sioma,110016007,Mbume
+0,Western,16,Sioma,156,Sioma,110016008,Sikabenga
+0,Western,16,Sioma,156,Sioma,110016009,Mutomena
+0,Western,16,Sioma,156,Sioma,110016010,Liwandamo
+0,Western,16,Sioma,156,Sioma,110016011,Lipaneno
+0,Western,16,Sioma,156,Sioma,110016012,Mulamba

@@ -1,0 +1,304 @@
+.page {
+  min-height: 100vh;
+  background-color: #0d3b0d;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 50px 20px;
+  color: white;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+  gap: 20px;
+}
+
+.logo {
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0;
+  color: white;
+  text-align: center;
+}
+
+.candidateSection {
+  width: 100%;
+  background-color: #243424;
+  padding: 30px;
+  border-radius: 15px;
+}
+
+.sectionTitle {
+  font-size: 1.5rem;
+  color: white;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.candidateNavigation {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.navButton {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  background-color: #1a3c1a;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.navButton:hover {
+  background-color: #2a5c2a;
+}
+
+.navButton.active {
+  background-color: white;
+  color: #243424;
+}
+
+.navButton.selectedPosition {
+  background-color: #4CAF50;
+}
+
+.selectionIndicator {
+  margin-left: 5px;
+}
+
+.rotateButton {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  background-color: #1a3c1a;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.rotateButton:hover {
+  background-color: #2a5c2a;
+}
+
+.progressContainer {
+  width: 100%;
+  height: 5px;
+  background-color: #1a3c1a;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.progressBar {
+  height: 100%;
+  width: 100%;
+  background-color: #4CAF50;
+  animation: progress 8s linear forwards;
+}
+
+@keyframes progress {
+  from { width: 100%; }
+  to { width: 0%; }
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.candidateDisplay {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.positionTag {
+  background-color: #1a3c1a;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  align-self: flex-start;
+  font-weight: bold;
+}
+
+.candidateImageWrapper {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto;
+  border: 5px solid white;
+}
+
+.candidateImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.candidateInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.candidateHeader {
+  text-align: center;
+}
+
+.candidateName {
+  font-size: 1.5rem;
+  margin: 0;
+  color: white;
+}
+
+.candidateParty {
+  font-size: 1.1rem;
+  margin: 0;
+  color: #ccc;
+}
+
+.candidateDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.detailItem {
+  display: flex;
+  gap: 10px;
+}
+
+.detailLabel {
+  font-weight: bold;
+  color: #4CAF50;
+}
+
+.quote {
+  font-style: italic;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-left: 3px solid #4CAF50;
+}
+
+.quoteLabel {
+  font-weight: bold;
+  color: #4CAF50;
+}
+
+.candidateActions {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.voteButton {
+  padding: 16px 30px;
+  font-size: 18px;
+  border: none;
+  border-radius: 30px;
+  background-color: white;
+  color: #243424;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 120px;
+}
+
+.voteButton:hover {
+  background-color: #1a3c1a;
+  color: white;
+  transform: scale(1.02);
+}
+
+.voteButton:active {
+  transform: scale(0.98);
+}
+
+.voteButton.selected {
+  background-color: #1a3c1a;
+  color: white;
+}
+
+.tickIcon {
+  font-size: 20px;
+}
+
+.voteSection {
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.submitVoteButton {
+  width: 100%;
+  max-width: 300px;
+  padding: 16px;
+  font-size: 18px;
+  border: none;
+  border-radius: 30px;
+  background-color: white;
+  color: #243424;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 0 auto;
+  display: block;
+}
+
+.submitVoteButton:hover:not(:disabled) {
+  background-color: #1a3c1a;
+  color: white;
+  transform: scale(1.02);
+}
+
+.submitVoteButton:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.submitVoteButton:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.voteMessage {
+  color: #ffcccc;
+  margin-top: 15px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .candidateNavigation {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .navButton, .rotateButton {
+    width: 100%;
+    max-width: 200px;
+  }
+  
+  .candidateDisplay {
+    flex-direction: column;
+  }
+  
+  .candidateImageWrapper {
+    width: 150px;
+    height: 150px;
+  }
+}

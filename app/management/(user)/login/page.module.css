@@ -1,0 +1,80 @@
+.page {
+  min-height: 100vh;
+  background-color: #0d3b0d;
+  display: flex;
+  justify-content: flex-start;
+  padding-top: 50px;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  gap: 30px; /* Increased gap */
+}
+
+.title {
+  color: white;
+  font-size: 2rem; /* Increased from 24px */
+  font-weight: bold;
+  margin: 0;
+}
+
+.container {
+  background-color: #243424;
+  padding: 40px; /* Increased padding */
+  border-radius: 30px;
+  width: 100%;
+  max-width: 450px; /* Increased width */
+  margin-top: 20px;
+}
+
+.tagline {
+  color: #ccc;
+  font-weight: bold;
+  margin-bottom: 30px; /* Increased margin */
+  font-size: 1.5rem; /* Increased from 20px */
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px; /* Increased gap */
+}
+
+.input {
+  width: 100%;
+  padding: 16px; /* Increased padding */
+  border: none;
+  border-radius: 30px; /* Slightly more rounded */
+  background-color: #d3d3d3;
+  font-size: 18px; /* Increased font size */
+  text-align: center;
+}
+
+.loginButton {
+  width: 70%; /* Slightly wider */
+  padding: 16px; /* Increased padding */
+  font-size: 18px; /* Increased font size */
+  border: none;
+  border-radius: 30px; /* Slightly more rounded */
+  background-color: white;
+  color: #243424;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+  margin-top: 10px;
+}
+
+.loginButton:hover {
+  background-color: #1a3c1a;
+  color: white;
+  transform: scale(1.02); /* Added slight scale effect */
+}
+
+.loginButton:active {
+  transform: scale(0.98); /* Added press effect */
+}

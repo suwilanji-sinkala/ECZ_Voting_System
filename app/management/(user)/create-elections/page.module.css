@@ -1,0 +1,158 @@
+.page {
+  min-height: 100vh;
+  background-color: #0d3b0d;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+/* Header Styles */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #1a3c1a;
+  position: relative;
+}
+
+.headerTitle {
+  font-size: 1.5rem;
+  margin: 0;
+  color: white;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.profileButton {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  margin-left: auto;
+}
+
+.profileMenu {
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background-color: #243424;
+  border-radius: 8px;
+  padding: 1rem;
+  min-width: 150px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
+
+.profileMenu ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.profileMenu li {
+  padding: 0.5rem 0;
+  cursor: pointer;
+}
+
+.profileMenu li:hover {
+  color: #ddd;
+}
+
+/* Main Content */
+.main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: white;
+  text-align: center;
+}
+
+.formContainer {
+  background-color: #243424;
+  border-radius: 10px;
+  padding: 2rem;
+}
+
+.formGroup {
+  margin-bottom: 1.5rem;
+}
+
+.formGroup strong {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.inputField {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 5px;
+  border: none;
+  background-color: #d3d3d3;
+  font-size: 1rem;
+}
+
+.positionsList {
+  margin-top: 0.5rem;
+  background-color: #3a4a3a;
+  border-radius: 5px;
+  padding: 1rem;
+}
+
+.positionItem {
+  padding: 0.5rem 0;
+  display: flex;
+  align-items: center;
+}
+
+.positionItem input[type="checkbox"] {
+  margin-right: 0.8rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  cursor: pointer;
+}
+
+.positionItem label {
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* Button Styles - Both buttons identical */
+.buttonGroup {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.actionButton {
+  width: 160px;
+  padding: 12px;
+  border: none;
+  border-radius: 25px;
+  background-color: white;
+  color: #0d3b0d;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.actionButton:hover {
+  background-color: #1a3c1a;
+  color: white;
+  transform: scale(1.02);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.actionButton:active {
+  transform: scale(0.98);
+}

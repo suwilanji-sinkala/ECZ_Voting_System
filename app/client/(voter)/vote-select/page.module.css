@@ -1,11 +1,11 @@
 .page {
   min-height: 100vh;
-  background-color: #0d3b0d;
+  background-color: #FFFFFF;
   display: flex;
   justify-content: center;
   align-items: flex-start;
   padding: 50px 20px;
-  color: white;
+  color: #333333;
 }
 
 .main {
@@ -25,20 +25,22 @@
   font-size: 2rem;
   font-weight: bold;
   margin: 0;
-  color: white;
+  color: #333333;
   text-align: center;
 }
 
 .confirmationContainer {
-  background-color: #243424;
+  background-color: #FFFFFF;
   padding: 30px;
   border-radius: 15px;
   width: 100%;
+  color: #333333;
+  box-shadow: 0 2px 8px rgba(51, 51, 51, 0.08);
 }
 
 .sectionTitle {
   font-size: 1.5rem;
-  color: white;
+  color: #333333;
   margin-bottom: 20px;
 }
 
@@ -49,16 +51,18 @@
 
 .tableHeader {
   display: flex;
-  border-bottom: 2px solid #4a5c4a;
+  border-bottom: 2px solid #CCCCCC;
   padding-bottom: 10px;
   margin-bottom: 15px;
   font-weight: bold;
+  color: #333333;
 }
 
 .tableRow {
   display: flex;
   padding: 12px 0;
-  border-bottom: 1px dashed #4a5c4a;
+  border-bottom: 1px dashed #CCCCCC;
+  color: #333333;
 }
 
 .tableCell {
@@ -82,26 +86,27 @@
   font-size: 18px;
   border: none;
   border-radius: 30px;
-  background-color: white;
-  color: #243424;
+  background-color: #333333;
+  color: #FFFFFF;
   font-weight: bold;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: background 0.3s, color 0.3s, transform 0.2s;
   text-align: center;
   text-decoration: none;
 }
 
 .actionButton:hover {
-  background-color: #1a3c1a;
-  color: white;
-  transform: scale(1.02);
+  background-color: #008080;
+  color: #FFFFFF;
+  transform: scale(1.03);
 }
 
 .actionButton:active {
+  background-color: #CCCCCC;
+  color: #333333;
   transform: scale(0.98);
 }
 
-/* Make buttons stack vertically on small screens */
 @media (max-width: 600px) {
   .confirmationActions {
     flex-direction: column;

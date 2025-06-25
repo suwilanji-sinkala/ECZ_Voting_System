@@ -1,7 +1,7 @@
 .page {
   min-height: 100vh;
-  background-color: #0d3b0d;
-  color: white;
+  background-color: #FFFFFF; /* Main background is white */
+  color: #333333; /* Deep grey text */
   padding: 20px;
 }
 
@@ -9,6 +9,8 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
+  background-color: #FFFFFF;
+  color: #333333;
 }
 
 .header {
@@ -16,12 +18,17 @@
   align-items: center;
   gap: 20px;
   margin-bottom: 30px;
+  background-color: #333333; /* Deep grey header */
+  color: #FFFFFF;
+  padding: 20px;
+  border-radius: 15px;
 }
 
 .dashboardTitle {
   font-size: 2rem;
   font-weight: bold;
   margin: 0;
+  color: #FFFFFF;
 }
 
 .statisticsGrid {
@@ -32,12 +39,14 @@
 }
 
 .statCard {
-  background-color: #243424;
+  background-color: #FFFFFF;
+  color: #333333;
   border-radius: 15px;
   padding: 20px;
   display: flex;
   align-items: center;
   gap: 15px;
+  box-shadow: 0 2px 8px rgba(51, 51, 51, 0.08);
 }
 
 .statIcon {
@@ -52,12 +61,13 @@
 .statTitle {
   font-size: 1rem;
   margin: 0 0 5px 0;
-  color: #ccc;
+  color: #666666;
 }
 
 .statCount {
   font-size: 1.5rem;
   font-weight: bold;
+  color: #333333;
 }
 
 .chartsContainer {
@@ -68,9 +78,11 @@
 }
 
 .chartCard {
-  background-color: #243424;
+  background-color: #FFFFFF;
+  color: #333333;
   border-radius: 15px;
   padding: 20px;
+  box-shadow: 0 2px 8px rgba(51, 51, 51, 0.08);
 }
 
 .chartHeader {
@@ -80,6 +92,7 @@
 .chartTitle {
   font-size: 1.2rem;
   margin: 0;
+  color: #333333;
 }
 
 .chartWrapper {
@@ -88,9 +101,11 @@
 }
 
 .recentActivities {
-  background-color: #243424;
+  background-color: #FFFFFF;
+  color: #333333;
   border-radius: 15px;
   padding: 20px;
+  box-shadow: 0 2px 8px rgba(51, 51, 51, 0.08);
 }
 
 .sectionHeader {
@@ -100,6 +115,7 @@
 .sectionTitle {
   font-size: 1.2rem;
   margin: 0;
+  color: #333333;
 }
 
 .activityList {
@@ -112,17 +128,18 @@
   display: flex;
   gap: 15px;
   padding: 12px 0;
-  border-bottom: 1px dashed #4a5c4a;
+  border-bottom: 1px dashed #CCCCCC;
 }
 
 .activityTime {
-  color: #4CAF50;
+  color: #333333;
   font-weight: bold;
   min-width: 60px;
 }
 
 .activityDesc {
   flex: 1;
+  color: #666666;
 }
 
 /* Responsive adjustments */

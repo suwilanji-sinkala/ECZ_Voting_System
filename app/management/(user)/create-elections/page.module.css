@@ -1,7 +1,7 @@
 .page {
   min-height: 100vh;
-  background-color: #0d3b0d;
-  color: white;
+  background-color: #FFFFFF; /* Main background is white */
+  color: #333333; /* Deep grey text */
   font-family: Arial, sans-serif;
 }
 
@@ -11,14 +11,15 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: #1a3c1a;
+  background-color: #333333; /* Deep grey header */
+  color: #FFFFFF;
   position: relative;
 }
 
 .headerTitle {
   font-size: 1.5rem;
   margin: 0;
-  color: white;
+  color: #FFFFFF;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -27,7 +28,7 @@
 .profileButton {
   background: none;
   border: none;
-  color: white;
+  color: #FFFFFF;
   font-size: 1.5rem;
   cursor: pointer;
   padding: 0.5rem;
@@ -38,11 +39,11 @@
   position: absolute;
   top: 60px;
   right: 20px;
-  background-color: #243424;
+  background-color: #333333;
   border-radius: 8px;
   padding: 1rem;
   min-width: 150px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 5px rgba(51,51,51,0.15);
   z-index: 1000;
 }
 
@@ -55,10 +56,13 @@
 .profileMenu li {
   padding: 0.5rem 0;
   cursor: pointer;
+  color: #FFFFFF;
+  transition: background 0.2s;
 }
 
 .profileMenu li:hover {
-  color: #ddd;
+  background-color: #008080; /* Teal hover */
+  color: #FFFFFF;
 }
 
 /* Main Content */
@@ -71,14 +75,16 @@
 .title {
   font-size: 2rem;
   margin-bottom: 2rem;
-  color: white;
+  color: #333333;
   text-align: center;
 }
 
 .formContainer {
-  background-color: #243424;
+  background-color: #FFFFFF;
+  color: #333333;
   border-radius: 10px;
   padding: 2rem;
+  box-shadow: 0 2px 8px rgba(51, 51, 51, 0.08);
 }
 
 .formGroup {
@@ -96,13 +102,14 @@
   padding: 0.8rem;
   border-radius: 5px;
   border: none;
-  background-color: #d3d3d3;
+  background-color: #CCCCCC;
+  color: #333333;
   font-size: 1rem;
 }
 
 .positionsList {
   margin-top: 0.5rem;
-  background-color: #3a4a3a;
+  background-color: #F5F5F5;
   border-radius: 5px;
   padding: 1rem;
 }
@@ -138,21 +145,22 @@
   padding: 12px;
   border: none;
   border-radius: 25px;
-  background-color: white;
-  color: #0d3b0d;
+  background-color: #333333;
+  color: #FFFFFF;
   font-weight: bold;
   cursor: pointer;
   font-size: 16px;
-  transition: all 0.3s ease;
+  transition: background 0.3s, color 0.3s, transform 0.2s;
 }
 
 .actionButton:hover {
-  background-color: #1a3c1a;
-  color: white;
-  transform: scale(1.02);
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  background-color: #008080; /* Teal hover */
+  color: #FFFFFF;
+  transform: scale(1.03);
+  box-shadow: 0 2px 5px rgba(0,128,128,0.10);
 }
 
 .actionButton:active {
+  background-color: #CCCCCC; /* Soft grey */
   transform: scale(0.98);
 }

@@ -1,9 +1,29 @@
 .page {
   min-height: 100vh;
-  background-color: #0d3b0d;
+  background-color: #FFFFFF;
   display: flex;
   justify-content: flex-start;
   padding-top: 50px;
+  color: #333333;
+}
+
+.header {
+  width: 100%;
+  background-color: #333333;
+  color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 0;
+  border-radius: 20px;
+  margin-bottom: 30px;
+}
+
+.title {
+  color: #FFFFFF; /* White text on deep grey */
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0;
 }
 
 .main {
@@ -12,69 +32,67 @@
   align-items: center;
   text-align: center;
   width: 100%;
-  gap: 30px; /* Increased gap */
-}
-
-.title {
-  color: white;
-  font-size: 2rem; /* Increased from 24px */
-  font-weight: bold;
-  margin: 0;
+  gap: 30px;
 }
 
 .container {
-  background-color: #243424;
-  padding: 40px; /* Increased padding */
+  background-color: #FFFFFF;
+  padding: 40px;
   border-radius: 30px;
   width: 100%;
-  max-width: 450px; /* Increased width */
+  max-width: 450px;
   margin-top: 20px;
+  color: #333333;
+  box-shadow: 0 4px 12px rgba(51, 51, 51, 0.10);
 }
 
 .tagline {
-  color: #ccc;
+  color: #666666;
   font-weight: bold;
-  margin-bottom: 30px; /* Increased margin */
-  font-size: 1.5rem; /* Increased from 20px */
+  margin-bottom: 30px;
+  font-size: 1.5rem;
 }
 
 .form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 25px; /* Increased gap */
+  gap: 25px;
 }
 
 .input {
   width: 100%;
-  padding: 16px; /* Increased padding */
+  padding: 16px;
   border: none;
-  border-radius: 30px; /* Slightly more rounded */
-  background-color: #d3d3d3;
-  font-size: 18px; /* Increased font size */
+  border-radius: 30px;
+  background-color: #CCCCCC;
+  color: #333333;
+  font-size: 18px;
   text-align: center;
 }
 
 .loginButton {
-  width: 70%; /* Slightly wider */
-  padding: 16px; /* Increased padding */
-  font-size: 18px; /* Increased font size */
+  width: 70%;
+  padding: 16px;
+  font-size: 18px;
   border: none;
-  border-radius: 30px; /* Slightly more rounded */
-  background-color: white;
-  color: #243424;
+  border-radius: 30px;
+  background-color: #333333;
+  color: #FFFFFF;
   font-weight: bold;
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: background 0.3s, color 0.3s, transform 0.2s;
   margin-top: 10px;
 }
 
 .loginButton:hover {
-  background-color: #1a3c1a;
-  color: white;
-  transform: scale(1.02); /* Added slight scale effect */
+  background-color: #008080;
+  color: #FFFFFF;
+  transform: scale(1.03);
 }
 
 .loginButton:active {
-  transform: scale(0.98); /* Added press effect */
+  background-color: #CCCCCC;
+  color: #333333;
+  transform: scale(0.98);
 }

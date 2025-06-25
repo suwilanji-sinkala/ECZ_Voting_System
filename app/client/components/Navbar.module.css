@@ -4,22 +4,22 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  background-color: #1a3c1a; /* Darker green to match your theme */
-  color: white;
+  background-color: #333333; /* Deep grey */
+  color: #FFFFFF;
   width: 100%;
 }
 
 .title {
   font-size: 1.5rem;
   margin: 0;
-  color: white;
+  color: #FFFFFF;
 }
 
 .menuButton, .profileButton {
   background: none;
   border: none;
   font-size: 1.5rem;
-  color: white;
+  color: #FFFFFF;
   cursor: pointer;
   padding: 0.5rem;
   transition: transform 0.2s;
@@ -34,9 +34,9 @@
   position: absolute;
   top: 60px;
   left: 0;
-  background-color: #243424; /* Matching your card color */
+  background-color: #333333; /* Deep grey */
   width: 200px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 16px rgba(51, 51, 51, 0.2);
   z-index: 10;
   border-radius: 0 0 15px 0;
 }
@@ -49,14 +49,14 @@
 
 .navMenu li {
   padding: 1rem;
-  color: white;
+  color: #FFFFFF;
   cursor: pointer;
-  border-bottom: 1px solid #3a4a3a; /* Subtle border color */
+  border-bottom: 1px solid #CCCCCC;
   transition: background-color 0.3s;
 }
 
 .navMenu li:hover {
-  background-color: #1a3c1a; /* Darker green hover */
+  background-color: #008080; /* Teal hover */
 }
 
 /* Profile Menu */
@@ -64,9 +64,9 @@
   position: absolute;
   top: 60px;
   right: 0;
-  background-color: #243424; /* Matching your card color */
+  background-color: #333333; /* Deep grey */
   width: 200px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 16px rgba(51, 51, 51, 0.2);
   z-index: 10;
   border-radius: 0 0 0 15px;
 }
@@ -79,65 +79,71 @@
 
 .profileMenu li {
   padding: 1rem;
-  color: white;
+  color: #FFFFFF;
   cursor: pointer;
-  border-bottom: 1px solid #3a4a3a; /* Subtle border color */
+  border-bottom: 1px solid #CCCCCC;
   transition: background-color 0.3s;
 }
 
 .profileMenu li:hover {
-  background-color: #1a3c1a; /* Darker green hover */
+  background-color: #008080; /* Teal hover */
 }
 
 .menuTitle {
   margin: 0;
   padding: 1rem;
-  background-color: #1a3c1a; /* Darker green header */
-  color: white;
+  background-color: #333333;
+  color: #FFFFFF;
   font-size: 1rem;
   font-weight: bold;
 }
 
-/* Additional Dashboard Styling to Match Your Theme */
+/* Dashboard Content */
 .dashboardContent {
-  background-color: #0d3b0d; /* Your page background color */
-  color: white;
-  min-height: calc(100vh - 60px); /* Full height minus header */
+  background-color: #FFFFFF;
+  color: #333333;
+  min-height: calc(100vh - 60px);
   padding: 20px;
 }
 
-/* Card Styling to Match Your Theme */
+/* Card Styling */
 .card {
-  background-color: #243424;
+  background-color: #FFFFFF;
   border-radius: 15px;
   padding: 20px;
   margin-bottom: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(51, 51, 51, 0.1);
 }
 
 .cardTitle {
-  color: white;
+  color: #333333;
   font-size: 1.2rem;
   margin-top: 0;
   margin-bottom: 15px;
-  border-bottom: 1px solid #3a4a3a;
+  border-bottom: 1px solid #CCCCCC;
   padding-bottom: 10px;
 }
 
-/* Button Styling to Match Your Theme */
+/* Button Styling */
 .actionButton {
-  background-color: white;
-  color: #243424;
+  background-color: #333333;
+  color: #FFFFFF;
   border: none;
   border-radius: 30px;
   padding: 12px 24px;
   font-weight: bold;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: background 0.3s, color 0.3s, transform 0.2s;
 }
 
 .actionButton:hover {
-  background-color: #1a3c1a;
-  color: white;
-  transform: scale(1.02);
+  background-color: #008080; /* Teal hover */
+  color: #FFFFFF;
+  transform: scale(1.03);
+}
+
+.actionButton:active {
+  background-color: #CCCCCC; /* Soft gray active */
+  color: #333333;
+  transform: scale(0.98);
 }

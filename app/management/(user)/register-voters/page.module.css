@@ -1,7 +1,7 @@
 .page {
   min-height: 100vh;
-  background-color: #0d3b0d;
-  color: white;
+  background-color: #FFFFFF;
+  color: #333333;
   font-family: Arial, sans-serif;
   position: relative;
 }
@@ -11,7 +11,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: #1a3c1a;
+  background-color: #333333;
+  color: #FFFFFF;
   position: relative;
   z-index: 100;
 }
@@ -19,12 +20,13 @@
 .title {
   font-size: 1.5rem;
   margin: 0;
+  color: #FFFFFF;
 }
 
 .menuButton, .profileButton {
   background: none;
   border: none;
-  color: white;
+  color: #FFFFFF;
   font-size: 1.5rem;
   cursor: pointer;
   padding: 0.5rem;
@@ -45,10 +47,12 @@
 }
 
 .tableContainer {
-  background-color: #243424;
+  background-color: #FFFFFF;
   border-radius: 8px;
   padding: 1rem;
   overflow-x: auto;
+  color: #333333;
+  box-shadow: 0 2px 8px rgba(51, 51, 51, 0.08);
 }
 
 .votersTable {
@@ -59,24 +63,27 @@
 .votersTable th, .votersTable td {
   padding: 1rem;
   text-align: left;
-  border-bottom: 1px solid #3a4a3a;
+  border-bottom: 1px solid #CCCCCC;
 }
 
 .votersTable th {
-  background-color: #1a3c1a;
+  background-color: #333333;
   font-weight: bold;
+  color: #FFFFFF;
 }
 
 .sectionTitle {
   font-size: 1.5rem;
   margin-bottom: 1rem;
-  color: #ccc;
+  color: #333333;
 }
 
 .formContainer {
-  background-color: #243424;
+  background-color: #FFFFFF;
   border-radius: 8px;
   padding: 1.5rem;
+  color: #333333;
+  box-shadow: 0 2px 8px rgba(51, 51, 51, 0.08);
 }
 
 .formGroup {
@@ -94,7 +101,8 @@
   padding: 0.8rem;
   border: none;
   border-radius: 5px;
-  background-color: #d3d3d3;
+  background-color: #CCCCCC;
+  color: #333333;
 }
 
 .submitButton {
@@ -104,34 +112,36 @@
   margin-top: 15px;
   border: none;
   border-radius: 25px;
-  background-color: white;
-  color: #243424;
+  background-color: #333333;
+  color: #FFFFFF;
   font-weight: bold;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: background 0.3s, color 0.3s, transform 0.2s;
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
 .submitButton:hover {
-  background-color: #1a3c1a;
-  color: white;
-  transform: scale(1.02);
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  background-color: #008080;
+  color: #FFFFFF;
+  transform: scale(1.03);
+  box-shadow: 0 2px 5px rgba(0,128,128,0.10);
 }
 
 .submitButton:active {
+  background-color: #CCCCCC;
+  color: #333333;
   transform: scale(0.98);
 }
 
 .navMenu, .profileMenu {
   position: absolute;
-  background-color: #243424;
+  background-color: #333333;
   border-radius: 8px;
   padding: 1rem;
   min-width: 150px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 5px rgba(51,51,51,0.15);
   z-index: 1000;
 }
 
@@ -154,16 +164,19 @@
 .navMenu li, .profileMenu li {
   padding: 0.5rem 0;
   cursor: pointer;
+  color: #FFFFFF;
+  transition: background 0.2s;
 }
 
 .navMenu li:hover, .profileMenu li:hover {
-  color: #ddd;
+  background-color: #008080;
+  color: #FFFFFF;
 }
 
 .menuTitle {
   margin-top: 0;
-  color: #ccc;
+  color: #333333;
   font-size: 1.1rem;
-  border-bottom: 1px solid #3a4a3a;
+  border-bottom: 1px solid #CCCCCC;
   padding-bottom: 0.5rem;
 }

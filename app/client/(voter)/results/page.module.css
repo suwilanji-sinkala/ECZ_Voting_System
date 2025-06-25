@@ -1,11 +1,11 @@
 .page {
   min-height: 100vh;
-  background-color: #0d3b0d;
+  background-color: #FFFFFF;
   display: flex;
   justify-content: center;
   align-items: flex-start;
   padding: 50px 20px;
-  color: white;
+  color: #333333;
 }
 
 .main {
@@ -25,39 +25,41 @@
   font-size: 2rem;
   font-weight: bold;
   margin: 0;
-  color: white;
+  color: #333333;
   text-align: center;
 }
 
 .container {
-  background-color: #243424;
+  background-color: #FFFFFF;
   padding: 30px;
   border-radius: 15px;
   width: 100%;
   margin-top: 20px;
+  color: #333333;
+  box-shadow: 0 2px 8px rgba(51, 51, 51, 0.08);
 }
 
 .electionInfo {
   margin-bottom: 30px;
   padding-bottom: 15px;
-  border-bottom: 1px solid #4a5c4a;
+  border-bottom: 1px solid #CCCCCC;
 }
 
 .electionDate {
   font-size: 1.1rem;
-  color: #ccc;
+  color: #666666;
   margin: 0;
 }
 
 .resultsSection {
   margin-bottom: 30px;
   padding-bottom: 20px;
-  border-bottom: 1px solid #4a5c4a;
+  border-bottom: 1px solid #CCCCCC;
 }
 
 .sectionTitle {
   font-size: 1.5rem;
-  color: white;
+  color: #333333;
   margin-bottom: 15px;
 }
 
@@ -69,7 +71,7 @@
 .subtitle {
   font-size: 1.1rem;
   margin: 15px 0 10px 0;
-  color: #ccc;
+  color: #666666;
 }
 
 .resultsList {
@@ -82,12 +84,12 @@
   padding: 8px 0;
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px dashed #4a5c4a;
+  border-bottom: 1px dashed #CCCCCC;
 }
 
 .votePercent {
   font-weight: bold;
-  color: #4CAF50;
+  color: #666666;
   margin-left: 10px;
 }
 
@@ -104,21 +106,23 @@
   font-size: 18px;
   border: none;
   border-radius: 30px;
-  background-color: white;
-  color: #243424;
+  background-color: #333333;
+  color: #FFFFFF;
   font-weight: bold;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: background 0.3s, color 0.3s, transform 0.2s;
   text-align: center;
   text-decoration: none;
 }
 
 .downloadButton:hover, .homeButton:hover {
-  background-color: #1a3c1a;
-  color: white;
-  transform: scale(1.02);
+  background-color: #008080;
+  color: #FFFFFF;
+  transform: scale(1.03);
 }
 
 .downloadButton:active, .homeButton:active {
+  background-color: #CCCCCC;
+  color: #333333;
   transform: scale(0.98);
 }

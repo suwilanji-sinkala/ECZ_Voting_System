@@ -1,11 +1,11 @@
 .page {
   min-height: 100vh;
-  background-color: #0d3b0d;
+  background-color: #FFFFFF;
   display: flex;
   justify-content: center;
   align-items: flex-start;
   padding: 50px 20px;
-  color: white;
+  color: #333333;
 }
 
 .main {
@@ -25,20 +25,22 @@
   font-size: 2rem;
   font-weight: bold;
   margin: 0;
-  color: white;
+  color: #333333;
   text-align: center;
 }
 
 .candidateSection {
   width: 100%;
-  background-color: #243424;
+  background-color: #FFFFFF;
   padding: 30px;
   border-radius: 15px;
+  color: #333333;
+  box-shadow: 0 2px 8px rgba(51, 51, 51, 0.08);
 }
 
 .sectionTitle {
   font-size: 1.5rem;
-  color: white;
+  color: #333333;
   margin-bottom: 20px;
   text-align: center;
 }
@@ -55,24 +57,27 @@
   padding: 10px 15px;
   border: none;
   border-radius: 8px;
-  background-color: #1a3c1a;
-  color: white;
+  background-color: #333333;
+  color: #FFFFFF;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: background 0.3s, color 0.3s, transform 0.2s;
   position: relative;
 }
 
 .navButton:hover {
-  background-color: #2a5c2a;
+  background-color: #008080;
+  color: #FFFFFF;
+  transform: scale(1.03);
 }
 
 .navButton.active {
-  background-color: white;
-  color: #243424;
+  background-color: #FFFFFF;
+  color: #333333;
 }
 
 .navButton.selectedPosition {
-  background-color: #4CAF50;
+  background-color: #CCCCCC;
+  color: #333333;
 }
 
 .selectionIndicator {
@@ -83,23 +88,25 @@
   padding: 10px 15px;
   border: none;
   border-radius: 8px;
-  background-color: #1a3c1a;
-  color: white;
+  background-color: #333333;
+  color: #FFFFFF;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: background 0.3s, color 0.3s, transform 0.2s;
   display: flex;
   align-items: center;
   gap: 5px;
 }
 
 .rotateButton:hover {
-  background-color: #2a5c2a;
+  background-color: #008080;
+  color: #FFFFFF;
+  transform: scale(1.03);
 }
 
 .progressContainer {
   width: 100%;
   height: 5px;
-  background-color: #1a3c1a;
+  background-color: #CCCCCC;
   border-radius: 5px;
   margin-bottom: 20px;
   overflow: hidden;
@@ -108,7 +115,7 @@
 .progressBar {
   height: 100%;
   width: 100%;
-  background-color: #4CAF50;
+  background-color: #333333;
   animation: progress 8s linear forwards;
 }
 
@@ -128,8 +135,8 @@
 }
 
 .positionTag {
-  background-color: #1a3c1a;
-  color: white;
+  background-color: #333333;
+  color: #FFFFFF;
   padding: 5px 10px;
   border-radius: 5px;
   align-self: flex-start;
@@ -142,7 +149,7 @@
   border-radius: 50%;
   overflow: hidden;
   margin: 0 auto;
-  border: 5px solid white;
+  border: 5px solid #FFFFFF;
 }
 
 .candidateImage {
@@ -164,13 +171,13 @@
 .candidateName {
   font-size: 1.5rem;
   margin: 0;
-  color: white;
+  color: #333333;
 }
 
 .candidateParty {
   font-size: 1.1rem;
   margin: 0;
-  color: #ccc;
+  color: #666666;
 }
 
 .candidateDetails {
@@ -186,19 +193,20 @@
 
 .detailLabel {
   font-weight: bold;
-  color: #4CAF50;
+  color: #666666;
 }
 
 .quote {
   font-style: italic;
   padding: 10px;
-  background-color: rgba(0, 0, 0, 0.2);
-  border-left: 3px solid #4CAF50;
+  background-color: rgba(51, 51, 51, 0.08);
+  border-left: 3px solid #CCCCCC;
+  color: #333333;
 }
 
 .quoteLabel {
   font-weight: bold;
-  color: #4CAF50;
+  color: #666666;
 }
 
 .candidateActions {
@@ -212,27 +220,29 @@
   font-size: 18px;
   border: none;
   border-radius: 30px;
-  background-color: white;
-  color: #243424;
+  background-color: #333333;
+  color: #FFFFFF;
   font-weight: bold;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: background 0.3s, color 0.3s, transform 0.2s;
   width: 120px;
 }
 
 .voteButton:hover {
-  background-color: #1a3c1a;
-  color: white;
-  transform: scale(1.02);
+  background-color: #008080;
+  color: #FFFFFF;
+  transform: scale(1.03);
 }
 
 .voteButton:active {
+  background-color: #CCCCCC;
+  color: #333333;
   transform: scale(0.98);
 }
 
 .voteButton.selected {
-  background-color: #1a3c1a;
-  color: white;
+  background-color: #333333;
+  color: #FFFFFF;
 }
 
 .tickIcon {
@@ -252,22 +262,24 @@
   font-size: 18px;
   border: none;
   border-radius: 30px;
-  background-color: white;
-  color: #243424;
+  background-color: #333333;
+  color: #FFFFFF;
   font-weight: bold;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: background 0.3s, color 0.3s, transform 0.2s;
   margin: 0 auto;
   display: block;
 }
 
 .submitVoteButton:hover:not(:disabled) {
-  background-color: #1a3c1a;
-  color: white;
-  transform: scale(1.02);
+  background-color: #008080;
+  color: #FFFFFF;
+  transform: scale(1.03);
 }
 
 .submitVoteButton:active:not(:disabled) {
+  background-color: #CCCCCC;
+  color: #333333;
   transform: scale(0.98);
 }
 
@@ -277,7 +289,7 @@
 }
 
 .voteMessage {
-  color: #ffcccc;
+  color: #FFCCCC;
   margin-top: 15px;
   text-align: center;
 }
@@ -287,16 +299,16 @@
     flex-direction: column;
     align-items: center;
   }
-  
+
   .navButton, .rotateButton {
     width: 100%;
     max-width: 200px;
   }
-  
+
   .candidateDisplay {
     flex-direction: column;
   }
-  
+
   .candidateImageWrapper {
     width: 150px;
     height: 150px;

@@ -1,0 +1,117 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Candidates {
+  Candidate_ID Int        @id @default(autoincrement())
+  FirstName    String
+  LastName     String
+  Othername    String?
+  AliasName    String?
+  Party_ID     Int?
+  Ward_Code    String?
+  Position_ID  Int?
+  Image        Bytes?
+  Positions    Positions? @relation(fields: [Position_ID], references: [Position_ID], onDelete: NoAction, onUpdate: NoAction)
+  Wards        Wards?     @relation(fields: [Ward_Code], references: [Ward_Code], onDelete: NoAction, onUpdate: NoAction)
+  Parties      Parties?   @relation(fields: [Party_ID], references: [Party_ID], onDelete: NoAction, onUpdate: NoAction)
+  Votes        Votes[]
+
+  @@unique([Position_ID, Ward_Code, Party_ID], map: "sqlite_autoindex_Candidates_1")
+}
+
+model Constituencies {
+  Constituency_Code Int        @id @default(autoincrement())
+  Constituency_Name String?
+  District_Code     String?
+  Districts         Districts? @relation(fields: [District_Code], references: [District_Code], onDelete: NoAction, onUpdate: NoAction)
+  Wards             Wards[]
+}
+
+model Districts {
+  id             Int              @id @unique(map: "sqlite_autoindex_Districts_1") @default(autoincrement())
+  District_Code  String           @unique(map: "sqlite_autoindex_Districts_2")
+  District_Name  String
+  Province_Code  Int?
+  Constituencies Constituencies[]
+  Provinces      Provinces?       @relation(fields: [Province_Code], references: [Province_Code], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model Election_Voters {
+  ID         Int        @id @default(autoincrement())
+  Voter      Int?
+  ElectionID Int?
+  Elections  Elections? @relation(fields: [ElectionID], references: [Election_ID], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model Elections {
+  Election_ID     Int               @id @default(autoincrement())
+  Year            Int
+  Election_Type   String
+  Election_Voters Election_Voters[]
+  Votes           Votes[]
+}
+
+model Levels {
+  Level_Id Int @id @default(autoincrement())
+  Name     Int @unique(map: "sqlite_autoindex_Levels_1")
+}
+
+model Parties {
+  Party_ID      Int          @id @default(autoincrement())
+  Party_Name    String       @unique(map: "sqlite_autoindex_Parties_1")
+  Party_Acronym String?      @unique(map: "sqlite_autoindex_Parties_2")
+  Slogan        String?
+  Candidates    Candidates[]
+}
+
+model Positions {
+  Position_ID   Int          @id @default(autoincrement())
+  Position_Name String       @unique(map: "sqlite_autoindex_Positions_1")
+  Candidates    Candidates[]
+}
+
+model Provinces {
+  Province_Code Int         @id @default(autoincrement())
+  Province_Name String?     @unique(map: "sqlite_autoindex_Provinces_1")
+  Districts     Districts[]
+}
+
+model Voters {
+  First_Name   String
+  Last_Name    String
+  NRC          Int     @unique(map: "sqlite_autoindex_Voters_1")
+  Ward         String
+  Constituency String
+  Email        String?
+  id           String  @id
+  passwordHash String
+  Wards        Wards   @relation(fields: [Ward], references: [Ward_Code], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model Votes {
+  Vote_ID      Int         @id @default(autoincrement())
+  Candidate_ID Int?
+  Ward_Code    String?
+  Election_ID  Int?
+  Vote_Hash    String?     @unique(map: "sqlite_autoindex_Votes_1")
+  Candidates   Candidates? @relation(fields: [Candidate_ID], references: [Candidate_ID], onDelete: NoAction, onUpdate: NoAction)
+  Elections    Elections?  @relation(fields: [Election_ID], references: [Election_ID], onDelete: NoAction, onUpdate: NoAction)
+  Wards        Wards?      @relation(fields: [Ward_Code], references: [Ward_Code], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model Wards {
+  id                Int             @id @unique(map: "sqlite_autoindex_Wards_1") @default(autoincrement())
+  Ward_Code         String          @unique(map: "sqlite_autoindex_Wards_2")
+  Ward_Name         String
+  Constituency_Code Int?
+  Candidates        Candidates[]
+  Voters            Voters[]
+  Votes             Votes[]
+  Constituencies    Constituencies? @relation(fields: [Constituency_Code], references: [Constituency_Code], onDelete: NoAction, onUpdate: NoAction)
+}

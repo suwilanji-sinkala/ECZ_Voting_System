@@ -1,5 +1,5 @@
 const sqlite3 = require('sqlite3').verbose();
-const Candidate = require('../models/Candidate');
+const Candidate = require('../models/Candidates.js');
 const db = new sqlite3.Database('./db/ecz_db_1.4.db');
 
 class CandidateController {

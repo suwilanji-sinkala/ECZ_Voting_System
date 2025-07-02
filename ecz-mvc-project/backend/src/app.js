@@ -1,18 +1,18 @@
 const express = require('express');
 const app = express();
 
-const candidateRoutes = require('./routes/candidateRoutes');
-const constituencyRoutes = require('./routes/constituencyRoutes');
-const districtRoutes = require('./routes/districtRoutes');
-const electionVoterRoutes = require('./routes/electionVoterRoutes');
-const electionRoutes = require('./routes/electionRoutes');
-const levelRoutes = require('./routes/levelRoutes');
-const partyRoutes = require('./routes/partyRoutes');
-const positionRoutes = require('./routes/positionRoutes');
-const provinceRoutes = require('./routes/provinceRoutes');
-const voteRoutes = require('./routes/voteRoutes');
-const voterRoutes = require('./routes/voterRoutes');
-const wardRoutes = require('./routes/wardRoutes');
+const candidateRoutes = require('./routes/CandidatesRoute.js');
+const constituencyRoutes = require('./routes/ConstituenciesRoute.js');
+const districtRoutes = require('./routes/DistrictsRoute.js');
+const electionVoterRoutes = require('./routes/ElectionVotersRoute.js');
+const electionRoutes = require('./routes/ElectionsRoute.js');
+const levelRoutes = require('./routes/LevelsRoute.js');
+const partyRoutes = require('./routes/PartiesRoute.js');
+const positionRoutes = require('./routes/PositionsRoute.js');
+const provinceRoutes = require('./routes/ProvincesRoute.js');
+const voteRoutes = require('./routes/VotesRoute.js');
+const voterRoutes = require('./routes/VotersRoute.js');
+const wardRoutes = require('./routes/WardRoute.js');
 
 app.use(express.json());
 

@@ -76,10 +76,13 @@ export default function Navbar({ title }: { title: string }) {
               <Link href={"/management/Dashboard"}>Dashboard</Link>
             </li>
             <li>
-              <Link href={"/management/create-ward-district"}>Add Voter</Link>
+              <Link href={"/management/register-voters"}>Register Voter</Link>
             </li>
             <li>
-              <Link href={"/management/register-candidate"}>Add Candidate</Link>
+              <Link href={"/management/register-candidate"}>Register Candidate</Link>
+            </li>
+            <li>
+              <Link href={"/management/create-ward-district"}>Ward and District Management</Link>
             </li>
           </ul>
         </div>

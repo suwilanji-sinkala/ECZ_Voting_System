@@ -39,28 +39,8 @@ export default function VotersList() {
   const [showProfileMenu, setShowProfileMenu] = useState(false);
   const [showNavMenu, setShowNavMenu] = useState(false);
   const idCounter = useRef(3);
-  const [voters, setVoters] = useState<Voter[]>([
-    { 
-      id: '001W', 
-      name: 'Suwilanji Shikala', 
-      email: 'suwilanji@example.com', 
-      nrc: '111111/11/1', 
-      ward: 'Central Ward', 
-      wardCode: '001W', 
-      constituency: 'Lusaka Central', 
-      district: 'Lusaka' 
-    },
-    { 
-      id: '002W', 
-      name: 'John Banda', 
-      email: 'john@example.com', 
-      nrc: '222222/22/2', 
-      ward: 'North Ward', 
-      wardCode: '002W', 
-      constituency: 'Ndola Central', 
-      district: 'Ndola' 
-    }
-  ]);
+  // Remove hardcoded voters, start with empty array
+  const [voters, setVoters] = useState<Voter[]>([]);
   
   const [newVoter, setNewVoter] = useState<NewVoter>({
     name: '',
@@ -92,6 +72,43 @@ export default function VotersList() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState("");
 
+  // Add sorting and pagination state
+  const [sortConfig, setSortConfig] = useState<{ key: keyof Voter; direction: 'asc' | 'desc' } | null>(null);
+  const [currentPage, setCurrentPage] = useState(1);
+  const votersPerPage = 10;
+
+  // Sorting logic
+  const sortedVoters = [...voters].sort((a, b) => {
+    if (!sortConfig) return 0;
+    const { key, direction } = sortConfig;
+    const aValue = a[key] ? a[key].toString().toLowerCase() : '';
+    const bValue = b[key] ? b[key].toString().toLowerCase() : '';
+    if (aValue < bValue) return direction === 'asc' ? -1 : 1;
+    if (aValue > bValue) return direction === 'asc' ? 1 : -1;
+    return 0;
+  });
+
+  // Pagination logic
+  const totalPages = Math.ceil(sortedVoters.length / votersPerPage);
+  const paginatedVoters = sortedVoters.slice((currentPage - 1) * votersPerPage, currentPage * votersPerPage);
+
+  // Sorting handler
+  const handleSort = (key: keyof Voter) => {
+    setSortConfig(prev => {
+      if (prev && prev.key === key) {
+        return { key, direction: prev.direction === 'asc' ? 'desc' : 'asc' };
+      }
+      return { key, direction: 'asc' };
+    });
+    setCurrentPage(1);
+  };
+
+  // Pagination handlers
+  const goToPage = (page: number) => {
+    if (page < 1 || page > totalPages) return;
+    setCurrentPage(page);
+  };
+
   // Fetch all wards for modal
   useEffect(() => {
     const fetchWards = async () => {
@@ -111,6 +128,31 @@ export default function VotersList() {
     };
 
     fetchWards();
+  }, []);
+
+  // Fetch all voters on mount
+  useEffect(() => {
+    const fetchVoters = async () => {
+      try {
+        const res = await fetch("/api/voters");
+        if (!res.ok) throw new Error("Failed to fetch voters");
+        const data = await res.json();
+        setVoters(Array.isArray(data) ? data.map((v: any) => ({
+          id: v.id,
+          name: v.First_Name + (v.Last_Name ? ' ' + v.Last_Name : ''),
+          email: v.Email || '',
+          nrc: v.NRC ? v.NRC.toString() : '',
+          ward: v.Wards?.Ward_Name || v.Ward || '',
+          wardCode: v.Ward || '',
+          constituency: v.Wards?.Constituencies?.Constituency_Name || v.Constituency || '',
+          district: v.Wards?.Constituencies?.Districts?.District_Name || '',
+        })) : []);
+      } catch (error) {
+        console.error("Error fetching voters:", error);
+        setVoters([]);
+      }
+    };
+    fetchVoters();
   }, []);
 
   const filteredWards = wards.filter(
@@ -213,7 +255,7 @@ export default function VotersList() {
       const voterData = {
         First_Name,
         Last_Name,
-        NRC: parseInt(newVoter.nrc.replace(/\D/g, "")),
+        NRC: newVoter.nrc,
         Ward: newVoter.wardCode,
         Constituency: newVoter.constituency,
         Email: newVoter.email || null,
@@ -221,15 +263,21 @@ export default function VotersList() {
         passwordHash: password // In production, hash this on the server side!
       };
 
-      const res = await fetch("/api/voter", {
+      const res = await fetch("/api/voters", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(voterData)
       });
-      
       if (!res.ok) {
-        const errorData = await res.json().catch(() => ({}));
-        throw new Error(errorData.message || "Failed to add voter");
+        let errorMessage = "Failed to add voter";
+        try {
+          const errorData = await res.json();
+          errorMessage = errorData.error || errorData.message || errorMessage;
+        } catch {
+          errorMessage = `Server error: ${res.status} ${res.statusText}`;
+        }
+        setSubmitError(errorMessage);
+        return;
       }
 
       // Success - show generated password
@@ -237,18 +285,20 @@ export default function VotersList() {
       setShowPasswordModal(true);
 
       // Add to local state
-      const newVoterEntry: Voter = {
-        id: nextId,
-        name: newVoter.name,
-        email: newVoter.email,
-        nrc: newVoter.nrc,
-        ward: newVoter.ward,
-        wardCode: newVoter.wardCode,
-        constituency: newVoter.constituency,
-        district: newVoter.district,
-      };
-
-      setVoters(prev => [...prev, newVoterEntry]);
+      const createdVoter = await res.json();
+      setVoters(prev => [
+        ...prev,
+        {
+          id: createdVoter.id,
+          name: createdVoter.First_Name + (createdVoter.Last_Name ? ' ' + createdVoter.Last_Name : ''),
+          email: createdVoter.Email || '',
+          nrc: createdVoter.NRC ? createdVoter.NRC.toString() : '',
+          ward: createdVoter.Wards?.Ward_Name || createdVoter.Ward || '',
+          wardCode: createdVoter.Ward || '',
+          constituency: createdVoter.Wards?.Constituencies?.Constituency_Name || createdVoter.Constituency || '',
+          district: createdVoter.Wards?.Constituencies?.Districts?.District_Name || '',
+        }
+      ]);
       
       // Reset form but keep ward info
       setNewVoter(prev => ({
@@ -299,6 +349,108 @@ export default function VotersList() {
     setWardSearch("");
     setWardError("");
   };
+
+  // Add edit/delete state
+  const [editVoterId, setEditVoterId] = useState<string | null>(null);
+  const [editVoterData, setEditVoterData] = useState<Partial<Voter>>({});
+  const [editError, setEditError] = useState("");
+  const [deleteError, setDeleteError] = useState("");
+  const [deleteLoadingId, setDeleteLoadingId] = useState<string | null>(null);
+
+  // Edit handlers
+  const startEditVoter = (voter: Voter) => {
+    setEditVoterId(voter.id);
+    setEditVoterData({ ...voter });
+    setEditError("");
+  };
+  const cancelEditVoter = () => {
+    setEditVoterId(null);
+    setEditVoterData({});
+    setEditError("");
+  };
+  const handleEditInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setEditVoterData(prev => ({ ...prev, [name]: value }));
+  };
+  const saveEditVoter = async () => {
+    setEditError("");
+    try {
+      const res = await fetch("/api/voters", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          id: editVoterData.id,
+          First_Name: (editVoterData.name || '').split(' ')[0],
+          Last_Name: (editVoterData.name || '').split(' ').slice(1).join(' '),
+          NRC: editVoterData.nrc,
+          Email: editVoterData.email,
+          Ward: editVoterData.wardCode,
+          Constituency: editVoterData.constituency,
+        }),
+      });
+      if (!res.ok) {
+        let errorMessage = "Failed to update voter";
+        try {
+          const errorData = await res.json();
+          errorMessage = errorData.error || errorData.message || errorMessage;
+        } catch {
+          errorMessage = `Server error: ${res.status} ${res.statusText}`;
+        }
+        setEditError(errorMessage);
+        return;
+      }
+      const updatedVoter = await res.json();
+      setVoters(prev => prev.map(v => v.id === updatedVoter.id ? {
+        id: updatedVoter.id,
+        name: updatedVoter.First_Name + (updatedVoter.Last_Name ? ' ' + updatedVoter.Last_Name : ''),
+        email: updatedVoter.Email || '',
+        nrc: updatedVoter.NRC ? updatedVoter.NRC.toString() : '',
+        ward: updatedVoter.Wards?.Ward_Name || updatedVoter.Ward || '',
+        wardCode: updatedVoter.Ward || '',
+        constituency: updatedVoter.Wards?.Constituencies?.Constituency_Name || updatedVoter.Constituency || '',
+        district: updatedVoter.Wards?.Constituencies?.Districts?.District_Name || '',
+      } : v));
+      setEditVoterId(null);
+      setEditVoterData({});
+    } catch (error) {
+      setEditError("Failed to update voter");
+    }
+  };
+
+  // Delete handler
+  const deleteVoter = async (id: string) => {
+    if (!window.confirm("Are you sure you want to delete this voter?")) return;
+    setDeleteLoadingId(id);
+    setDeleteError("");
+    try {
+      const res = await fetch("/api/voters", {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ id }),
+      });
+      if (!res.ok) {
+        let errorMessage = "Failed to delete voter";
+        try {
+          const errorData = await res.json();
+          errorMessage = errorData.error || errorData.message || errorMessage;
+        } catch {
+          errorMessage = `Server error: ${res.status} ${res.statusText}`;
+        }
+        setDeleteError(errorMessage);
+        setDeleteLoadingId(null);
+        return;
+      }
+      setVoters(prev => prev.filter(v => v.id !== id));
+      setDeleteLoadingId(null);
+    } catch (error) {
+      setDeleteError("Failed to delete voter");
+      setDeleteLoadingId(null);
+    }
+  };
+
+  // In the table body, for each row, show Edit/Delete buttons
+  // If editVoterId === voter.id, show inline edit form for that row
+  // Show error messages for edit/delete if any
 
   return (
     <div className={styles.page}>
@@ -352,38 +504,73 @@ export default function VotersList() {
             <table className={styles.votersTable}>
               <thead>
                 <tr>
-                  <th>Year Id</th>
-                  <th>Name</th>
-                  <th>NRC</th>
-                  <th>Email</th>
-                  <th>Ward</th>
-                  <th>Constituency</th>
-                  <th>District</th>
+                  <th onClick={() => handleSort('id')} style={{ cursor: 'pointer' }}>Year Id {sortConfig?.key === 'id' && (sortConfig.direction === 'asc' ? '↑' : '↓')}</th>
+                  <th onClick={() => handleSort('name')} style={{ cursor: 'pointer' }}>Name {sortConfig?.key === 'name' && (sortConfig.direction === 'asc' ? '↑' : '↓')}</th>
+                  <th onClick={() => handleSort('nrc')} style={{ cursor: 'pointer' }}>NRC {sortConfig?.key === 'nrc' && (sortConfig.direction === 'asc' ? '↑' : '↓')}</th>
+                  <th onClick={() => handleSort('email')} style={{ cursor: 'pointer' }}>Email {sortConfig?.key === 'email' && (sortConfig.direction === 'asc' ? '↑' : '↓')}</th>
+                  <th onClick={() => handleSort('ward')} style={{ cursor: 'pointer' }}>Ward {sortConfig?.key === 'ward' && (sortConfig.direction === 'asc' ? '↑' : '↓')}</th>
+                  <th onClick={() => handleSort('constituency')} style={{ cursor: 'pointer' }}>Constituency {sortConfig?.key === 'constituency' && (sortConfig.direction === 'asc' ? '↑' : '↓')}</th>
+                  <th onClick={() => handleSort('district')} style={{ cursor: 'pointer' }}>District {sortConfig?.key === 'district' && (sortConfig.direction === 'asc' ? '↑' : '↓')}</th>
                 </tr>
               </thead>
               <tbody>
-                {displayedVoters.length === 0 ? (
+                {paginatedVoters.length === 0 ? (
                   <tr>
                     <td colSpan={7} style={{ textAlign: "center", color: "#888" }}>
                       {selectedWardCode ? "No voters found." : "Please select a ward to view voters."}
                     </td>
                   </tr>
                 ) : (
-                  displayedVoters.map((voter) => (
+                  paginatedVoters.map((voter) => (
                     <tr key={voter.id}>
-                      <td>{voter.id}</td>
-                      <td>{voter.name}</td>
-                      <td>{voter.nrc}</td>
-                      <td>{voter.email || 'N/A'}</td>
-                      <td>{voter.ward}</td>
-                      <td>{voter.constituency}</td>
-                      <td>{voter.district}</td>
+                      {editVoterId === voter.id ? (
+                        <>
+                          <td><input name="id" value={editVoterData.id || ''} disabled style={{ width: 60 }} /></td>
+                          <td><input name="name" value={editVoterData.name || ''} onChange={handleEditInputChange} style={{ width: 120 }} /></td>
+                          <td><input name="nrc" value={editVoterData.nrc || ''} onChange={handleEditInputChange} style={{ width: 100 }} /></td>
+                          <td><input name="email" value={editVoterData.email || ''} onChange={handleEditInputChange} style={{ width: 140 }} /></td>
+                          <td>{voter.ward}</td>
+                          <td>{voter.constituency}</td>
+                          <td>{voter.district}</td>
+                          <td>
+                            <button onClick={saveEditVoter} disabled={isSubmitting} style={{ marginRight: 4 }} aria-label="Save Edit">💾</button>
+                            <button onClick={cancelEditVoter} disabled={isSubmitting} aria-label="Cancel Edit">✖️</button>
+                          </td>
+                        </>
+                      ) : (
+                        <>
+                          <td>{voter.id}</td>
+                          <td>{voter.name}</td>
+                          <td>{voter.nrc}</td>
+                          <td>{voter.email || 'N/A'}</td>
+                          <td>{voter.ward}</td>
+                          <td>{voter.constituency}</td>
+                          <td>{voter.district}</td>
+                          <td>
+                            <button onClick={() => startEditVoter(voter)} disabled={editVoterId !== null} aria-label="Edit Voter" style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: 18 }}>
+                              ✏️
+                            </button>
+                            <button onClick={() => deleteVoter(voter.id)} disabled={deleteLoadingId === voter.id} aria-label="Delete Voter" style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: 18, marginLeft: 4 }}>
+                              {deleteLoadingId === voter.id ? '⏳' : '🗑️'}
+                            </button>
+                          </td>
+                        </>
+                      )}
                     </tr>
                   ))
                 )}
               </tbody>
             </table>
           </div>
+
+          {/* Pagination Controls */}
+          {totalPages > 1 && (
+            <div style={{ display: 'flex', justifyContent: 'center', marginTop: 16, gap: 8 }}>
+              <button onClick={() => goToPage(currentPage - 1)} disabled={currentPage === 1}>Previous</button>
+              <span>Page {currentPage} of {totalPages}</span>
+              <button onClick={() => goToPage(currentPage + 1)} disabled={currentPage === totalPages}>Next</button>
+            </div>
+          )}
         </div>
 
         {/* Add Voter Section */}
@@ -595,6 +782,12 @@ export default function VotersList() {
             <li>Sign Out</li>
           </ul>
         </div>
+      )}
+      {editError && (
+        <div style={{ color: 'red', marginTop: 8 }}>{editError}</div>
+      )}
+      {deleteError && (
+        <div style={{ color: 'red', marginTop: 8 }}>{deleteError}</div>
       )}
     </div>
   );

@@ -84,6 +84,9 @@ export default function Navbar({ title }: { title: string }) {
             <li>
               <Link href={"/management/create-ward-district"}>Ward and District Management</Link>
             </li>
+             <li>
+              <Link href={"/management/create-elections"}>Create Elections</Link>
+            </li>
           </ul>
         </div>
       )}

@@ -157,19 +157,51 @@ export default function WardDistrictTabs() {
 
   // Pagination helper
   function Pagination({ page, totalPages, setPage }: { page: number; totalPages: number; setPage: (n: number) => void }) {
+    const getVisiblePages = () => {
+      const delta = 2; // Number of pages to show on each side of current page
+      const range = [];
+      const rangeWithDots = [];
+
+      for (let i = Math.max(2, page - delta); i <= Math.min(totalPages - 1, page + delta); i++) {
+        range.push(i);
+      }
+
+      if (page - delta > 2) {
+        rangeWithDots.push(1, '...');
+      } else {
+        rangeWithDots.push(1);
+      }
+
+      rangeWithDots.push(...range);
+
+      if (page + delta < totalPages - 1) {
+        rangeWithDots.push('...', totalPages);
+      } else if (totalPages > 1) {
+        rangeWithDots.push(totalPages);
+      }
+
+      return rangeWithDots;
+    };
+
+    const visiblePages = getVisiblePages();
+
     return (
       <nav>
-        <ul className="pagination justify-content-end">
+        <ul className="pagination justify-content-end flex-wrap">
           <li className={`page-item${page === 1 ? " disabled" : ""}`}>
             <button className="page-link" onClick={() => setPage(page - 1)} disabled={page === 1}>
               <i className="fas fa-chevron-left"></i>
             </button>
           </li>
-          {Array.from({ length: totalPages }, (_, i) => (
-            <li key={i + 1} className={`page-item${page === i + 1 ? " active" : ""}`}>
-              <button className="page-link" onClick={() => setPage(i + 1)}>
-                {i + 1}
-              </button>
+          {visiblePages.map((pageNum, index) => (
+            <li key={index} className={`page-item${pageNum === page ? " active" : ""}${pageNum === "..." ? " disabled" : ""}`}>
+              {pageNum === "..." ? (
+                <span className="page-link">{pageNum}</span>
+              ) : (
+                <button className="page-link" onClick={() => setPage(pageNum as number)}>
+                  {pageNum}
+                </button>
+              )}
             </li>
           ))}
           <li className={`page-item${page === totalPages || totalPages === 0 ? " disabled" : ""}`}>
@@ -298,8 +330,8 @@ export default function WardDistrictTabs() {
                     </tbody>
                   </table>
                 </div>
-                <div className="d-flex justify-content-between align-items-center mt-3">
-                  <div className="text-secondary small">
+                <div className="d-flex flex-column flex-md-row justify-content-between align-items-center mt-3 gap-2">
+                  <div className="text-secondary small text-center text-md-start">
                     Showing{" "}
                     <span className="fw-bold">
                       {activeTab === "ward"
@@ -318,11 +350,13 @@ export default function WardDistrictTabs() {
                     </span>{" "}
                     results
                   </div>
-                  {activeTab === "ward" ? (
-                    <Pagination page={wardPage} totalPages={wardTotalPages} setPage={setWardPage} />
-                  ) : (
-                    <Pagination page={districtPage} totalPages={districtTotalPages} setPage={setDistrictPage} />
-                  )}
+                  <div className="d-flex justify-content-center">
+                    {activeTab === "ward" ? (
+                      <Pagination page={wardPage} totalPages={wardTotalPages} setPage={setWardPage} />
+                    ) : (
+                      <Pagination page={districtPage} totalPages={districtTotalPages} setPage={setDistrictPage} />
+                    )}
+                  </div>
                 </div>
               </div>
             </div>

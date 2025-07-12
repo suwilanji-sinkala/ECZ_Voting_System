@@ -1,184 +1,363 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import styles from './page.module.css';
 import Link from 'next/link';
+import Navbar from '../../components/Navbar';
+
+interface Candidate {
+  candidateId: number;
+  name: string;
+  party: string;
+  partyAcronym: string;
+  votes: number;
+  percentage: number;
+  image?: string;
+}
+
+interface Position {
+  positionId: number;
+  positionName: string;
+  candidates: Candidate[];
+  totalVotes: number;
+}
+
+interface Election {
+  electionId: number;
+  electionTitle: string;
+  electionDescription: string;
+  startDate: string;
+  endDate: string;
+  status: string;
+  totalVotes: number;
+  totalVoters: number;
+  voterTurnout: number;
+  positions: Position[];
+}
+
+interface LiveResultsData {
+  overallStats: {
+    totalVoters: number;
+    totalVotesCast: number;
+    totalActiveElections: number;
+    overallTurnout: number;
+  };
+  elections: Election[];
+  lastUpdated: string;
+}
 
 export default function LiveResultsPage() {
-  const lastUpdated = new Date('2025-04-24T14:30:00');
-  const [expandedSections, setExpandedSections] = useState<Record<string, boolean>>({
-    president: true,
-    mp: true,
-    mayor: true,
-    councilor: true
-  });
+  const [liveData, setLiveData] = useState<LiveResultsData | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const [lastUpdated, setLastUpdated] = useState(new Date());
+  const [expandedSections, setExpandedSections] = useState<Record<string, boolean>>({});
+  const [selectedElection, setSelectedElection] = useState<number | null>(null);
 
-  const toggleSection = (section: string) => {
+  const fetchLiveResults = async () => {
+    try {
+      setLoading(true);
+      const response = await fetch('/api/elections/live-results');
+      if (!response.ok) {
+        throw new Error('Failed to fetch live results');
+      }
+      const data = await response.json();
+      setLiveData(data);
+      setLastUpdated(new Date());
+      
+      // Initialize expanded sections for all positions
+      const sections: Record<string, boolean> = {};
+      data.elections.forEach((election: Election) => {
+        election.positions.forEach((position: Position) => {
+          sections[`${election.electionId}-${position.positionId}`] = true;
+        });
+      });
+      setExpandedSections(sections);
+      
+      // Set first election as selected by default
+      if (data.elections.length > 0) {
+        setSelectedElection(data.elections[0].electionId);
+      }
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Unknown error');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // Auto-refresh every 30 seconds
+  useEffect(() => {
+    fetchLiveResults();
+    const interval = setInterval(fetchLiveResults, 30000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const toggleSection = (sectionKey: string) => {
     setExpandedSections(prev => ({
       ...prev,
-      [section]: !prev[section]
+      [sectionKey]: !prev[sectionKey]
     }));
   };
 
-  const candidates = {
-    president: [
-      { name: 'Hakainde Hichilema', percent: '48%', votes: '13,660' },
-      { name: 'Edgar Chagwa Lungu', percent: '36%', votes: '10,120' },
-      { name: 'Other Candidates', percent: '16%', votes: '4,710' }
-    ],
-    mp: [
-      { name: 'David Mumba', percent: '52%', votes: '1,234' },
-      { name: 'Warren Chisha Mwambazi', percent: '42%', votes: '908' },
-      { name: 'Other Candidates', percent: '6%', votes: '142' }
-    ],
-    mayor: [
-      { name: 'Chilando Chitangala', percent: '32%', votes: '506' },
-      { name: 'Webster Chileshe', percent: '10%', votes: '101' },
-      { name: 'Other Candidates', percent: '58%', votes: '893' }
-    ],
-    councilor: [
-      { name: 'Bwalya Chishala', percent: '23%', votes: '203' },
-      { name: 'Pollard Samba', percent: '7%', votes: '96' },
-      { name: 'Other Candidates', percent: '70%', votes: '604' }
-    ]
+  const handleRefresh = () => {
+    fetchLiveResults();
   };
+
+  const getStatusColor = (status: string) => {
+    switch (status.toLowerCase()) {
+      case 'active': return '#28a745';
+      case 'completed': return '#6c757d';
+      case 'draft': return '#ffc107';
+      default: return '#6c757d';
+    }
+  };
+
+  const getStatusIcon = (status: string) => {
+    switch (status.toLowerCase()) {
+      case 'active': return '🟢';
+      case 'completed': return '✅';
+      case 'draft': return '📝';
+      default: return '❓';
+    }
+  };
+
+  if (loading && !liveData) {
+    return (
+      <div className={styles.page}>
+        <Navbar title="Live Election Results" />
+        <main className={styles.main}>
+          <div className={styles.loadingContainer}>
+            <div className={styles.loadingSpinner}></div>
+            <p>Loading live results...</p>
+          </div>
+        </main>
+      </div>
+    );
+  }
+
+  if (error && !liveData) {
+    return (
+      <div className={styles.page}>
+        <Navbar title="Live Election Results" />
+        <main className={styles.main}>
+          <div className={styles.errorContainer}>
+            <p>Error loading live results: {error}</p>
+            <button onClick={handleRefresh} className={styles.retryButton}>
+              Retry
+            </button>
+          </div>
+        </main>
+      </div>
+    );
+  }
+
+  if (!liveData || liveData.elections.length === 0) {
+    return (
+      <div className={styles.page}>
+        <Navbar title="Live Election Results" />
+        <main className={styles.main}>
+          <div className={styles.noDataContainer}>
+            <p>No live election data available at the moment.</p>
+            <button onClick={handleRefresh} className={styles.retryButton}>
+              Refresh
+            </button>
+          </div>
+        </main>
+      </div>
+    );
+  }
 
   return (
     <div className={styles.page}>
+      <Navbar title="Live Election Results" />
+      
       <main className={styles.main}>
-        <Image 
-          src="/ECZ_Logo.png" 
-          alt="Electoral Commission of Zambia Logo" 
-          width={200} 
-          height={100} 
-          priority
-          className={styles.logo}
-        />
-        <h1 className={styles.title}>Live Election Results</h1>
-        
-        <div className={styles.container}>
-          <div className={styles.electionProgress}>
-            <p className={styles.progressText}>
-              <strong>Election Progress:</strong> 28,490 / 100,000
-            </p>
-            <p className={styles.lastUpdated}>
-              Last Updated {lastUpdated.toLocaleDateString('en-US', { 
-                month: 'long', 
-                day: 'numeric', 
-                year: 'numeric' 
-              })}, {lastUpdated.toLocaleTimeString('en-US', { 
-                hour: '2-digit', 
-                minute: '2-digit' 
-              })}
-            </p>
+        <div className={styles.headerSection}>
+          <div className={styles.headerContent}>
+            <h1>Live Election Results</h1>
+            <p>Real-time updates from active and completed elections</p>
           </div>
-
-          <div className={styles.resultsSection}>
-            <div 
-              className={styles.sectionHeader}
-              onClick={() => toggleSection('president')}
-            >
-              <h2 className={styles.sectionTitle}>Presidential Standings</h2>
-              <span className={styles.dropdownIcon}>
-                {expandedSections.president ? '−' : '+'}
-              </span>
+          <div className={styles.headerActions}>
+            <button onClick={handleRefresh} className={styles.refreshButton}>
+              <span className={styles.refreshIcon}>🔄</span>
+              Refresh
+            </button>
+            <div className={styles.lastUpdated}>
+              Last updated: {lastUpdated.toLocaleTimeString()}
             </div>
-            {expandedSections.president && (
-              <div className={styles.candidateList}>
-                {candidates.president.map((candidate, index) => (
-                  <div key={index} className={styles.candidateResult}>
-                    <span className={styles.candidateName}>{candidate.name}</span>
-                    <span className={styles.voteInfo}>
-                      {candidate.percent} ({candidate.votes} Votes)
-                    </span>
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
-
-          {/* Repeat for other sections */}
-          <div className={styles.resultsSection}>
-            <div 
-              className={styles.sectionHeader}
-              onClick={() => toggleSection('mp')}
-            >
-              <h2 className={styles.sectionTitle}>MP Standings (Selected Constituency)</h2>
-              <span className={styles.dropdownIcon}>
-                {expandedSections.mp ? '−' : '+'}
-              </span>
-            </div>
-            {expandedSections.mp && (
-              <div className={styles.candidateList}>
-                {candidates.mp.map((candidate, index) => (
-                  <div key={index} className={styles.candidateResult}>
-                    <span className={styles.candidateName}>{candidate.name}</span>
-                    <span className={styles.voteInfo}>
-                      {candidate.percent} ({candidate.votes} Votes)
-                    </span>
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
-
-          <div className={styles.resultsSection}>
-            <div 
-              className={styles.sectionHeader}
-              onClick={() => toggleSection('mayor')}
-            >
-              <h2 className={styles.sectionTitle}>Mayor Standings</h2>
-              <span className={styles.dropdownIcon}>
-                {expandedSections.mayor ? '−' : '+'}
-              </span>
-            </div>
-            {expandedSections.mayor && (
-              <div className={styles.candidateList}>
-                {candidates.mayor.map((candidate, index) => (
-                  <div key={index} className={styles.candidateResult}>
-                    <span className={styles.candidateName}>{candidate.name}</span>
-                    <span className={styles.voteInfo}>
-                      {candidate.percent} ({candidate.votes} Votes)
-                    </span>
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
-
-          <div className={styles.resultsSection}>
-            <div 
-              className={styles.sectionHeader}
-              onClick={() => toggleSection('councilor')}
-            >
-              <h2 className={styles.sectionTitle}>Councilor Standings</h2>
-              <span className={styles.dropdownIcon}>
-                {expandedSections.councilor ? '−' : '+'}
-              </span>
-            </div>
-            {expandedSections.councilor && (
-              <div className={styles.candidateList}>
-                {candidates.councilor.map((candidate, index) => (
-                  <div key={index} className={styles.candidateResult}>
-                    <span className={styles.candidateName}>{candidate.name}</span>
-                    <span className={styles.voteInfo}>
-                      {candidate.percent} ({candidate.votes} Votes)
-                    </span>
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
-
-          <div className={styles.actionButtons}>
-            <Link href="/client/live" className={styles.actionButton}>
-              Refresh Results
-            </Link>
-            <Link href="/client/vote-candidates" className={styles.actionButton}>
-              Return To Home
-            </Link>
           </div>
         </div>
+
+        <div className={styles.overallStats}>
+          <div className={styles.statCard}>
+            <div className={styles.statIcon}>👥</div>
+            <div className={styles.statContent}>
+              <h3>Total Voters</h3>
+              <p>{liveData.overallStats.totalVoters.toLocaleString()}</p>
+            </div>
+          </div>
+          <div className={styles.statCard}>
+            <div className={styles.statIcon}>🗳️</div>
+            <div className={styles.statContent}>
+              <h3>Votes Cast</h3>
+              <p>{liveData.overallStats.totalVotesCast.toLocaleString()}</p>
+            </div>
+          </div>
+          <div className={styles.statCard}>
+            <div className={styles.statIcon}>📊</div>
+            <div className={styles.statContent}>
+              <h3>Turnout</h3>
+              <p>{liveData.overallStats.overallTurnout.toFixed(1)}%</p>
+            </div>
+          </div>
+          <div className={styles.statCard}>
+            <div className={styles.statIcon}>🏛️</div>
+            <div className={styles.statContent}>
+              <h3>Elections</h3>
+              <p>{liveData.overallStats.totalActiveElections}</p>
+            </div>
+          </div>
+        </div>
+
+        <div className={styles.electionSelector}>
+          <h3>Select Election</h3>
+          <div className={styles.electionTabs}>
+            {liveData.elections.map((election) => (
+              <button
+                key={election.electionId}
+                className={`${styles.electionTab} ${selectedElection === election.electionId ? styles.active : ''}`}
+                onClick={() => setSelectedElection(election.electionId)}
+              >
+                <span className={styles.tabIcon}>{getStatusIcon(election.status)}</span>
+                {election.electionTitle}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {selectedElection && (
+          <div className={styles.selectedElection}>
+            {liveData.elections
+              .filter(election => election.electionId === selectedElection)
+              .map((election) => (
+                <div key={election.electionId} className={styles.electionCard}>
+                  <div className={styles.electionHeader}>
+                    <div className={styles.electionInfo}>
+                      <div className={styles.electionTitleRow}>
+                        <h2>{election.electionTitle}</h2>
+                        <span 
+                          className={styles.status} 
+                          style={{ backgroundColor: getStatusColor(election.status) }}
+                        >
+                          {getStatusIcon(election.status)} {election.status}
+                        </span>
+                      </div>
+                      <p className={styles.electionDescription}>{election.electionDescription}</p>
+                      <div className={styles.electionMeta}>
+                        <div className={styles.metaItem}>
+                          <span className={styles.metaLabel}>Start Date:</span>
+                          <span className={styles.metaValue}>
+                            {new Date(election.startDate).toLocaleDateString()}
+                          </span>
+                        </div>
+                        <div className={styles.metaItem}>
+                          <span className={styles.metaLabel}>End Date:</span>
+                          <span className={styles.metaValue}>
+                            {new Date(election.endDate).toLocaleDateString()}
+                          </span>
+                        </div>
+                        <div className={styles.metaItem}>
+                          <span className={styles.metaLabel}>Voter Turnout:</span>
+                          <span className={styles.metaValue}>
+                            {election.voterTurnout.toFixed(1)}%
+                          </span>
+                        </div>
+                        <div className={styles.metaItem}>
+                          <span className={styles.metaLabel}>Total Votes:</span>
+                          <span className={styles.metaValue}>
+                            {election.totalVotes.toLocaleString()}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className={styles.positionsContainer}>
+                    {election.positions.map((position) => {
+                      const sectionKey = `${election.electionId}-${position.positionId}`;
+                      const isExpanded = expandedSections[sectionKey];
+                      
+                      return (
+                        <div key={position.positionId} className={styles.positionCard}>
+                          <div 
+                            className={styles.positionHeader}
+                            onClick={() => toggleSection(sectionKey)}
+                          >
+                            <div className={styles.positionInfo}>
+                              <h3>{position.positionName}</h3>
+                              <p>{position.totalVotes.toLocaleString()} total votes</p>
+                            </div>
+                            <div className={styles.positionActions}>
+                              <span className={styles.expandIcon}>
+                                {isExpanded ? '▼' : '▶'}
+                              </span>
+                            </div>
+                          </div>
+
+                          {isExpanded && (
+                            <div className={styles.candidatesContainer}>
+                              {position.candidates.map((candidate, index) => (
+                                <div key={candidate.candidateId} className={styles.candidateCard}>
+                                  <div className={styles.candidateRank}>
+                                    <span className={styles.rankNumber}>{index + 1}</span>
+                                    {index === 0 && <span className={styles.leaderBadge}>👑</span>}
+                                  </div>
+                                  <div className={styles.candidateImage}>
+                                    {candidate.image ? (
+                                      <img 
+                                        src={`data:image/jpeg;base64,${candidate.image}`} 
+                                        alt={candidate.name}
+                                        className={styles.candidateImg}
+                                      />
+                                    ) : (
+                                      <div className={styles.candidatePlaceholder}>
+                                        👤
+                                      </div>
+                                    )}
+                                  </div>
+                                  <div className={styles.candidateInfo}>
+                                    <h4>{candidate.name}</h4>
+                                    <p className={styles.partyInfo}>
+                                      {candidate.party} ({candidate.partyAcronym})
+                                    </p>
+                                  </div>
+                                  <div className={styles.candidateStats}>
+                                    <div className={styles.voteCount}>
+                                      <span className={styles.voteNumber}>{candidate.votes.toLocaleString()}</span>
+                                      <span className={styles.voteLabel}>votes</span>
+                                    </div>
+                                    <div className={styles.percentage}>
+                                      {candidate.percentage.toFixed(1)}%
+                                    </div>
+                                  </div>
+                                  <div className={styles.progressBar}>
+                                    <div 
+                                      className={styles.progressFill}
+                                      style={{ width: `${candidate.percentage}%` }}
+                                    ></div>
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          )}
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              ))}
+          </div>
+        )}
       </main>
     </div>
   );

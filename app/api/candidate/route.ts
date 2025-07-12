@@ -1,56 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 
-//interfaces for type safety
-interface District {
-      District_ID: number;
-      Name: string;
-      // Add other fields as needed
-    }
-
-    interface Constituency {
-      Constituency_ID: number;
-      Name: string;
-      Districts?: District | null;
-      // Add other fields as needed
-    }
-
-    interface Ward {
-      Ward_Code: string;
-      Name: string;
-      Constituencies?: Constituency | null;
-      // Add other fields as needed
-    }
-
-    interface Position {
-      Position_ID: number;
-      Name: string;
-      // Add other fields as needed
-    }
-
-    interface Party {
-      Party_ID: number;
-      Name: string;
-      // Add other fields as needed
-    }
-
-    interface Candidate {
-      Candidate_ID: number;
-      FirstName: string;
-      LastName: string;
-      Othername?: string | null;
-      AliasName?: string | null;
-      Party_ID?: number | null;
-      Ward_Code?: string | null;
-      Position_ID?: number | null;
-      Image?: Buffer | null;
-      Positions?: Position | null;
-      Wards?: Ward | null;
-      Parties?: Party | null;
-      _count: { Votes: number };
-      // Add other fields as needed
-    }
-
 // GET candidates or a specific candidate by Candidate_ID
 export async function GET(req: NextRequest) {
   try {
@@ -85,6 +35,17 @@ export async function GET(req: NextRequest) {
         return NextResponse.json({ message: 'Candidate not found' }, { status: 404 });
       }
 
+      // Convert image buffer to base64 data URL if it exists
+      let imageUrl = null;
+      if (candidate.Image && Buffer.isBuffer(candidate.Image)) {
+        try {
+          const base64 = candidate.Image.toString('base64');
+          imageUrl = `data:image/jpeg;base64,${base64}`;
+        } catch (error) {
+          console.error('Error converting image to base64:', error);
+        }
+      }
+
       // Format the response to include nested relationships
       const formattedCandidate = {
         ...candidate,
@@ -93,7 +54,8 @@ export async function GET(req: NextRequest) {
         constituency: candidate.Wards?.Constituencies,
         district: candidate.Wards?.Constituencies?.Districts,
         party: candidate.Parties,
-        voteCount: candidate.Votes.length
+        voteCount: candidate.Votes.length,
+        imageUrl: imageUrl
       };
 
       return NextResponse.json(formattedCandidate);
@@ -125,26 +87,30 @@ export async function GET(req: NextRequest) {
     });
 
     // Format the response
-    
+    const formattedCandidates = candidates.map(candidate => {
+      // Convert image buffer to base64 data URL if it exists
+      let imageUrl = null;
+      if (candidate.Image && Buffer.isBuffer(candidate.Image)) {
+        try {
+          const base64 = candidate.Image.toString('base64');
+          // Determine MIME type (you might want to store this in the database)
+          imageUrl = `data:image/jpeg;base64,${base64}`;
+        } catch (error) {
+          console.error('Error converting image to base64:', error);
+        }
+      }
 
-    interface FormattedCandidate extends Omit<Candidate, 'Positions' | 'Wards' | 'Parties' | '_count'> {
-      position: Position | null;
-      ward: Ward | null;
-      constituency: Constituency | null;
-      district: District | null;
-      party: Party | null;
-      voteCount: number;
-    }
-
-    const formattedCandidates: FormattedCandidate[] = candidates.map((candidate: Candidate) => ({
-      ...candidate,
-      position: candidate.Positions ?? null,
-      ward: candidate.Wards ?? null,
-      constituency: candidate.Wards?.Constituencies ?? null,
-      district: candidate.Wards?.Constituencies?.Districts ?? null,
-      party: candidate.Parties ?? null,
-      voteCount: candidate._count.Votes
-    }));
+      return {
+        ...candidate,
+        position: candidate.Positions,
+        ward: candidate.Wards,
+        constituency: candidate.Wards?.Constituencies,
+        district: candidate.Wards?.Constituencies?.Districts,
+        party: candidate.Parties,
+        voteCount: candidate._count.Votes,
+        imageUrl: imageUrl
+      };
+    });
 
     return NextResponse.json(formattedCandidates);
   } catch (error) {
@@ -342,17 +308,55 @@ export async function PUT(req: NextRequest) {
     if (updateData.Othername) updateData.Othername = updateData.Othername.trim();
     if (updateData.AliasName) updateData.AliasName = updateData.AliasName.trim();
 
+
+    
     const candidate = await prisma.candidates.update({
       where: { Candidate_ID: candidateId },
       data: updateData,
       include: {
         Positions: true,
-        Wards: true,
-        Parties: true
+        Wards: {
+          include: {
+            Constituencies: {
+              include: {
+                Districts: true
+              }
+            }
+          }
+        },
+        Parties: true,
+        _count: {
+          select: { Votes: true }
+        }
       }
     });
 
-    return NextResponse.json(candidate);
+
+
+    // Convert image buffer to base64 data URL if it exists
+    let imageUrl = null;
+    if (candidate.Image && Buffer.isBuffer(candidate.Image)) {
+      try {
+        const base64 = candidate.Image.toString('base64');
+        imageUrl = `data:image/jpeg;base64,${base64}`;
+      } catch (error) {
+        console.error('Error converting image to base64:', error);
+      }
+    }
+
+    // Format the response to match GET endpoint
+    const formattedCandidate = {
+      ...candidate,
+      position: candidate.Positions,
+      ward: candidate.Wards,
+      constituency: candidate.Wards?.Constituencies,
+      district: candidate.Wards?.Constituencies?.Districts,
+      party: candidate.Parties,
+      voteCount: candidate._count.Votes,
+      imageUrl: imageUrl
+    };
+
+    return NextResponse.json(formattedCandidate);
   } catch (error) {
     console.error('Error updating candidate:', error);
     return NextResponse.json({ message: 'Internal server error' }, { status: 500 });

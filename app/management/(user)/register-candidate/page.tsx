@@ -43,6 +43,18 @@ interface Candidate {
   imageUrl?: string;
 }
 
+interface Election {
+  Election_ID: number;
+  title: string;
+  Description: string | null;
+  StartDate: string;
+  EndDate: string;
+  Status: string;
+  Year: number;
+  Election_Type: string;
+  positions: Position[];
+}
+
 interface NewCandidate {
   name: string;
   otherName: string;
@@ -50,6 +62,7 @@ interface NewCandidate {
   party: Party | null;
   position: Position | null;
   ward: Ward | null;
+  election: Election | null;
   image: File | null;
 }
 
@@ -91,6 +104,9 @@ class ErrorBoundary extends Component<{ children: ReactNode }, { hasError: boole
 }
 
 export default function CandidateList() {
+  // Tab state
+  const [activeTab, setActiveTab] = useState<"register" | "view">("register");
+
   // Modal states
   const [showWardModal, setShowWardModal] = useState(false);
   const [showPartyModal, setShowPartyModal] = useState(false);
@@ -101,6 +117,7 @@ export default function CandidateList() {
   const [parties, setParties] = useState<Party[]>([]);
   const [positions, setPositions] = useState<Position[]>([]);
   const [candidates, setCandidates] = useState<Candidate[]>([]);
+  const [draftElections, setDraftElections] = useState<Election[]>([]);
 
   // Search
   const [wardSearch, setWardSearch] = useState("");
@@ -116,6 +133,7 @@ export default function CandidateList() {
     party: null,
     position: null,
     ward: null,
+    election: null,
     image: null,
   });
 
@@ -139,6 +157,10 @@ export default function CandidateList() {
   const [deleteError, setDeleteError] = useState("");
   const [deleteLoadingId, setDeleteLoadingId] = useState<number | null>(null);
 
+  // Pagination states
+  const [currentPage, setCurrentPage] = useState(1);
+  const candidatesPerPage = 10;
+
   const fileInputRef = useRef<HTMLInputElement | null>(null);
 
   // Fetch data with error handling
@@ -156,31 +178,29 @@ export default function CandidateList() {
     }
   };
 
-  // Fetch all data on mount
+  // 1. Fetch draft elections on mount
   useEffect(() => {
     const loadData = async () => {
       setLoading(true);
       setDataError("");
       setWardLoading(true);
-      
       try {
-        const [wardsData, partiesData, positionsData, candidatesData] = await Promise.all([
+        const [wardsData, partiesData, positionsData, candidatesData, draftElectionsData] = await Promise.all([
           fetchData("/api/ward"),
           fetchData("/api/party"),
           fetchData("/api/position"),
           fetchData("/api/candidate"),
+          fetchData("/api/elections"),
         ]);
-
         setWards(wardsData);
         setParties(partiesData);
         setPositions(positionsData);
-        
+        setDraftElections(draftElectionsData);
         const validCandidates = candidatesData.filter(candidate => {
           if (!candidate || typeof candidate !== 'object') return false;
           if (!candidate.Candidate_ID || typeof candidate.FirstName !== 'string' || typeof candidate.LastName !== 'string') return false;
           return true;
         });
-        
         setCandidates(validCandidates);
       } catch (error) {
         const errorMessage = error instanceof Error ? error.message : "Failed to load data";
@@ -191,9 +211,124 @@ export default function CandidateList() {
         setWardLoading(false);
       }
     };
-
     loadData();
   }, []);
+
+  // 2. Step logic for registration
+  const handleElectionSelect = (election: Election) => {
+    setNewCandidate({
+      ...newCandidate,
+      election,
+      position: null, // reset position and ward when election changes
+      ward: null,
+    });
+  };
+  const handlePositionSelect = (position: Position) => {
+    setNewCandidate({
+      ...newCandidate,
+      position,
+      ward: null, // reset ward when position changes
+    });
+  };
+  const handleWardSelect = (ward: Ward) => {
+    setNewCandidate({
+      ...newCandidate,
+      ward,
+    });
+  };
+  const handlePartySelect = (party: Party) => {
+    setNewCandidate({
+      ...newCandidate,
+      party,
+    });
+  };
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setNewCandidate({
+      ...newCandidate,
+      [name]: value,
+    });
+  };
+  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0] || null;
+    setNewCandidate({
+      ...newCandidate,
+      image: file,
+    });
+  };
+
+  // File to base64 conversion
+  const fileToBase64 = (file: File): Promise<string> => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => {
+        if (typeof reader.result === 'string') {
+          resolve(reader.result);
+        } else {
+          reject(new Error('Failed to convert file to base64'));
+        }
+      };
+      reader.onerror = () => reject(new Error('Error reading file'));
+      reader.readAsDataURL(file);
+    });
+  };
+
+  // 3. Form submission
+  const handleAddCandidate = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitError("");
+    try {
+      if (!newCandidate.election || !newCandidate.position || !newCandidate.ward) {
+        setSubmitError("Please select election, position, and ward.");
+        setIsSubmitting(false);
+        return;
+      }
+      const payload: any = {
+        FirstName: newCandidate.name,
+        LastName: newCandidate.name,
+        Othername: newCandidate.otherName,
+        AliasName: newCandidate.nickName,
+        Party_ID: newCandidate.party?.Party_ID || null,
+        Position_ID: newCandidate.position.Position_ID,
+        Ward_Code: newCandidate.ward.Ward_Code,
+        Election_ID: newCandidate.election.Election_ID,
+      };
+      if (newCandidate.image) {
+        const base64 = await fileToBase64(newCandidate.image);
+        payload.Image = base64;
+      }
+      const response = await fetch("/api/candidate", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      if (!response.ok) {
+        const errorData = await response.json();
+        setSubmitError(errorData.message || "Failed to add candidate");
+        setIsSubmitting(false);
+        return;
+      }
+      // Refresh candidate list
+      const candidatesData = await fetchData("/api/candidate");
+      setCandidates(candidatesData);
+      // Reset form
+      setNewCandidate({
+        name: "",
+        otherName: "",
+        nickName: "",
+        party: null,
+        position: null,
+        ward: null,
+        election: null,
+        image: null,
+      });
+      setIsSubmitting(false);
+    } catch (error) {
+      setSubmitError("Failed to add candidate");
+      setIsSubmitting(false);
+    }
+  };
 
   // Filtered lists
   const filteredWards = wards.filter(w => {
@@ -216,7 +351,7 @@ export default function CandidateList() {
   });
 
   // Candidate list filter
-  const displayedCandidates = candidates.filter(c => {
+  const filteredCandidates = candidates.filter(c => {
     if (!c) return false;
     
     if (candidateSearch) {
@@ -238,6 +373,31 @@ export default function CandidateList() {
     
     return true;
   });
+
+  // Pagination logic
+  const totalPages = Math.ceil(filteredCandidates.length / candidatesPerPage);
+  const displayedCandidates = filteredCandidates.slice(
+    (currentPage - 1) * candidatesPerPage,
+    currentPage * candidatesPerPage
+  );
+
+  // Pagination handlers
+  const goToPage = (page: number) => {
+    if (page < 1 || page > totalPages) return;
+    setCurrentPage(page);
+  };
+
+  const goToNextPage = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+
+  const goToPrevPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
 
   // Modal handlers
   const openWardModal = () => {
@@ -271,215 +431,10 @@ export default function CandidateList() {
     setPositionSearch("");
   };
 
-  // Ward selection with full details fetch
-  const handleWardSelect = async (ward: Ward) => {
-    try {
-      setWardError("");
-      const res = await fetch(`/api/ward?Ward_Code=${encodeURIComponent(ward.Ward_Code)}`);
-      if (!res.ok) throw new Error("Ward not found");
-      const data = await res.json();
-      
-      setNewCandidate(prev => ({
-        ...prev,
-        ward: {
-          ...ward,
-          Ward_Name: data.Ward_Name || ward.Ward_Name,
-          Ward_Code: data.Ward_Code || ward.Ward_Code,
-          constituency: data.constituency || ward.constituency,
-          district: data.district || ward.district,
-        }
-      }));
-      setSelectedWardCode(ward.Ward_Code);
-      setShowWardModal(false);
-      setWardSearch("");
-    } catch (err) {
-      console.error("Error selecting ward:", err);
-      setWardError("Failed to fetch ward details. Please try again.");
-    }
-  };
-
-  const handlePartySelect = (party: Party) => {
-    if (!party || !party.Party_ID) {
-      setSubmitError("Invalid party selected");
-      return;
-    }
-    setNewCandidate(prev => ({ ...prev, party }));
-    closePartyModal();
-  };
-
-  const handlePositionSelect = (position: Position) => {
-    if (!position || !position.Position_ID) {
-      setSubmitError("Invalid position selected");
-      return;
-    }
-    setNewCandidate(prev => ({ ...prev, position }));
-    closePositionModal();
-  };
-
-  // Form input handlers
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    
-    const fieldMap: { [key: string]: keyof NewCandidate } = {
-      name: 'name',
-      nickname: 'nickName', 
-      othername: 'otherName'
-    };
-    
-    if (fieldMap[name]) {
-      setNewCandidate(prev => ({ 
-        ...prev, 
-        [fieldMap[name]]: value 
-      }));
-    }
-    
-    if (submitError) setSubmitError("");
-  };
-
-  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (file) {
-      if (file.size > 5 * 1024 * 1024) {
-        setSubmitError("Image file size must be less than 5MB");
-        return;
-      }
-      
-      if (!file.type.startsWith('image/')) {
-        setSubmitError("Please select a valid image file");
-        return;
-      }
-      
-      setNewCandidate(prev => ({ ...prev, image: file }));
-      if (submitError) setSubmitError("");
-    }
-  };
-
-  // Form validation
-  const validateForm = (): string | null => {
-    if (!newCandidate.name.trim()) {
-      return "Candidate name is required";
-    }
-    const nameParts = newCandidate.name.trim().split(/\s+/);
-    if (nameParts.length < 2) {
-      return "Please enter both first and last name (at least two words)";
-    }
-    if (!newCandidate.party) {
-      return "Party selection is required";
-    }
-    if (!newCandidate.position) {
-      return "Position selection is required";
-    }
-    if (!newCandidate.ward) {
-      return "Ward selection is required";
-    }
-    return null;
-  };
-
-  // File to base64 conversion
-  const fileToBase64 = (file: File): Promise<string> => {
-    return new Promise((resolve, reject) => {
-      const reader = new FileReader();
-      reader.onload = () => {
-        if (typeof reader.result === 'string') {
-          resolve(reader.result);
-        } else {
-          reject(new Error('Failed to convert file to base64'));
-        }
-      };
-      reader.onerror = () => reject(new Error('Error reading file'));
-      reader.readAsDataURL(file);
-    });
-  };
-
-  // Add candidate handler
-  const handleAddCandidate = async (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    const validationError = validateForm();
-    if (validationError) {
-      setSubmitError(validationError);
-      return;
-    }
-
-    setIsSubmitting(true);
-    setSubmitError("");
-
-    try {
-      const nameParts = newCandidate.name.trim().split(/\s+/);
-      const FirstName = nameParts[0];
-      const LastName = nameParts.slice(1).join(" ");
-
-      let imageBase64: string | null = null;
-      if (newCandidate.image) {
-        try {
-          imageBase64 = await fileToBase64(newCandidate.image);
-        } catch (error) {
-          throw new Error("Failed to process image file");
-        }
-      }
-
-      const candidateData = {
-        FirstName,
-        LastName,
-        Othername: newCandidate.otherName || null,
-        NickName: newCandidate.nickName || null,
-        Party_ID: newCandidate.party?.Party_ID || null,
-        Ward_Code: newCandidate.ward?.Ward_Code || null,
-        Position_ID: newCandidate.position?.Position_ID || null,
-        Image: imageBase64,
-      };
-
-      const response = await fetch("/api/candidate", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(candidateData),
-      });
-
-      if (!response.ok) {
-        let errorMessage = "Failed to add candidate";
-        try {
-          const errorData = await response.json();
-          errorMessage = errorData.message || errorMessage;
-        } catch {
-          errorMessage = `Server error: ${response.status} ${response.statusText}`;
-        }
-        throw new Error(errorMessage);
-      }
-
-      const addedCandidate = await response.json();
-      const newCandidateEntry: Candidate = {
-        ...addedCandidate,
-        party: newCandidate.party,
-        position: newCandidate.position,
-        ward: newCandidate.ward,
-        imageUrl: imageBase64 || undefined,
-      };
-
-      setCandidates(prev => [...prev, newCandidateEntry]);
-
-      setNewCandidate({
-        name: "",
-        otherName: "",
-        nickName: "",
-        party: null,
-        position: null,
-        ward: newCandidate.ward,
-        image: null,
-      });
-      
-      if (fileInputRef.current) {
-        fileInputRef.current.value = "";
-      }
-      
-      setSubmitError("");
-      
-    } catch (error) {
-      const errorMessage = error instanceof Error ? error.message : "An unexpected error occurred";
-      setSubmitError(errorMessage);
-      console.error("Error adding candidate:", error);
-    } finally {
-      setIsSubmitting(false);
-    }
+  // Handle candidate search with pagination reset
+  const handleCandidateSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setCandidateSearch(e.target.value);
+    setCurrentPage(1); // Reset to first page when searching
   };
 
   // Clear ward selection
@@ -489,6 +444,7 @@ export default function CandidateList() {
       ...prev,
       ward: null,
     }));
+    setCurrentPage(1); // Reset to first page when ward is cleared
   };
 
   // Edit handlers
@@ -648,7 +604,7 @@ export default function CandidateList() {
   return (
     <ErrorBoundary>
       <div className={styles.page}>
-        <Navbar title="Add Candidate" />
+        <Navbar title="Register Candidate" />
 
         <div className={styles.contentContainer}>
           {/* Data Error Display */}
@@ -680,630 +636,634 @@ export default function CandidateList() {
             </div>
           )}
 
-          {/* Candidate List Section */}
-          <div className={styles.tableSection}>
-            <div style={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-              marginBottom: 16,
-            }}>
-              <h2 className={styles.sectionTitle}>Candidate List</h2>
-              {selectedWardCode && (
-                <div>
-                  <button
-                    onClick={openWardModal}
-                    className={styles.submitButton}
-                    style={{ fontSize: 14, padding: "8px 16px", marginRight: 8 }}
-                  >
-                    Change Ward
-                  </button>
-                  <button
-                    onClick={clearWardSelection}
-                    style={{
-                      fontSize: 14,
-                      padding: "8px 16px",
-                      backgroundColor: "#6c757d",
-                      color: "white",
-                      border: "none",
-                      borderRadius: 4,
-                      cursor: "pointer",
-                    }}
-                  >
-                    Clear Selection
-                  </button>
-                </div>
-              )}
-            </div>
+          {/* Tabs */}
+          <div className={styles.container}>
+            <ul className={styles.nav}>
+              <li className={styles.navItem}>
+                <button
+                  className={`${styles.navLink}${activeTab === "register" ? ` ${styles.active}` : ""}`}
+                  onClick={() => setActiveTab("register")}
+                >
+                  Register Candidate
+                </button>
+              </li>
+              <li className={styles.navItem}>
+                <button
+                  className={`${styles.navLink}${activeTab === "view" ? ` ${styles.active}` : ""}`}
+                  onClick={() => setActiveTab("view")}
+                >
+                  View Candidates
+                </button>
+              </li>
+            </ul>
 
-            {selectedWardCode && newCandidate.ward && (
-              <div style={{
-                marginBottom: 16,
-                padding: 12,
-                backgroundColor: "#d4edda",
-                borderRadius: 4,
-                border: "1px solid #c3e6cb",
-              }}>
-                <strong>Selected Ward:</strong> {newCandidate.ward.Ward_Name} ({selectedWardCode})
-                {newCandidate.ward.constituency && (
-                  <> - {newCandidate.ward.constituency.Constituency_Name}</>
-                )}
-                {newCandidate.ward.district && (
-                  <>, {newCandidate.ward.district.District_Name}</>
-                )}
-              </div>
-            )}
+            {/* Tab Content */}
+            {activeTab === "register" && (
+              <div className={styles.row}>
+                {/* Form Section */}
+                <div className={styles.colLg8}>
+                  <div className={`${styles.card} ${styles.shadow} ${styles.fadeIn} ${styles.zoomIn}`}>
+                    <div className={styles.cardBody}>
+                      <div className="d-flex align-items-center gap-3 mb-4">
+                        <div className="bg-primary bg-opacity-10 text-primary rounded-circle p-3">
+                          <i className="fas fa-user-plus fa-lg"></i>
+                        </div>
+                        <h2 className="h4 text-primary mb-0">Register New Candidate</h2>
+                      </div>
+                      
+                      {/* Step-by-step form */}
+                      <div style={{ marginBottom: 30 }}>
+                        {/* Step 1: Select Election */}
+                        <div style={{ marginBottom: 20 }}>
+                          <h3 style={{ marginBottom: 10, color: "#333" }}>Step 1: Select Election</h3>
+                          {draftElections.length === 0 ? (
+                            <div style={{ padding: 12, backgroundColor: "#fff3cd", border: "1px solid #ffeaa7", borderRadius: 4 }}>
+                              No draft elections available. Please create an election first.
+                            </div>
+                          ) : (
+                            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", gap: 12 }}>
+                              {draftElections.map((election) => (
+                                <div
+                                  key={election.Election_ID}
+                                  onClick={() => handleElectionSelect(election)}
+                                  style={{
+                                    padding: 16,
+                                    border: newCandidate.election?.Election_ID === election.Election_ID 
+                                      ? "2px solid #007bff" 
+                                      : "1px solid #ddd",
+                                    borderRadius: 8,
+                                    cursor: "pointer",
+                                    backgroundColor: newCandidate.election?.Election_ID === election.Election_ID 
+                                      ? "#f8f9ff" 
+                                      : "#fff",
+                                    transition: "all 0.2s",
+                                  }}
+                                >
+                                  <h4 style={{ margin: "0 0 8px 0", color: "#333" }}>{election.title}</h4>
+                                  <p style={{ margin: "0 0 4px 0", fontSize: 14, color: "#666" }}>
+                                    {election.Description}
+                                  </p>
+                                  <p style={{ margin: "0 0 4px 0", fontSize: 12, color: "#888" }}>
+                                    {election.StartDate} - {election.EndDate}
+                                  </p>
+                                  <p style={{ margin: 0, fontSize: 12, color: "#007bff" }}>
+                                    {election.positions.length} positions available
+                                  </p>
+                                </div>
+                              ))}
+                            </div>
+                          )}
+                        </div>
 
-            <div style={{ marginBottom: 16 }}>
-              <input
-                type="text"
-                placeholder="Search candidates by name, party, or position..."
-                value={candidateSearch}
-                onChange={e => setCandidateSearch(e.target.value)}
-                className={styles.inputField}
-                style={{ width: "100%", maxWidth: 350 }}
-              />
-            </div>
+                        {/* Step 2: Select Position */}
+                        {newCandidate.election && (
+                          <div style={{ marginBottom: 20 }}>
+                            <h3 style={{ marginBottom: 10, color: "#333" }}>Step 2: Select Position</h3>
+                            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: 12 }}>
+                              {newCandidate.election.positions.map((position) => (
+                                <div
+                                  key={position.Position_ID}
+                                  onClick={() => handlePositionSelect(position)}
+                                  style={{
+                                    padding: 12,
+                                    border: newCandidate.position?.Position_ID === position.Position_ID 
+                                      ? "2px solid #28a745" 
+                                      : "1px solid #ddd",
+                                    borderRadius: 6,
+                                    cursor: "pointer",
+                                    backgroundColor: newCandidate.position?.Position_ID === position.Position_ID 
+                                      ? "#f8fff8" 
+                                      : "#fff",
+                                    textAlign: "center",
+                                    transition: "all 0.2s",
+                                  }}
+                                >
+                                  {position.Position_Name}
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        )}
 
-            {/* Edit Success Display */}
-            {editSuccess && (
-              <div style={{
-                marginBottom: 16,
-                padding: 12,
-                backgroundColor: "#d4edda",
-                color: "#155724",
-                border: "1px solid #c3e6cb",
-                borderRadius: 4,
-              }}>
-                <strong>Success:</strong> {editSuccess}
-              </div>
-            )}
-
-            {/* Edit Error Display */}
-            {editError && (
-              <div style={{
-                marginBottom: 16,
-                padding: 12,
-                backgroundColor: "#f8d7da",
-                color: "#721c24",
-                border: "1px solid #f5c6cb",
-                borderRadius: 4,
-              }}>
-                <strong>Error updating candidate:</strong> {editError}
-              </div>
-            )}
-
-            {/* Delete Error Display */}
-            {deleteError && (
-              <div style={{
-                marginBottom: 16,
-                padding: 12,
-                backgroundColor: "#f8d7da",
-                color: "#721c24",
-                border: "1px solid #f5c6cb",
-                borderRadius: 4,
-              }}>
-                <strong>Error deleting candidate:</strong> {deleteError}
-              </div>
-            )}
-
-            <div className={styles.tableContainer}>
-              <table className={styles.votersTable}>
-                <thead>
-                  <tr>
-                    <th>Name</th>
-                    <th>Nickname</th>
-                    <th>Party</th>
-                    <th>Position</th>
-                    <th>Ward</th>
-                    <th>Image</th>
-                    <th>Actions</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {loading ? (
-                    <tr>
-                      <td colSpan={7} style={{ textAlign: "center", color: "#666", padding: 20 }}>
-                        Loading candidates...
-                      </td>
-                    </tr>
-                  ) : displayedCandidates.length === 0 ? (
-                    <tr>
-                      <td colSpan={7} style={{ textAlign: "center", color: "#888", padding: 20 }}>
-                        {selectedWardCode
-                          ? candidateSearch
-                            ? "No candidates found matching your search."
-                            : "No candidates found for this ward."
-                          : "Please select a ward to view candidates."
-                        }
-                      </td>
-                    </tr>
-                  ) : (
-                    displayedCandidates.map(candidate => (
-                      <tr key={candidate.Candidate_ID}>
-                        {editCandidateId === candidate.Candidate_ID ? (
-                          <>
-                            <td>
+                        {/* Step 3: Select Ward */}
+                        {newCandidate.position && (
+                          <div style={{ marginBottom: 20 }}>
+                            <h3 style={{ marginBottom: 10, color: "#333" }}>Step 3: Select Ward</h3>
+                            <div style={{ marginBottom: 10 }}>
                               <input
-                                name="FirstName"
-                                value={editCandidateData.FirstName || ''}
-                                onChange={handleEditInputChange}
-                                style={{ width: 100 }}
+                                type="text"
+                                placeholder="Search wards..."
+                                value={wardSearch}
+                                onChange={(e) => setWardSearch(e.target.value)}
+                                className={styles.inputField}
+                                style={{ width: "100%", maxWidth: 300 }}
                               />
-                              <input
-                                name="Othername"
-                                value={editCandidateData.Othername || ''}
-                                onChange={handleEditInputChange}
-                                placeholder="Other Name"
-                                style={{ width: 80 }}
-                              />
-                              <input
-                                name="LastName"
-                                value={editCandidateData.LastName || ''}
-                                onChange={handleEditInputChange}
-                                style={{ width: 100 }}
-                              />
-                            </td>
-                            <td>
-                              <input
-                                name="AliasName"
-                                value={editCandidateData.AliasName || ''}
-                                onChange={handleEditInputChange}
-                                style={{ width: 100 }}
-                              />
-                            </td>
-                            <td>{candidate.party?.Party_Name || "N/A"}</td>
-                            <td>{candidate.position?.Position_Name || "N/A"}</td>
-                            <td>{candidate.ward?.Ward_Name || candidate.Ward_Code || "N/A"}</td>
-                            <td>
-                              <input
-                                type="file"
-                                accept="image/*"
-                                onChange={handleEditImageChange}
-                                style={{ fontSize: 12, width: 120 }}
-                              />
-                              {candidate.imageUrl && !editImageFile && (
-                                <div style={{ marginTop: 4 }}>
-                                  <img
-                                    src={candidate.imageUrl}
-                                    alt={`${candidate.FirstName} ${candidate.LastName}`}
-                                    style={{ width: 32, height: 32, borderRadius: "50%", objectFit: "cover" }}
-                                    onError={(e) => {
-                                      (e.currentTarget as HTMLImageElement).style.display = 'none';
-                                    }}
+                            </div>
+                            <div style={{ maxHeight: 200, overflowY: "auto", border: "1px solid #ddd", borderRadius: 4 }}>
+                              {filteredWards.slice(0, 20).map((ward) => (
+                                <div
+                                  key={ward.Ward_Code}
+                                  onClick={() => handleWardSelect(ward)}
+                                  style={{
+                                    padding: 12,
+                                    borderBottom: "1px solid #eee",
+                                    cursor: "pointer",
+                                    backgroundColor: newCandidate.ward?.Ward_Code === ward.Ward_Code 
+                                      ? "#e8f5e8" 
+                                      : "#fff",
+                                  }}
+                                >
+                                  <div style={{ fontWeight: "bold" }}>{ward.Ward_Name}</div>
+                                  <div style={{ fontSize: 12, color: "#666" }}>{ward.Ward_Code}</div>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+
+                        {/* Step 4: Candidate Details */}
+                        {newCandidate.ward && (
+                          <div style={{ marginBottom: 20 }}>
+                            <h3 style={{ marginBottom: 10, color: "#333" }}>Step 4: Candidate Details</h3>
+                            
+                            <form onSubmit={handleAddCandidate}>
+                              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginBottom: 16 }}>
+                                <div>
+                                  <label style={{ display: "block", marginBottom: 4, fontWeight: "bold" }}>
+                                    First Name *
+                                  </label>
+                                  <input
+                                    type="text"
+                                    name="name"
+                                    value={newCandidate.name}
+                                    onChange={handleInputChange}
+                                    className={styles.inputField}
+                                    required
                                   />
                                 </div>
-                              )}
-                              {editImageFile && (
-                                <div style={{ marginTop: 4, fontSize: 12, color: '#007bff' }}>
-                                  New image selected: {editImageFile.name}
+                                <div>
+                                  <label style={{ display: "block", marginBottom: 4, fontWeight: "bold" }}>
+                                    Other Name
+                                  </label>
+                                  <input
+                                    type="text"
+                                    name="otherName"
+                                    value={newCandidate.otherName}
+                                    onChange={handleInputChange}
+                                    className={styles.inputField}
+                                  />
+                                </div>
+                              </div>
+
+                              <div style={{ marginBottom: 16 }}>
+                                <label style={{ display: "block", marginBottom: 4, fontWeight: "bold" }}>
+                                  Nickname/Alias
+                                </label>
+                                <input
+                                  type="text"
+                                  name="nickName"
+                                  value={newCandidate.nickName}
+                                  onChange={handleInputChange}
+                                  className={styles.inputField}
+                                />
+                              </div>
+
+                              <div style={{ marginBottom: 16 }}>
+                                <label style={{ display: "block", marginBottom: 4, fontWeight: "bold" }}>
+                                  Party
+                                </label>
+                                <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
+                                  <input
+                                    type="text"
+                                    placeholder="Select party..."
+                                    value={newCandidate.party?.Party_Name || ""}
+                                    readOnly
+                                    className={styles.inputField}
+                                    style={{ flex: 1 }}
+                                  />
+                                  <button
+                                    type="button"
+                                    onClick={openPartyModal}
+                                    className={styles.actionButton}
+                                    style={{ padding: "8px 12px" }}
+                                  >
+                                    Select
+                                  </button>
+                                </div>
+                              </div>
+
+                              <div style={{ marginBottom: 16 }}>
+                                <label style={{ display: "block", marginBottom: 4, fontWeight: "bold" }}>
+                                  Profile Image
+                                </label>
+                                <input
+                                  type="file"
+                                  accept="image/*"
+                                  onChange={handleImageChange}
+                                  ref={fileInputRef}
+                                  className={styles.inputField}
+                                />
+                              </div>
+
+                              {submitError && (
+                                <div style={{ 
+                                  marginBottom: 16, 
+                                  padding: 12, 
+                                  backgroundColor: "#f8d7da", 
+                                  color: "#721c24", 
+                                  border: "1px solid #f5c6cb", 
+                                  borderRadius: 4 
+                                }}>
+                                  {submitError}
                                 </div>
                               )}
-                            </td>
-                            <td>
-                              <button onClick={saveEditCandidate} style={{ marginRight: 4 }}>💾</button>
-                              <button onClick={cancelEditCandidate}>✖️</button>
-                            </td>
-                          </>
-                        ) : (
-                          <>
-                            <td>{candidate.FirstName} {candidate.OtherName} {candidate.LastName}</td>
-                            <td>{candidate.NickName || "N/A"}</td>
-                            <td>{candidate.party?.Party_Name || "N/A"}</td>
-                            <td>{candidate.position?.Position_Name || "N/A"}</td>
-                            <td>{candidate.ward?.Ward_Name || candidate.Ward_Code || "N/A"}</td>
-                            <td>
-                              {candidate.imageUrl ? (
-                                <img
-                                  src={candidate.imageUrl}
-                                  alt={`${candidate.FirstName} ${candidate.LastName}`}
-                                  style={{ width: 32, height: 32, borderRadius: "50%", objectFit: "cover" }}
-                                  onError={(e) => {
-                                    (e.currentTarget as HTMLImageElement).style.display = 'none';
-                                  }}
-                                />
-                              ) : (
-                                <span style={{ color: "#bbb" }}>No Image</span>
-                              )}
-                            </td>
-                            <td>
-                              <button
-                                onClick={() => startEditCandidate(candidate.Candidate_ID)}
-                                disabled={editCandidateId !== null}
-                                style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: 18 }}
-                                aria-label="Edit Candidate"
-                              >
-                                ✏️
-                              </button>
-                              <button
-                                onClick={() => deleteCandidate(candidate.Candidate_ID)}
-                                disabled={deleteLoadingId === candidate.Candidate_ID}
-                                style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: 18, marginLeft: 4 }}
-                                aria-label="Delete Candidate"
-                              >
-                                {deleteLoadingId === candidate.Candidate_ID ? '⏳' : '🗑️'}
-                              </button>
-                            </td>
-                          </>
-                        )}
-                      </tr>
-                    ))
-                  )}
-                </tbody>
-              </table>
-            </div>
-          </div>
 
-          {/* Add Candidate Section */}
-          <div className={styles.formSection}>
-            <h2 className={styles.sectionTitle}>Add Candidate</h2>
-            
-            {!selectedWardCode && (
-              <div style={{
-                marginBottom: 16,
-                padding: 12,
-                backgroundColor: "#fff3cd",
-                borderRadius: 4,
-                border: "1px solid #ffeaa7",
-              }}>
-                <p style={{ margin: 0, color: "#856404" }}>
-                  Please select a ward first to enable candidate registration.
-                </p>
-                <button
-                  onClick={openWardModal}
-                  className={styles.submitButton}
-                  style={{ marginTop: 8, fontSize: 14, padding: "8px 16px" }}
-                >
-                  Select Ward
-                </button>
+                              <button
+                                type="submit"
+                                disabled={isSubmitting}
+                                className={styles.submitButton}
+                                style={{ width: "100%" }}
+                              >
+                                {isSubmitting ? "Registering..." : "Register Candidate"}
+                              </button>
+                            </form>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Info Section */}
+                <div className="col-lg-4">
+                  <div className="card shadow fade-in zoom-in">
+                    <div className="card-body">
+                      <div className="d-flex align-items-center gap-3 mb-4">
+                        <div className="bg-info bg-opacity-10 text-info rounded-circle p-3">
+                          <i className="fas fa-info-circle fa-lg"></i>
+                        </div>
+                        <h2 className="h5 mb-0">Registration Guide</h2>
+                      </div>
+                      
+                      <div className="mb-3">
+                        <h6 className="text-primary">Step-by-Step Process:</h6>
+                        <ol className="small text-secondary">
+                          <li>Select a draft election</li>
+                          <li>Choose a position from that election</li>
+                          <li>Select a ward for the candidate</li>
+                          <li>Fill in candidate details</li>
+                          <li>Upload profile image (optional)</li>
+                        </ol>
+                      </div>
+
+                      <div className="alert alert-primary mt-3 mb-0" role="alert">
+                        <i className="fas fa-lightbulb me-2"></i>
+                        <strong>Tip:</strong> Make sure to select a draft election first, as positions are specific to each election.
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             )}
 
-            <form className={styles.formContainer} onSubmit={handleAddCandidate}>
-              <div className={styles.formGroup}>
-                <label>Name (first surname)*</label>
-                <input
-                  type="text"
-                  name="name"
-                  value={newCandidate.name}
-                  onChange={handleInputChange}
-                  placeholder="Enter Full Name"
-                  required
-                  disabled={!selectedWardCode || isSubmitting}
-                />
-              </div>
+            {/* View Candidates Tab */}
+            {activeTab === "view" && (
+              <div className="row g-4">
+                <div className="col-12">
+                  <div className="card shadow fade-in zoom-in">
+                    <div className="card-body">
+                      <div className="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-4 gap-3">
+                        <h2 className="h4 text-primary mb-0">Registered Candidates</h2>
+                        <div className="input-group w-100 w-md-auto" style={{ maxWidth: 300 }}>
+                          <span className="input-group-text bg-white border-end-0">
+                            <i className="fas fa-search text-secondary"></i>
+                          </span>
+                          <input
+                            type="text"
+                            className="form-control border-start-0"
+                            placeholder="Search candidates..."
+                            value={candidateSearch}
+                            onChange={handleCandidateSearch}
+                          />
+                        </div>
+                      </div>
 
-              <div className={styles.formGroup}>
-                <label>Other Name</label>
-                <input
-                  type="text"
-                  name="othername"
-                  value={newCandidate.otherName}
-                  onChange={handleInputChange}
-                  placeholder="Enter Other Name"
-                  disabled={!selectedWardCode || isSubmitting}
-                />
-              </div>
+                      {loading ? (
+                        <div className="text-center text-secondary py-4">
+                          <i className="fas fa-spinner fa-spin me-2"></i>
+                          Loading candidates...
+                        </div>
+                      ) : displayedCandidates.length === 0 ? (
+                        <div className="text-center text-secondary py-4">
+                          <div className="mb-2">👥</div>
+                          <div className="fw-bold">No candidates found</div>
+                          <div className="small">
+                            {candidateSearch 
+                              ? "Try adjusting your search terms" 
+                              : "Register your first candidate using the Register Candidate tab"
+                            }
+                          </div>
+                        </div>
+                      ) : (
+                        <>
+                          <div className="table-responsive">
+                            <table className="table table-hover align-middle">
+                              <thead className="table-light">
+                                <tr>
+                                  <th>Name</th>
+                                  <th>Party</th>
+                                  <th>Position</th>
+                                  <th>Ward</th>
+                                  <th className="text-end">Actions</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                {displayedCandidates.map((candidate: any) => (
+                                  <tr key={candidate.Candidate_ID}>
+                                    <td>
+                                      <div className="d-flex align-items-center gap-3">
+                                        {candidate.imageUrl ? (
+                                          <img
+                                            src={candidate.imageUrl}
+                                            alt="Candidate"
+                                            className="rounded-circle"
+                                            style={{ width: 40, height: 40, objectFit: "cover" }}
+                                          />
+                                        ) : (
+                                          <div 
+                                            className="rounded-circle bg-secondary text-white d-flex align-items-center justify-content-center"
+                                            style={{ width: 40, height: 40, fontSize: '14px', fontWeight: 'bold' }}
+                                          >
+                                            {candidate.FirstName?.charAt(0)}{candidate.LastName?.charAt(0)}
+                                          </div>
+                                        )}
+                                        <div>
+                                          <div className="fw-bold">
+                                            {candidate.FirstName} {candidate.LastName}
+                                          </div>
+                                          {candidate.OtherName && (
+                                            <div className="small text-secondary">{candidate.OtherName}</div>
+                                          )}
+                                          {candidate.AliasName && (
+                                            <div className="small text-primary">"{candidate.AliasName}"</div>
+                                          )}
+                                        </div>
+                                      </div>
+                                    </td>
+                                    <td>
+                                      <span className="badge bg-primary">
+                                        {candidate.party?.Party_Name || "Independent"}
+                                      </span>
+                                    </td>
+                                    <td>
+                                      <span className="text-secondary">
+                                        {candidate.position?.Position_Name || "N/A"}
+                                      </span>
+                                    </td>
+                                    <td>
+                                      <div>
+                                        <div className="fw-bold">{candidate.ward?.Ward_Name || "N/A"}</div>
+                                        {candidate.ward?.constituency && (
+                                          <div className="small text-secondary">
+                                            {candidate.ward.constituency.Constituency_Name}
+                                          </div>
+                                        )}
+                                      </div>
+                                    </td>
+                                    <td className="text-end">
+                                      <button
+                                        onClick={() => startEditCandidate(candidate.Candidate_ID)}
+                                        className="btn btn-link text-primary btn-sm me-2"
+                                      >
+                                        <i className="fas fa-edit"></i> Edit
+                                      </button>
+                                      <button
+                                        onClick={() => deleteCandidate(candidate.Candidate_ID)}
+                                        disabled={deleteLoadingId === candidate.Candidate_ID}
+                                        className="btn btn-link text-danger btn-sm"
+                                      >
+                                        {deleteLoadingId === candidate.Candidate_ID ? (
+                                          <i className="fas fa-spinner fa-spin"></i>
+                                        ) : (
+                                          <i className="fas fa-trash"></i>
+                                        )} Delete
+                                      </button>
+                                    </td>
+                                  </tr>
+                                ))}
+                              </tbody>
+                            </table>
+                          </div>
 
-              <div className={styles.formGroup}>
-                <label>Alias Name (Nickname)</label>
-                <input
-                  type="text"
-                  name="nickname"
-                  value={newCandidate.nickName}
-                  onChange={handleInputChange}
-                  placeholder="Enter Nickname"
-                  disabled={!selectedWardCode || isSubmitting}
-                />
-              </div>
-
-              <div className={styles.formGroup}>
-                <label>Party *</label>
-                <input
-                  type="text"
-                  name="party"
-                  value={newCandidate.party?.Party_Name || ""}
-                  readOnly
-                  required
-                  placeholder="Select Party"
-                  onClick={openPartyModal}
-                  style={{ backgroundColor: "#f8f9fa", cursor: selectedWardCode ? "pointer" : "not-allowed" }}
-                  disabled={isSubmitting}
-                />
-              </div>
-
-              <div className={styles.formGroup}>
-                <label>Position *</label>
-                <input
-                  type="text"
-                  name="position"
-                  value={newCandidate.position?.Position_Name || ""}
-                  readOnly
-                  required
-                  placeholder="Select Position"
-                  onClick={openPositionModal}
-                  style={{ backgroundColor: "#f8f9fa", cursor: selectedWardCode ? "pointer" : "not-allowed" }}
-                  disabled={isSubmitting}
-                />
-              </div>
-
-              <div className={styles.formGroup}>
-                <label>Ward *</label>
-                <input
-                  type="text"
-                  name="ward"
-                  value={newCandidate.ward?.Ward_Name || ""}
-                  readOnly
-                  required
-                  style={{ backgroundColor: "#f8f9fa", cursor: "pointer" }}
-                  placeholder="Click to select ward"
-                  onClick={openWardModal}
-                  disabled={isSubmitting}
-                />
-              </div>
-
-              <div className={styles.formGroup}>
-                <label>Constituency</label>
-                <input
-                  type="text"
-                  name="constituency"
-                  value={newCandidate.ward?.constituency?.Constituency_Name || ""}
-                  readOnly
-                  style={{ backgroundColor: "#f8f9fa" }}
-                  placeholder="Auto-filled from ward selection"
-                />
-              </div>
-
-              <div className={styles.formGroup}>
-                <label>District</label>
-                <input
-                  type="text"
-                  name="district"
-                  value={newCandidate.ward?.district?.District_Name || ""}
-                  readOnly
-                  style={{ backgroundColor: "#f8f9fa" }}
-                  placeholder="Auto-filled from ward selection"
-                />
-              </div>
-
-              <div className={styles.formGroup}>
-                <label>Image (optional)</label>
-                <input
-                  type="file"
-                  ref={fileInputRef}
-                  name="image"
-                  onChange={handleImageChange}
-                  className={styles.fileInput}
-                  accept="image/*"
-                  disabled={isSubmitting}
-                />
-                <small style={{ color: "#666", fontSize: "12px" }}>
-                  Maximum file size: 5MB. Supported formats: JPG, PNG, GIF
-                </small>
-              </div>
-
-              {submitError && (
-                <div style={{
-                  color: "#721c24",
-                  marginBottom: 16,
-                  padding: 12,
-                  backgroundColor: "#f8d7da",
-                  borderRadius: 4,
-                  border: "1px solid #f5c6cb",
-                }}>
-                  {submitError}
+                          {/* Pagination */}
+                          {totalPages > 1 && (
+                            <div className="d-flex flex-column flex-md-row justify-content-between align-items-center mt-3 gap-2">
+                              <div className="text-secondary small text-center text-md-start">
+                                Showing{" "}
+                                <span className="fw-bold">
+                                  {(currentPage - 1) * candidatesPerPage + 1}
+                                </span>{" "}
+                                to{" "}
+                                <span className="fw-bold">
+                                  {Math.min(currentPage * candidatesPerPage, filteredCandidates.length)}
+                                </span>{" "}
+                                of{" "}
+                                <span className="fw-bold">
+                                  {filteredCandidates.length}
+                                </span>{" "}
+                                results
+                              </div>
+                              <nav>
+                                <ul className="pagination justify-content-end flex-wrap">
+                                  <li className={`page-item${currentPage === 1 ? " disabled" : ""}`}>
+                                    <button 
+                                      className="page-link" 
+                                      onClick={goToPrevPage} 
+                                      disabled={currentPage === 1}
+                                    >
+                                      <i className="fas fa-chevron-left"></i>
+                                    </button>
+                                  </li>
+                                  {Array.from({ length: Math.min(5, totalPages) }, (_, i) => {
+                                    let pageNum;
+                                    if (totalPages <= 5) {
+                                      pageNum = i + 1;
+                                    } else if (currentPage <= 3) {
+                                      pageNum = i + 1;
+                                    } else if (currentPage >= totalPages - 2) {
+                                      pageNum = totalPages - 4 + i;
+                                    } else {
+                                      pageNum = currentPage - 2 + i;
+                                    }
+                                    
+                                    return (
+                                      <li key={pageNum} className={`page-item${pageNum === currentPage ? " active" : ""}`}>
+                                        <button 
+                                          className="page-link" 
+                                          onClick={() => goToPage(pageNum)}
+                                        >
+                                          {pageNum}
+                                        </button>
+                                      </li>
+                                    );
+                                  })}
+                                  <li className={`page-item${currentPage === totalPages || totalPages === 0 ? " disabled" : ""}`}>
+                                    <button 
+                                      className="page-link" 
+                                      onClick={goToNextPage} 
+                                      disabled={currentPage === totalPages || totalPages === 0}
+                                    >
+                                      <i className="fas fa-chevron-right"></i>
+                                    </button>
+                                  </li>
+                                </ul>
+                              </nav>
+                            </div>
+                          )}
+                        </>
+                      )}
+                    </div>
+                  </div>
                 </div>
-              )}
-
-              <button
-                type="submit"
-                className={styles.submitButton}
-                disabled={!selectedWardCode || isSubmitting}
-              >
-                {isSubmitting ? "Adding Candidate..." : "Add Candidate"}
-              </button>
-            </form>
+              </div>
+            )}
           </div>
+
+          {/* Modals */}
+          {/* Ward Selection Modal */}
+          {showWardModal && (
+            <div className={styles.modalOverlay}>
+              <div className={styles.modal}>
+                <div className={styles.modalHeader}>
+                  <h3>Select Ward</h3>
+                  <button onClick={closeWardModal} className={styles.closeButton}>
+                    ×
+                  </button>
+                </div>
+                <div className={styles.modalBody}>
+                  <input
+                    type="text"
+                    placeholder="Search wards..."
+                    value={wardSearch}
+                    onChange={(e) => setWardSearch(e.target.value)}
+                    className={styles.inputField}
+                    style={{ marginBottom: 16 }}
+                  />
+                  {wardError && (
+                    <div style={{ color: "#dc3545", marginBottom: 16 }}>{wardError}</div>
+                  )}
+                  <div style={{ maxHeight: 300, overflowY: "auto" }}>
+                    {filteredWards.map((ward) => (
+                      <div
+                        key={ward.Ward_Code}
+                        onClick={() => handleWardSelect(ward)}
+                        style={{
+                          padding: 12,
+                          border: "1px solid #ddd",
+                          marginBottom: 8,
+                          borderRadius: 4,
+                          cursor: "pointer",
+                          backgroundColor: "#fff",
+                        }}
+                      >
+                        <div style={{ fontWeight: "bold" }}>{ward.Ward_Name}</div>
+                        <div style={{ fontSize: 12, color: "#666" }}>{ward.Ward_Code}</div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Party Selection Modal */}
+          {showPartyModal && (
+            <div className={styles.modalOverlay}>
+              <div className={styles.modal}>
+                <div className={styles.modalHeader}>
+                  <h3>Select Party</h3>
+                  <button onClick={closePartyModal} className={styles.closeButton}>
+                    ×
+                  </button>
+                </div>
+                <div className={styles.modalBody}>
+                  <input
+                    type="text"
+                    placeholder="Search parties..."
+                    value={partySearch}
+                    onChange={(e) => setPartySearch(e.target.value)}
+                    className={styles.inputField}
+                    style={{ marginBottom: 16 }}
+                  />
+                  <div style={{ maxHeight: 300, overflowY: "auto" }}>
+                    {filteredParties.map((party) => (
+                      <div
+                        key={party.Party_ID}
+                        onClick={() => handlePartySelect(party)}
+                        style={{
+                          padding: 12,
+                          border: "1px solid #ddd",
+                          marginBottom: 8,
+                          borderRadius: 4,
+                          cursor: "pointer",
+                          backgroundColor: "#fff",
+                        }}
+                      >
+                        <div style={{ fontWeight: "bold" }}>{party.Party_Name}</div>
+                        {party.Party_Acronym && (
+                          <div style={{ fontSize: 12, color: "#666" }}>{party.Party_Acronym}</div>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Position Selection Modal */}
+          {showPositionModal && (
+            <div className={styles.modalOverlay}>
+              <div className={styles.modal}>
+                <div className={styles.modalHeader}>
+                  <h3>Select Position</h3>
+                  <button onClick={closePositionModal} className={styles.closeButton}>
+                    ×
+                  </button>
+                </div>
+                <div className={styles.modalBody}>
+                  <input
+                    type="text"
+                    placeholder="Search positions..."
+                    value={positionSearch}
+                    onChange={(e) => setPositionSearch(e.target.value)}
+                    className={styles.inputField}
+                    style={{ marginBottom: 16 }}
+                  />
+                  <div style={{ maxHeight: 300, overflowY: "auto" }}>
+                    {filteredPositions.map((position) => (
+                      <div
+                        key={position.Position_ID}
+                        onClick={() => handlePositionSelect(position)}
+                        style={{
+                          padding: 12,
+                          border: "1px solid #ddd",
+                          marginBottom: 8,
+                          borderRadius: 4,
+                          cursor: "pointer",
+                          backgroundColor: "#fff",
+                        }}
+                      >
+                        {position.Position_Name}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
-
-        {/* Ward Modal - Matching Voter Page Implementation */}
-        {showWardModal && (
-          <div className={styles.modalOverlay} onClick={closeWardModal}>
-            <div className={styles.modalContent} onClick={e => e.stopPropagation()}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
-                <h5 style={{ margin: 0 }}>Select Ward</h5>
-                <button 
-                  onClick={closeWardModal}
-                  style={{ background: 'none', border: 'none', fontSize: 18, cursor: 'pointer' }}
-                >
-                  ×
-                </button>
-              </div>
-              
-              <input
-                type="text"
-                placeholder="Search ward by name or code..."
-                value={wardSearch}
-                onChange={e => setWardSearch(e.target.value)}
-                className={styles.inputField}
-                style={{ marginBottom: 12, width: '100%' }}
-                autoFocus
-              />
-              
-              <div style={{ maxHeight: 300, overflowY: "auto", border: '1px solid #ddd', borderRadius: 4 }}>
-                {wardLoading ? (
-                  <div style={{ padding: 16, textAlign: 'center' }}>Loading wards...</div>
-                ) : filteredWards.length > 0 ? (
-                  filteredWards.map(ward => (
-                    <div
-                      key={ward.Ward_Code}
-                      className={styles.wardOption}
-                      style={{ 
-                        padding: 12, 
-                        cursor: "pointer", 
-                        borderBottom: "1px solid #eee",
-                        backgroundColor: "white",
-                      }}
-                      onClick={() => handleWardSelect(ward)}
-                      onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#f8f9fa")}
-                      onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "white")}
-                    >
-                      <div><strong>{ward.Ward_Name}</strong></div>
-                      <div style={{ fontSize: 12, color: '#666' }}>Code: {ward.Ward_Code}</div>
-                      {ward.constituency && (
-                        <div style={{ fontSize: 12, color: '#666' }}>
-                          Constituency: {ward.constituency.Constituency_Name}
-                        </div>
-                      )}
-                      {ward.district && (
-                        <div style={{ fontSize: 12, color: '#666' }}>
-                          District: {ward.district.District_Name}
-                        </div>
-                      )}
-                    </div>
-                  ))
-                ) : (
-                  <div style={{ padding: 16, textAlign: 'center', color: '#666' }}>
-                    {wardSearch ? 'No wards found matching your search.' : 'No wards available.'}
-                  </div>
-                )}
-              </div>
-              
-              {wardError && (
-                <div style={{ color: "red", marginTop: 12, padding: 8, backgroundColor: '#ffeaea', borderRadius: 4 }}>
-                  {wardError}
-                </div>
-              )}
-            </div>
-          </div>
-        )}
-
-        {/* Party Modal */}
-        {showPartyModal && (
-          <div className={styles.modalOverlay} onClick={closePartyModal}>
-            <div className={styles.modalContent} onClick={e => e.stopPropagation()}>
-              <div style={{
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
-                marginBottom: 16,
-              }}>
-                <h5 style={{ margin: 0 }}>Select Party</h5>
-                <button
-                  onClick={closePartyModal}
-                  style={{ background: "none", border: "none", fontSize: 18, cursor: "pointer" }}
-                >
-                  ×
-                </button>
-              </div>
-              <input
-                type="text"
-                placeholder="Search party by name..."
-                value={partySearch}
-                onChange={e => setPartySearch(e.target.value)}
-                className={styles.inputField}
-                style={{ marginBottom: 12, width: "100%" }}
-                autoFocus
-              />
-              <div style={{ maxHeight: 300, overflowY: "auto", border: "1px solid #ddd", borderRadius: 4 }}>
-                {filteredParties.length > 0 ? (
-                  filteredParties.map(party => (
-                    <div
-                      key={party.Party_ID}
-                      className={styles.wardOption}
-                      style={{
-                        padding: 12,
-                        cursor: "pointer",
-                        borderBottom: "1px solid #eee",
-                        backgroundColor: "white",
-                      }}
-                      onClick={() => handlePartySelect(party)}
-                      onMouseEnter={e => e.currentTarget.style.backgroundColor = "#f8f9fa"}
-                      onMouseLeave={e => e.currentTarget.style.backgroundColor = "white"}
-                    >
-                      <div>
-                        <strong>{party.Party_Name}</strong>
-                      </div>
-                      <div>
-                        <strong>{party.Party_Acronym}</strong>
-                      </div>
-                      <div>
-                        <strong>{party.Slogan}</strong>
-                      </div>
-                    </div>
-                  ))
-                ) : (
-                  <div style={{ padding: 16, textAlign: "center", color: "#666" }}>
-                    {partySearch ? "No parties found matching your search." : "No parties available."}
-                  </div>
-                )}
-              </div>
-            </div>
-          </div>
-        )}
-
-        {/* Position Modal */}
-        {showPositionModal && (
-          <div className={styles.modalOverlay} onClick={closePositionModal}>
-            <div className={styles.modalContent} onClick={e => e.stopPropagation()}>
-              <div style={{
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
-                marginBottom: 16,
-              }}>
-                <h5 style={{ margin: 0 }}>Select Position</h5>
-                <button
-                  onClick={closePositionModal}
-                  style={{ background: "none", border: "none", fontSize: 18, cursor: "pointer" }}
-                >
-                  ×
-                </button>
-              </div>
-              <input
-                type="text"
-                placeholder="Search position by name..."
-                value={positionSearch}
-                onChange={e => setPositionSearch(e.target.value)}
-                className={styles.inputField}
-                style={{ marginBottom: 12, width: "100%" }}
-                autoFocus
-              />
-              <div style={{ maxHeight: 300, overflowY: "auto", border: "1px solid #ddd", borderRadius: 4 }}>
-                {filteredPositions.length > 0 ? (
-                  filteredPositions.map(position => (
-                    <div
-                      key={position.Position_ID}
-                      className={styles.wardOption}
-                      style={{
-                        padding: 12,
-                        cursor: "pointer",
-                        borderBottom: "1px solid #eee",
-                        backgroundColor: "white",
-                      }}
-                      onClick={() => handlePositionSelect(position)}
-                      onMouseEnter={e => e.currentTarget.style.backgroundColor = "#f8f9fa"}
-                      onMouseLeave={e => e.currentTarget.style.backgroundColor = "white"}
-                    >
-                      <div>
-                        <strong>{position.Position_Name}</strong>
-                      </div>
-                    </div>
-                  ))
-                ) : (
-                  <div style={{ padding: 16, textAlign: "center", color: "#666" }}>
-                    {positionSearch
-                      ? "No positions found matching your search."
-                      : "No positions available."}
-                  </div>
-                )}
-              </div>
-            </div>
-          </div>
-        )}
       </div>
-      
-
     </ErrorBoundary>
   );
 }

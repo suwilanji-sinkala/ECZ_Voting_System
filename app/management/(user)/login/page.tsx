@@ -1,6 +1,6 @@
 import Image from "next/image";
 import styles from "./page.module.css";
-import "bootstrap-icons/font/bootstrap-icons.css";
+// Bootstrap Icons are loaded via CDN in layout.tsx
 import Link from "next/link";
 
 export default function ManagementLogin() {

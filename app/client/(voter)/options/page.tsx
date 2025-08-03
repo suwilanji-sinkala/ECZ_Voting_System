@@ -88,18 +88,7 @@ export default function OptionsPage() {
               </div>
             </div>
 
-            <div className={styles.optionCard} onClick={() => window.location.href = '/client/vote-select'}>
-              <div className={styles.optionIcon}>
-                <span className={styles.icon}>✅</span>
-              </div>
-              <div className={styles.optionContent}>
-                <h3>Review Selections</h3>
-                <p>Review and submit your candidate selections</p>
-              </div>
-              <div className={styles.optionArrow}>
-                <span>→</span>
-              </div>
-            </div>
+
           </div>
 
           <div className={styles.infoSection}>

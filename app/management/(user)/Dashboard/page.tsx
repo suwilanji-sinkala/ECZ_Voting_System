@@ -353,35 +353,7 @@ export default function Dashboard() {
           )}
         </div>
 
-        <div className={styles.recentActivities}>
-          <h3 className={styles.sectionTitle}>Recent Activities</h3>
-          <div className={styles.activityInfo}>
-            <p>Votes in last 24 hours: <strong>{dashboardData.recentActivity.votesLast24Hours.toLocaleString()}</strong></p>
-            <p>Last updated: <strong>{new Date(dashboardData.recentActivity.lastUpdated).toLocaleString()}</strong></p>
-          </div>
-          <ul className={styles.activityList}>
-            <li className={styles.activityItem}>
-              <span className={styles.activityTime}>14:32</span>
-              <span className={styles.activityDesc}>Results uploaded for Polling Station #2345 (Lusaka)</span>
-            </li>
-            <li className={styles.activityItem}>
-              <span className={styles.activityTime}>14:28</span>
-              <span className={styles.activityDesc}>New candidate profile updated: John Mwanza (UPND)</span>
-            </li>
-            <li className={styles.activityItem}>
-              <span className={styles.activityTime}>14:15</span>
-              <span className={styles.activityDesc}>Voter verification completed for Western Province</span>
-            </li>
-            <li className={styles.activityItem}>
-              <span className={styles.activityTime}>13:45</span>
-              <span className={styles.activityDesc}>System backup completed successfully</span>
-            </li>
-            <li className={styles.activityItem}>
-              <span className={styles.activityTime}>13:22</span>
-              <span className={styles.activityDesc}>Polling Station #1823 (Copperbelt) reported connectivity issue - resolved</span>
-            </li>
-          </ul>
-        </div>
+
       </div>
     </div>
   );

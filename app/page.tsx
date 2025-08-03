@@ -1,7 +1,7 @@
 import styles from "./page.module.css";
 import Image from "next/image";
 import Link from "next/link";
-import "bootstrap-icons/font/bootstrap-icons.css"; // Import Bootstrap Icons CSS
+// Bootstrap Icons are loaded via CDN in layout.tsx
 
 export default function Home() {
   return (

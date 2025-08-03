@@ -143,6 +143,11 @@ export async function DELETE(request: Request) {
         where: { Election: Number(Election_ID) }
       });
 
+      // Delete election candidates for this election (fix foreign key constraint)
+      await tx.electionCandidates.deleteMany({
+        where: { Election: Number(Election_ID) }
+      });
+
       // Finally delete the election
       await tx.elections.delete({
         where: { Election_ID: Number(Election_ID) }

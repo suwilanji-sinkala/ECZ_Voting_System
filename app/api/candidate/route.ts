@@ -131,6 +131,56 @@ export async function POST(req: NextRequest) {
       }, { status: 400 });
     }
 
+    // Validate election selection
+    if (!data.Election_ID) {
+      return NextResponse.json({ 
+        message: 'Election selection is required' 
+      }, { status: 400 });
+    }
+
+    // Validate position selection
+    if (!data.Position_ID) {
+      return NextResponse.json({ 
+        message: 'Position selection is required' 
+      }, { status: 400 });
+    }
+
+    // Validate ward selection
+    if (!data.Ward_Code) {
+      return NextResponse.json({ 
+        message: 'Ward selection is required' 
+      }, { status: 400 });
+    }
+
+    // Validate that the election is in draft status
+    const election = await prisma.elections.findUnique({
+      where: { Election_ID: data.Election_ID }
+    });
+
+    if (!election) {
+      return NextResponse.json({ message: 'Invalid Election_ID' }, { status: 400 });
+    }
+
+    if (election.Status !== 'draft') {
+      return NextResponse.json({ 
+        message: 'Candidates can only be registered for draft elections' 
+      }, { status: 400 });
+    }
+
+    // Validate that the position is assigned to the selected election
+    const electionPosition = await prisma.electionPositions.findFirst({
+      where: {
+        Election: data.Election_ID,
+        Position: data.Position_ID
+      }
+    });
+
+    if (!electionPosition) {
+      return NextResponse.json({ 
+        message: 'Selected position is not available for this election' 
+      }, { status: 400 });
+    }
+
     // Check for unique constraint (Position_ID, Ward_Code, Party_ID)
     if (data.Position_ID && data.Ward_Code && data.Party_ID) {
       const existingCandidate = await prisma.candidates.findFirst({
@@ -200,16 +250,30 @@ export async function POST(req: NextRequest) {
       Image: imageBuffer
     };
 
-    const candidate = await prisma.candidates.create({ 
-      data: candidateData,
-      include: {
-        Positions: true,
-        Wards: true,
-        Parties: true
-      }
+    // Use transaction to create candidate and election candidate relationship
+    const result = await prisma.$transaction(async (tx) => {
+      // Create the candidate
+      const candidate = await tx.candidates.create({ 
+        data: candidateData,
+        include: {
+          Positions: true,
+          Wards: true,
+          Parties: true
+        }
+      });
+
+      // Create the election candidate relationship
+      await tx.electionCandidates.create({
+        data: {
+          Election: data.Election_ID,
+          Candidate: candidate.Candidate_ID
+        }
+      });
+
+      return candidate;
     });
 
-    return NextResponse.json(candidate, { status: 201 });
+    return NextResponse.json(result, { status: 201 });
   } catch (error) {
     console.error('Error creating candidate:', error);
     return NextResponse.json({ message: 'Internal server error' }, { status: 500 });

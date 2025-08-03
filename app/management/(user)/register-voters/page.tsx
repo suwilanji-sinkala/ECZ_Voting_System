@@ -109,6 +109,12 @@ export default function VotersList() {
     setCurrentPage(page);
   };
 
+  // Handle voter search with pagination reset
+  const handleVoterSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setVoterSearch(e.target.value);
+    setCurrentPage(1); // Reset to first page when searching
+  };
+
   // Fetch all wards for modal
   useEffect(() => {
     const fetchWards = async () => {
@@ -183,6 +189,7 @@ export default function VotersList() {
         district: data.district?.District_Name || "",
       }));
       setSelectedWardCode(ward.Ward_Code);
+      setCurrentPage(1); // Reset to first page when ward changes
       setShowWardModal(false);
       setWardSearch("");
     } catch (err) {
@@ -494,7 +501,7 @@ export default function VotersList() {
               type="text"
               placeholder="Search voters by name, NRC, or email..."
               value={voterSearch}
-              onChange={e => setVoterSearch(e.target.value)}
+                onChange={handleVoterSearch}
               className={styles.inputField}
               style={{ width: "100%", maxWidth: 350 }}
             />
@@ -565,10 +572,85 @@ export default function VotersList() {
 
           {/* Pagination Controls */}
           {totalPages > 1 && (
-            <div style={{ display: 'flex', justifyContent: 'center', marginTop: 16, gap: 8 }}>
-              <button onClick={() => goToPage(currentPage - 1)} disabled={currentPage === 1}>Previous</button>
-              <span>Page {currentPage} of {totalPages}</span>
-              <button onClick={() => goToPage(currentPage + 1)} disabled={currentPage === totalPages}>Next</button>
+            <div style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              marginTop: '20px',
+              padding: '15px',
+              backgroundColor: '#f8f9fa',
+              borderRadius: '8px',
+              border: '1px solid #dee2e6'
+            }}>
+              <div style={{ fontSize: '14px', color: '#666' }}>
+                Showing {((currentPage - 1) * votersPerPage) + 1} to {Math.min(currentPage * votersPerPage, sortedVoters.length)} of {sortedVoters.length} voters
+              </div>
+              
+              <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+                <button
+                  onClick={() => goToPage(currentPage - 1)}
+                  disabled={currentPage === 1}
+                  style={{
+                    padding: '8px 12px',
+                    border: '1px solid #dee2e6',
+                    backgroundColor: currentPage === 1 ? '#f8f9fa' : '#fff',
+                    color: currentPage === 1 ? '#6c757d' : '#333',
+                    borderRadius: '4px',
+                    cursor: currentPage === 1 ? 'not-allowed' : 'pointer',
+                    fontSize: '14px'
+                  }}
+                >
+                  Previous
+                </button>
+                
+                {Array.from({ length: Math.min(5, totalPages) }, (_, i) => {
+                  let pageNum;
+                  if (totalPages <= 5) {
+                    pageNum = i + 1;
+                  } else if (currentPage <= 3) {
+                    pageNum = i + 1;
+                  } else if (currentPage >= totalPages - 2) {
+                    pageNum = totalPages - 4 + i;
+                  } else {
+                    pageNum = currentPage - 2 + i;
+                  }
+                  
+                  return (
+                    <button
+                      key={pageNum}
+                      onClick={() => goToPage(pageNum)}
+                      style={{
+                        padding: '8px 12px',
+                        border: '1px solid #dee2e6',
+                        backgroundColor: currentPage === pageNum ? '#007bff' : '#fff',
+                        color: currentPage === pageNum ? '#fff' : '#333',
+                        borderRadius: '4px',
+                        cursor: 'pointer',
+                        fontSize: '14px',
+                        minWidth: '40px'
+                      }}
+                    >
+                      {pageNum}
+                    </button>
+                  );
+                })}
+                
+                <button
+                  onClick={() => goToPage(currentPage + 1)}
+                  disabled={currentPage === totalPages}
+                  style={{
+                    padding: '8px 12px',
+                    border: '1px solid #dee2e6',
+                    backgroundColor: currentPage === totalPages ? '#f8f9fa' : '#fff',
+                    color: currentPage === totalPages ? '#6c757d' : '#333',
+                    borderRadius: '4px',
+                    cursor: currentPage === totalPages ? 'not-allowed' : 'pointer',
+                    fontSize: '14px'
+                  }}
+                >
+                  Next
+                </button>
+              </div>
             </div>
           )}
         </div>

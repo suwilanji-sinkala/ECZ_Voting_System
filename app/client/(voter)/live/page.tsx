@@ -202,13 +202,13 @@ export default function LiveResultsPage() {
               <h3>Votes Cast</h3>
               <p>{liveData.overallStats.totalVotesCast.toLocaleString()}</p>
             </div>
-          </div>
+                  </div>
           <div className={styles.statCard}>
             <div className={styles.statIcon}>📊</div>
             <div className={styles.statContent}>
               <h3>Turnout</h3>
               <p>{liveData.overallStats.overallTurnout.toFixed(1)}%</p>
-            </div>
+              </div>
           </div>
           <div className={styles.statCard}>
             <div className={styles.statIcon}>🏛️</div>
@@ -217,7 +217,7 @@ export default function LiveResultsPage() {
               <p>{liveData.overallStats.totalActiveElections}</p>
             </div>
           </div>
-        </div>
+                  </div>
 
         <div className={styles.electionSelector}>
           <h3>Select Election</h3>
@@ -233,7 +233,7 @@ export default function LiveResultsPage() {
               </button>
             ))}
           </div>
-        </div>
+          </div>
 
         {selectedElection && (
           <div className={styles.selectedElection}>
@@ -270,13 +270,13 @@ export default function LiveResultsPage() {
                           <span className={styles.metaLabel}>Voter Turnout:</span>
                           <span className={styles.metaValue}>
                             {election.voterTurnout.toFixed(1)}%
-                          </span>
-                        </div>
+              </span>
+            </div>
                         <div className={styles.metaItem}>
                           <span className={styles.metaLabel}>Total Votes:</span>
                           <span className={styles.metaValue}>
                             {election.totalVotes.toLocaleString()}
-                          </span>
+                    </span>
                         </div>
                       </div>
                     </div>
@@ -322,9 +322,9 @@ export default function LiveResultsPage() {
                                     ) : (
                                       <div className={styles.candidatePlaceholder}>
                                         👤
-                                      </div>
-                                    )}
-                                  </div>
+              </div>
+            )}
+          </div>
                                   <div className={styles.candidateInfo}>
                                     <h4>{candidate.name}</h4>
                                     <p className={styles.partyInfo}>
@@ -345,12 +345,12 @@ export default function LiveResultsPage() {
                                       className={styles.progressFill}
                                       style={{ width: `${candidate.percentage}%` }}
                                     ></div>
-                                  </div>
-                                </div>
-                              ))}
-                            </div>
-                          )}
-                        </div>
+            </div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
                       );
                     })}
                   </div>

@@ -1,0 +1,112 @@
+{
+  "name": "election-network",
+  "version": "1.0.0",
+  "client": {
+    "organization": "ECZMSP",
+    "connection": {
+      "timeout": {
+        "peer": {
+          "endorser": "300"
+        },
+        "orderer": "300"
+      }
+    }
+  },
+  "channels": {
+    "electionchannel": {
+      "orderers": [
+        "orderer.election.com"
+      ],
+      "peers": {
+        "peer0.ecz.election.com": {
+          "endorsingPeer": true,
+          "chaincodeQuery": true,
+          "ledgerQuery": true,
+          "eventSource": true
+        },
+        "peer0.voter.election.com": {
+          "endorsingPeer": false,
+          "chaincodeQuery": true,
+          "ledgerQuery": true,
+          "eventSource": true
+        }
+      }
+    }
+  },
+  "organizations": {
+    "ECZMSP": {
+      "mspid": "ECZMSP",
+      "peers": [
+        "peer0.ecz.election.com"
+      ],
+      "certificateAuthorities": [
+        "ca.ecz.election.com"
+      ]
+    },
+    "VoterMSP": {
+      "mspid": "VoterMSP",
+      "peers": [
+        "peer0.voter.election.com"
+      ],
+      "certificateAuthorities": [
+        "ca.voter.election.com"
+      ]
+    }
+  },
+  "orderers": {
+    "orderer.election.com": {
+      "url": "grpc://localhost:7050",
+      "tlsCACerts": {
+        "path": "organizations/ordererOrganizations/election.com/orderers/orderer.election.com/msp/tlscacerts/tlsca.election.com-cert.pem"
+      },
+      "grpcOptions": {
+        "ssl-target-name-override": "orderer.election.com",
+        "hostnameOverride": "orderer.election.com"
+      }
+    }
+  },
+  "peers": {
+    "peer0.ecz.election.com": {
+      "url": "grpc://localhost:7051",
+      "tlsCACerts": {
+        "path": "organizations/peerOrganizations/ecz.election.com/peers/peer0.ecz.election.com/tls/ca.crt"
+      },
+      "grpcOptions": {
+        "ssl-target-name-override": "peer0.ecz.election.com",
+        "hostnameOverride": "peer0.ecz.election.com"
+      }
+    },
+    "peer0.voter.election.com": {
+      "url": "grpc://localhost:8051",
+      "tlsCACerts": {
+        "path": "organizations/peerOrganizations/voter.election.com/peers/peer0.voter.election.com/tls/ca.crt"
+      },
+      "grpcOptions": {
+        "ssl-target-name-override": "peer0.voter.election.com",
+        "hostnameOverride": "peer0.voter.election.com"
+      }
+    }
+  },
+  "certificateAuthorities": {
+    "ca.ecz.election.com": {
+      "url": "https://localhost:7054",
+      "caName": "ca-ecz-election-com",
+      "tlsCACerts": {
+        "path": "organizations/peerOrganizations/ecz.election.com/ca/ca.ecz.election.com-cert.pem"
+      },
+      "httpOptions": {
+        "verify": false
+      }
+    },
+    "ca.voter.election.com": {
+      "url": "https://localhost:8054",
+      "caName": "ca-voter-election-com",
+      "tlsCACerts": {
+        "path": "organizations/peerOrganizations/voter.election.com/ca/ca.voter.election.com-cert.pem"
+      },
+      "httpOptions": {
+        "verify": false
+      }
+    }
+  }
+} 

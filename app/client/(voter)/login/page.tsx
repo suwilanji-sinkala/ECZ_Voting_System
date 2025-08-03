@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import styles from "./page.module.css";
-import "bootstrap-icons/font/bootstrap-icons.css";
+// Bootstrap Icons are loaded via CDN in layout.tsx
 
 export default function VoterLogin() {
   const [NRC, setNRC] = useState("");

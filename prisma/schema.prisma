@@ -8,30 +8,31 @@ datasource db {
 }
 
 model Candidates {
-  Candidate_ID Int        @id @default(autoincrement())
-  FirstName    String
-  LastName     String
-  Othername    String?
-  AliasName    String?
-  Party_ID     Int?
-  Ward_Code    String?
-  Position_ID  Int?
-  Image        Bytes?
-  Positions    Positions? @relation(fields: [Position_ID], references: [Position_ID], onDelete: NoAction, onUpdate: NoAction)
-  Wards        Wards?     @relation(fields: [Ward_Code], references: [Ward_Code], onDelete: NoAction, onUpdate: NoAction)
-  Parties      Parties?   @relation(fields: [Party_ID], references: [Party_ID], onDelete: NoAction, onUpdate: NoAction)
-  Votes        Votes[]
+  Candidate_ID       Int                  @id @default(autoincrement())
+  FirstName          String
+  LastName           String
+  Othername          String?
+  AliasName          String?
+  Party_ID           Int?
+  Ward_Code          String?
+  Position_ID        Int?
+  Image              Bytes?
+  Positions          Positions?           @relation(fields: [Position_ID], references: [Position_ID], onDelete: NoAction, onUpdate: NoAction)
+  Wards              Wards?               @relation(fields: [Ward_Code], references: [Ward_Code], onDelete: NoAction, onUpdate: NoAction)
+  Parties            Parties?             @relation(fields: [Party_ID], references: [Party_ID], onDelete: NoAction, onUpdate: NoAction)
+  ElectionCandidates ElectionCandidates[]
+  Votes              Votes[]
 
   @@unique([Position_ID, Ward_Code, Party_ID], map: "sqlite_autoindex_Candidates_1")
 }
 
 model Constituencies {
-  Constituency_Code Int        @id @default(autoincrement())
+  Constituency_Code Int         @id @default(autoincrement())
   Constituency_Name String?
   District_Code     String?
-  Districts         Districts? @relation(fields: [District_Code], references: [District_Code], onDelete: NoAction, onUpdate: NoAction)
-  Wards             Wards[]
+  Districts         Districts?  @relation(fields: [District_Code], references: [District_Code], onDelete: NoAction, onUpdate: NoAction)
   Elections         Elections[]
+  Wards             Wards[]
 }
 
 model Districts {
@@ -40,8 +41,18 @@ model Districts {
   District_Name  String
   Province_Code  Int?
   Constituencies Constituencies[]
-  Elections      Elections[]
   Provinces      Provinces?       @relation(fields: [Province_Code], references: [Province_Code], onDelete: NoAction, onUpdate: NoAction)
+  Elections      Elections[]
+}
+
+model ElectionCandidates {
+  id         Int         @id @default(autoincrement())
+  Election   Int?
+  Candidate  Int?
+  Elections  Elections?  @relation(fields: [Election], references: [Election_ID], onDelete: NoAction, onUpdate: NoAction)
+  Candidates Candidates? @relation(fields: [Candidate], references: [Candidate_ID], onDelete: NoAction, onUpdate: NoAction)
+
+  @@unique([Election, Candidate], map: "sqlite_autoindex_ElectionCandidates_1")
 }
 
 model ElectionPositions {
@@ -60,28 +71,26 @@ model Election_Voters {
 }
 
 model Elections {
-  Election_ID       Int                 @id @default(autoincrement())
-  title             String
-  Description       String?
-  StartDate         String
-  EndDate           String
-  Status            String
-  Year              Int
-  Election_Type     String
-  // Location-based voting restrictions
-  Province_Code     Int?
-  District_Code     String?
-  Constituency_Code Int?
-  Ward_Code         String?
-  // Relationships
-  ElectionPositions ElectionPositions[]
-  Election_Voters   Election_Voters[]
-  Votes             Votes[]
-  // Location relationships
-  Provinces         Provinces?          @relation(fields: [Province_Code], references: [Province_Code], onDelete: NoAction, onUpdate: NoAction)
-  Districts         Districts?          @relation(fields: [District_Code], references: [District_Code], onDelete: NoAction, onUpdate: NoAction)
-  Constituencies    Constituencies?     @relation(fields: [Constituency_Code], references: [Constituency_Code], onDelete: NoAction, onUpdate: NoAction)
-  Wards             Wards?              @relation(fields: [Ward_Code], references: [Ward_Code], onDelete: NoAction, onUpdate: NoAction)
+  Election_ID        Int                  @id @default(autoincrement())
+  title              String
+  Description        String?
+  StartDate          String
+  EndDate            String
+  Status             String
+  Year               Int
+  Election_Type      String
+  Province_Code      Int?
+  District_Code      String?
+  Constituency_Code  Int?
+  Ward_Code          String?
+  ElectionCandidates ElectionCandidates[]
+  ElectionPositions  ElectionPositions[]
+  Election_Voters    Election_Voters[]
+  Wards              Wards?               @relation(fields: [Ward_Code], references: [Ward_Code], onDelete: NoAction, onUpdate: NoAction)
+  Constituencies     Constituencies?      @relation(fields: [Constituency_Code], references: [Constituency_Code], onDelete: NoAction, onUpdate: NoAction)
+  Districts          Districts?           @relation(fields: [District_Code], references: [District_Code], onDelete: NoAction, onUpdate: NoAction)
+  Provinces          Provinces?           @relation(fields: [Province_Code], references: [Province_Code], onDelete: NoAction, onUpdate: NoAction)
+  Votes              Votes[]
 }
 
 model Levels {
@@ -143,8 +152,8 @@ model Wards {
   Ward_Name         String
   Constituency_Code Int?
   Candidates        Candidates[]
+  Elections         Elections[]
   Voters            Voters[]
   Votes             Votes[]
-  Elections         Elections[]
   Constituencies    Constituencies? @relation(fields: [Constituency_Code], references: [Constituency_Code], onDelete: NoAction, onUpdate: NoAction)
 }

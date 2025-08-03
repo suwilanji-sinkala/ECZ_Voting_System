@@ -1,0 +1,42 @@
+OrdererOrgs:
+  - &OrdererOrg
+    Name: OrdererOrg
+    ID: OrdererMSP
+    MSPDir: crypto-config/ordererOrganizations/election.com/msp
+
+PeerOrgs:
+  - &ECZ
+    Name: ECZMSP
+    ID: ECZMSP
+    MSPDir: crypto-config/peerOrganizations/ecz.election.com/msp
+    Policies:
+      Readers:
+        Type: Signature
+        Rule: "OR('ECZMSP.member')"
+      Writers:
+        Type: Signature
+        Rule: "OR('ECZMSP.member')"
+      Admins:
+        Type: Signature
+        Rule: "OR('ECZMSP.admin')"
+    AnchorPeers:
+      - Host: peer0.ecz.election.com
+        Port: 7051
+
+  - &Voter
+    Name: VoterMSP
+    ID: VoterMSP
+    MSPDir: crypto-config/peerOrganizations/voter.election.com/msp
+    Policies:
+      Readers:
+        Type: Signature
+        Rule: "OR('VoterMSP.member')"
+      Writers:
+        Type: Signature
+        Rule: "OR('VoterMSP.member')"
+      Admins:
+        Type: Signature
+        Rule: "OR('VoterMSP.admin')"
+    AnchorPeers:
+      - Host: peer0.voter.election.com
+        Port: 8051 

@@ -1,0 +1,80 @@
+{
+  "ELECTION_1753002351351_g4u223ub2": {
+    "electionId": "ELECTION_1753002351351_g4u223ub2",
+    "title": "Test Presidential Election 2024",
+    "description": "Test election for blockchain integration",
+    "startDate": "2024-08-12T08:00:00Z",
+    "endDate": "2024-08-12T18:00:00Z",
+    "status": "draft",
+    "year": 2024,
+    "electionType": "general",
+    "wardCode": "",
+    "constituencyCode": "",
+    "districtCode": ""
+  },
+  "ELECTION_1753002375831_84on111eo": {
+    "electionId": "ELECTION_1753002375831_84on111eo",
+    "title": "Test Presidential Election 2024",
+    "description": "Test election for blockchain integration",
+    "startDate": "2024-08-12T08:00:00Z",
+    "endDate": "2024-08-12T18:00:00Z",
+    "status": "draft",
+    "year": 2024,
+    "electionType": "general",
+    "wardCode": "",
+    "constituencyCode": "",
+    "districtCode": ""
+  },
+  "ELECTION_1753002403481_7twyxqe3c": {
+    "electionId": "ELECTION_1753002403481_7twyxqe3c",
+    "title": "Test Presidential Election 2024",
+    "description": "Test election for blockchain integration",
+    "startDate": "2024-08-12T08:00:00Z",
+    "endDate": "2024-08-12T18:00:00Z",
+    "status": "draft",
+    "year": 2024,
+    "electionType": "general",
+    "wardCode": "",
+    "constituencyCode": "",
+    "districtCode": ""
+  },
+  "ELECTION_1753003254458_4cekjnnq5": {
+    "electionId": "ELECTION_1753003254458_4cekjnnq5",
+    "title": "Test Presidential Election 2024",
+    "description": "Test election for blockchain integration",
+    "startDate": "2024-08-12T08:00:00Z",
+    "endDate": "2024-08-12T18:00:00Z",
+    "status": "draft",
+    "year": 2024,
+    "electionType": "general",
+    "wardCode": "",
+    "constituencyCode": "",
+    "districtCode": ""
+  },
+  "ELECTION_1753004099623_38lomugrp": {
+    "electionId": "ELECTION_1753004099623_38lomugrp",
+    "title": "Blockchain Verification Election",
+    "description": "Test election for blockchain verification",
+    "startDate": "2024-08-12T08:00:00Z",
+    "endDate": "2024-08-12T18:00:00Z",
+    "status": "draft",
+    "year": 2024,
+    "electionType": "general",
+    "wardCode": "",
+    "constituencyCode": "",
+    "districtCode": ""
+  },
+  "ELECTION_1753004101305_lfmi9t0e8": {
+    "electionId": "ELECTION_1753004101305_lfmi9t0e8",
+    "title": "Performance Test Election",
+    "description": "Quick performance test",
+    "startDate": "2024-08-12T08:00:00Z",
+    "endDate": "2024-08-12T18:00:00Z",
+    "status": "draft",
+    "year": 2024,
+    "electionType": "general",
+    "wardCode": "",
+    "constituencyCode": "",
+    "districtCode": ""
+  }
+}

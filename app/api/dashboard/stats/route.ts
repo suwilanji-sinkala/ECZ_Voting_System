@@ -37,7 +37,10 @@ export async function GET() {
         const candidateVotes = await prisma.votes.groupBy({
           by: ['Candidate_ID'],
           where: {
-            Election_ID: election.Election_ID
+            Election_ID: election.Election_ID,
+            Candidate_ID: {
+              not: null
+            }
           },
           _count: {
             Vote_ID: true
@@ -47,9 +50,13 @@ export async function GET() {
         // Get candidate details with vote counts
         const candidateStats = await Promise.all(
           candidateVotes.map(async (vote) => {
+            if (!vote.Candidate_ID) {
+              return null;
+            }
+            
             const candidate = await prisma.candidates.findUnique({
               where: {
-                Candidate_ID: vote.Candidate_ID!
+                Candidate_ID: vote.Candidate_ID
               },
               include: {
                 Parties: true,
@@ -63,13 +70,16 @@ export async function GET() {
               voteCount: vote._count.Vote_ID
             };
           })
-        );
+        ).then(stats => stats.filter(stat => stat !== null));
 
         // Get votes by ward for this election
         const wardVotes = await prisma.votes.groupBy({
           by: ['Ward_Code'],
           where: {
-            Election_ID: election.Election_ID
+            Election_ID: election.Election_ID,
+            Ward_Code: {
+              not: null
+            }
           },
           _count: {
             Vote_ID: true
@@ -79,9 +89,13 @@ export async function GET() {
         // Get ward details with vote counts
         const wardStats = await Promise.all(
           wardVotes.map(async (vote) => {
+            if (!vote.Ward_Code) {
+              return null;
+            }
+            
             const ward = await prisma.wards.findUnique({
               where: {
-                Ward_Code: vote.Ward_Code!
+                Ward_Code: vote.Ward_Code
               }
             });
 
@@ -90,7 +104,7 @@ export async function GET() {
               voteCount: vote._count.Vote_ID
             };
           })
-        );
+        ).then(stats => stats.filter(stat => stat !== null));
 
         return {
           election,

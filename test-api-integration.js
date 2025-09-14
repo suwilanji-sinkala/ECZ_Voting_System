@@ -16,7 +16,7 @@ async function testApiIntegration() {
     const contractPath = path.join(__dirname, 'build', 'contracts', 'ElectionSystem.json');
     const contractArtifact = JSON.parse(fs.readFileSync(contractPath, 'utf8'));
     
-    const deployedAddress = '0x08eBb403149e61ae33bce43929Ff440Ff81256c0';
+    const deployedAddress = '0x086eA9ABD1Fc4C00c74b04aD3BE0F892f3282050';
     const contract = new web3.eth.Contract(contractArtifact.abi, deployedAddress);
     
     console.log(`✅ Connected to contract at: ${deployedAddress}`);

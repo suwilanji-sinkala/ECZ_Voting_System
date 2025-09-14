@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
+import { getEthereumClient, ElectionData } from '@/lib/ethereum-client';
 
 // Helper to format election with positions
 const formatElectionWithPositions = (election: any) => ({
@@ -48,6 +49,10 @@ export async function POST(request: Request) {
       positionIds
     } = await request.json();
 
+    // Generate unique election ID for blockchain
+    const blockchainElectionId = `ELECTION_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+
+    // Create election in database first
     const newElection = await prisma.elections.create({
       data: {
         title,
@@ -72,7 +77,50 @@ export async function POST(request: Request) {
       }
     });
 
-    return NextResponse.json(formatElectionWithPositions(newElection), { status: 201 });
+    // Create election on Ethereum blockchain
+    try {
+      const ethereumClient = await getEthereumClient();
+      
+      const electionData: ElectionData = {
+        electionId: blockchainElectionId,
+        title: title,
+        description: Description || '',
+        startDate: StartDate,
+        endDate: EndDate,
+        status: Status || 'draft',
+        year: parseInt(Year) || new Date().getFullYear(),
+        electionType: Election_Type || 'general',
+        wardCode: '',
+        constituencyCode: '',
+        districtCode: ''
+      };
+
+      await ethereumClient.createElection(electionData);
+
+      console.log('Election created successfully on both database and Ethereum blockchain:', {
+        electionId: newElection.Election_ID,
+        blockchainId: blockchainElectionId,
+        title: title
+      });
+
+      // Return election with blockchain info
+      return NextResponse.json({
+        ...formatElectionWithPositions(newElection),
+        blockchainId: blockchainElectionId,
+        blockchainVerified: true
+      }, { status: 201 });
+
+    } catch (blockchainError) {
+      console.error('Blockchain creation failed, but database election created:', blockchainError);
+      
+      // Return election without blockchain info (database only)
+      return NextResponse.json({
+        ...formatElectionWithPositions(newElection),
+        blockchainVerified: false,
+        blockchainError: 'Failed to create on blockchain'
+      }, { status: 201 });
+    }
+
   } catch (error) {
     console.error('Error creating election:', error);
     return NextResponse.json(

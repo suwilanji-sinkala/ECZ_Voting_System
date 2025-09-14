@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import styles from "./page.module.css";
 import Navbar from "../../components/Navbar";
+import MetaMaskVoteButton from "../../../components/MetaMaskVoteButton";
 
 interface Candidate {
   Candidate_ID: number;
@@ -67,6 +68,8 @@ export default function VoteCandidatesPage() {
   const [hasVoted, setHasVoted] = useState<Record<number, boolean>>({}); // electionId -> bool
   const [submitting, setSubmitting] = useState(false);
   const [currentStep, setCurrentStep] = useState<'elections' | 'voting' | 'confirmation'>('elections');
+  const [metamaskVotes, setMetamaskVotes] = useState<Record<string, boolean>>({}); // "electionId_positionId" -> bool
+  const [metamaskError, setMetamaskError] = useState<string | null>(null);
 
   // Fetch voter info
   useEffect(() => {
@@ -146,7 +149,7 @@ export default function VoteCandidatesPage() {
     setVotes(prev => ({ ...prev, [positionId]: candidateId }));
   };
 
-  // Handle vote submission
+  // Handle vote submission (server-side)
   const handleSubmitVote = async () => {
     if (!voter || !selectedElection) return;
     setSubmitting(true);
@@ -172,6 +175,34 @@ export default function VoteCandidatesPage() {
     } finally {
       setSubmitting(false);
     }
+  };
+
+  // Handle MetaMask vote success
+  const handleMetaMaskVoteSuccess = (transactionHash: string, positionId: number) => {
+    const voteKey = `${selectedElection?.Election_ID}_${positionId}`;
+    setMetamaskVotes(prev => ({ ...prev, [voteKey]: true }));
+    setMetamaskError(null);
+    
+    // Check if all positions have been voted on
+    if (selectedElection) {
+      const allVoted = selectedElection.positions.every(pos => 
+        metamaskVotes[`${selectedElection.Election_ID}_${pos.Position_ID}`] || 
+        votes[pos.Position_ID]
+      );
+      
+      if (allVoted) {
+        setCurrentStep('confirmation');
+        setHasVoted(prev => ({ ...prev, [selectedElection.Election_ID]: true }));
+      }
+    }
+    
+    console.log('MetaMask vote successful:', transactionHash);
+  };
+
+  // Handle MetaMask vote error
+  const handleMetaMaskVoteError = (error: string) => {
+    setMetamaskError(error);
+    console.error('MetaMask vote failed:', error);
   };
 
   // Format date for display
@@ -403,6 +434,21 @@ export default function VoteCandidatesPage() {
                           <span className={styles.selectedIcon}>✓</span>
                         )}
                       </div>
+
+                      {/* MetaMask Vote Button */}
+                      {votes[position.Position_ID] === candidate.Candidate_ID && (
+                        <div className={styles.metamaskVoteSection}>
+                          <MetaMaskVoteButton
+                            electionId={selectedElection.Election_ID}
+                            candidateId={candidate.Candidate_ID}
+                            positionId={position.Position_ID}
+                            wardCode={voter?.Ward || ''}
+                            voterId={voter?.id || ''}
+                            onVoteSuccess={(txHash) => handleMetaMaskVoteSuccess(txHash, position.Position_ID)}
+                            onVoteError={handleMetaMaskVoteError}
+                          />
+                        </div>
+                      )}
                     </div>
                   ))}
                 </div>

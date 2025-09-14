@@ -1,6 +1,6 @@
 # Election Management System with Blockchain Integration
 
-A comprehensive election management system built with Next.js, Prisma, and Hyperledger Fabric blockchain technology. This system provides secure, transparent, and immutable voting records with location-based voter eligibility.
+A comprehensive election management system built with Next.js, Prisma, and Ethereum blockchain technology. This system provides secure, transparent, and immutable voting records with location-based voter eligibility.
 
 ## Features
 
@@ -11,9 +11,9 @@ A comprehensive election management system built with Next.js, Prisma, and Hyper
 - **Voting System**: Secure voting with blockchain immutability
 - **Results Management**: Real-time and final election results
 
-### Blockchain Integration (Hyperledger Fabric)
+### Blockchain Integration (Ethereum/Ganache)
 - **Immutable Vote Records**: All votes are stored on the blockchain for transparency
-- **Smart Contract Logic**: Chaincode handles voting rules and eligibility checks
+- **Smart Contract Logic**: Solidity contracts handle voting rules and eligibility checks
 - **Audit Trail**: Complete history of all voting activities
 - **Decentralized Storage**: Distributed ledger ensures data integrity
 - **Location-Based Access Control**: Voters can only access elections for their constituency/ward
@@ -29,15 +29,13 @@ A comprehensive election management system built with Next.js, Prisma, and Hyper
 - **Frontend**: Next.js 14, React 18, TypeScript
 - **Backend**: Next.js API Routes, Prisma ORM
 - **Database**: SQLite (development), PostgreSQL (production ready)
-- **Blockchain**: Hyperledger Fabric 2.2.12
-- **Smart Contracts**: Go chaincode
+- **Blockchain**: Ethereum/Ganache (local development)
+- **Smart Contracts**: Solidity
 - **Authentication**: Custom voter authentication system
 
 ## Prerequisites
 
 - Node.js 18+ 
-- Docker and Docker Compose
-- Go 1.19+ (for chaincode development)
 - Git
 
 ## Installation
@@ -59,36 +57,21 @@ npx prisma generate
 npx prisma db push
 ```
 
-### 4. Set Up Hyperledger Fabric Network
+### 4. Set Up Ethereum/Ganache Blockchain
 
-#### Option A: Automated Setup (Recommended)
+#### Start Ganache (Local Blockchain)
 ```bash
-# Make setup script executable
-chmod +x blockchain/scripts/setup.sh
-
-# Run the setup script
-npm run fabric:setup
+# Start Ganache CLI
+npm run ganache:start
 ```
 
-#### Option B: Manual Setup
+#### Compile and Deploy Smart Contracts
 ```bash
-# Navigate to blockchain directory
-cd blockchain
+# Compile Solidity contracts
+npm run truffle:compile
 
-# Download Fabric binaries
-curl -sSL https://bit.ly/2ysbOFE | bash -s -- 2.2.12 1.4.9
-
-# Generate crypto materials
-cryptogen generate --config=./organizations/cryptogen/crypto-config.yaml --output="organizations"
-
-# Generate genesis block
-configtxgen -profile TwoOrgsOrdererGenesis -channelID system-channel -outputBlock ./system-genesis-block/genesis.block
-
-# Start the network
-docker-compose -f docker/docker-compose-net.yaml up -d
-
-# Install and deploy chaincode
-npm run fabric:deploy
+# Deploy contracts to Ganache
+npm run truffle:migrate
 ```
 
 ### 5. Start the Application
@@ -112,14 +95,13 @@ my-app/
 │   │   └── voters/               # Voter management APIs
 │   ├── client/                   # Voter-facing pages
 │   └── management/               # Admin management pages
-├── blockchain/                   # Hyperledger Fabric configuration
-│   ├── chaincode/                # Smart contracts (Go)
-│   ├── docker/                   # Docker configuration
-│   ├── organizations/            # Network organization config
-│   └── scripts/                  # Setup and deployment scripts
-├── lib/                          # Shared libraries
-│   ├── prisma.ts                 # Database client
-│   └── fabric-client.ts          # Blockchain client
+├── contracts/                    # Ethereum smart contracts
+│   └── ElectionSystem.sol        # Solidity smart contract
+├── migrations/                   # Truffle migration files
+│   └── 1_deploy_election_system.js
+├── lib/                          # Utility libraries
+│   ├── ethereum-client.ts        # Ethereum blockchain client
+│   └── prisma.ts                 # Database client
 ├── prisma/                       # Database schema and migrations
 └── public/                       # Static assets
 ```
@@ -205,28 +187,33 @@ const response = await fetch('/api/blockchain/vote', {
 
 ## Blockchain Commands
 
-### Network Management
+### Ganache Management
 ```bash
-# Start the network
-npm run fabric:start
+# Start Ganache blockchain
+npm run ganache:start
 
-# Stop the network
-npm run fabric:stop
-
-# Deploy chaincode updates
-npm run fabric:deploy
+# Stop Ganache (Ctrl+C in the terminal)
 ```
 
-### Chaincode Operations
+### Smart Contract Operations
 ```bash
-# Query election results
-docker exec cli peer chaincode query -C electionchannel -n election -c '{"Args":["GetElectionResults","ELECTION_1"]}'
+# Compile contracts
+npm run truffle:compile
 
-# Check voter eligibility
-docker exec cli peer chaincode query -C electionchannel -n election -c '{"Args":["IsVoterEligible","001W","ELECTION_1"]}'
+# Deploy contracts
+npm run truffle:migrate
 
-# Get vote history
-docker exec cli peer chaincode query -C electionchannel -n election -c '{"Args":["GetVoteHistory","001W"]}'
+# Test contracts
+npm run truffle:test
+
+# Open Truffle console
+npm run truffle:console
+```
+
+### Testing the Setup
+```bash
+# Test Ethereum/Ganache integration
+node test-ethereum.js
 ```
 
 ## Security Considerations
@@ -248,11 +235,11 @@ docker exec cli peer chaincode query -C electionchannel -n election -c '{"Args":
 
 ## Development
 
-### Adding New Chaincode Functions
-1. Modify `blockchain/chaincode/election-chaincode.go`
-2. Update the Fabric client in `lib/fabric-client.ts`
+### Adding New Smart Contract Functions
+1. Modify `contracts/ElectionSystem.sol`
+2. Update the Ethereum client in `lib/ethereum-client.ts`
 3. Create corresponding API endpoints
-4. Deploy updated chaincode: `npm run fabric:deploy`
+4. Deploy updated contracts: `npm run truffle:migrate`
 
 ### Database Schema Changes
 1. Update `prisma/schema.prisma`
@@ -265,7 +252,7 @@ docker exec cli peer chaincode query -C electionchannel -n election -c '{"Args":
 npm test
 
 # Test blockchain functions
-npm run fabric:test
+npm run truffle:test
 
 # Test API endpoints
 npm run test:api
@@ -275,15 +262,16 @@ npm run test:api
 
 ### Production Setup
 1. Configure production database (PostgreSQL)
-2. Set up production Fabric network with proper TLS certificates
+2. Deploy smart contracts to Ethereum testnet/mainnet
 3. Configure environment variables
 4. Deploy using Docker or cloud platform
 
 ### Environment Variables
 ```env
 DATABASE_URL="postgresql://user:password@localhost:5432/election_db"
-FABRIC_NETWORK_CONFIG_PATH="/path/to/connection-profile.json"
-FABRIC_WALLET_PATH="/path/to/wallet"
+ETHEREUM_RPC_URL="http://localhost:7545"
+CONTRACT_ADDRESS="0x..."
+PRIVATE_KEY="0x..."
 ```
 
 ## Contributing

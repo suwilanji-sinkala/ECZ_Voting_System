@@ -1262,6 +1262,132 @@ export default function CandidateList() {
               </div>
             </div>
           )}
+
+          {/* Edit Candidate Modal */}
+          {editCandidateId && (
+            <div className={styles.modalOverlay}>
+              <div className={styles.modal} style={{ maxWidth: '600px' }}>
+                <div className={styles.modalHeader}>
+                  <h3>Edit Candidate</h3>
+                  <button onClick={cancelEditCandidate} className={styles.closeButton}>
+                    ×
+                  </button>
+                </div>
+                <div className={styles.modalBody}>
+                  {editError && (
+                    <div style={{ 
+                      marginBottom: 16, 
+                      padding: 12, 
+                      backgroundColor: "#f8d7da", 
+                      color: "#721c24", 
+                      border: "1px solid #f5c6cb", 
+                      borderRadius: 4 
+                    }}>
+                      {editError}
+                    </div>
+                  )}
+                  
+                  {editSuccess && (
+                    <div style={{ 
+                      marginBottom: 16, 
+                      padding: 12, 
+                      backgroundColor: "#d4edda", 
+                      color: "#155724", 
+                      border: "1px solid #c3e6cb", 
+                      borderRadius: 4 
+                    }}>
+                      {editSuccess}
+                    </div>
+                  )}
+
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 16 }}>
+                    <div>
+                      <label style={{ display: "block", marginBottom: 4, fontWeight: "bold" }}>
+                        First Name *
+                      </label>
+                      <input
+                        type="text"
+                        name="FirstName"
+                        value={editCandidateData.FirstName || ""}
+                        onChange={handleEditInputChange}
+                        className={styles.inputField}
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label style={{ display: "block", marginBottom: 4, fontWeight: "bold" }}>
+                        Last Name *
+                      </label>
+                      <input
+                        type="text"
+                        name="LastName"
+                        value={editCandidateData.LastName || ""}
+                        onChange={handleEditInputChange}
+                        className={styles.inputField}
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 16 }}>
+                    <div>
+                      <label style={{ display: "block", marginBottom: 4, fontWeight: "bold" }}>
+                        Other Name
+                      </label>
+                      <input
+                        type="text"
+                        name="Othername"
+                        value={editCandidateData.Othername || ""}
+                        onChange={handleEditInputChange}
+                        className={styles.inputField}
+                      />
+                    </div>
+                    <div>
+                      <label style={{ display: "block", marginBottom: 4, fontWeight: "bold" }}>
+                        Nickname/Alias
+                      </label>
+                      <input
+                        type="text"
+                        name="AliasName"
+                        value={editCandidateData.AliasName || ""}
+                        onChange={handleEditInputChange}
+                        className={styles.inputField}
+                      />
+                    </div>
+                  </div>
+
+                  <div style={{ marginBottom: 16 }}>
+                    <label style={{ display: "block", marginBottom: 4, fontWeight: "bold" }}>
+                      Profile Image
+                    </label>
+                    <input
+                      type="file"
+                      accept="image/*"
+                      onChange={handleEditImageChange}
+                      className={styles.inputField}
+                    />
+                  </div>
+
+                  <div style={{ display: 'flex', gap: 12, justifyContent: 'flex-end' }}>
+                    <button
+                      onClick={cancelEditCandidate}
+                      className={styles.actionButton}
+                      style={{ backgroundColor: '#6c757d', color: 'white' }}
+                    >
+                      Cancel
+                    </button>
+                    <button
+                      onClick={saveEditCandidate}
+                      className={styles.actionButton}
+                      style={{ backgroundColor: '#007bff', color: 'white' }}
+                    >
+                      Save Changes
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </ErrorBoundary>

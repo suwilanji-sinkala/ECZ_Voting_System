@@ -184,7 +184,7 @@ export async function PUT(req: NextRequest) {
       }
     });
 
-    // Note: Blockchain updates would require additional chaincode functions
+    // Note: Blockchain updates would require additional smart contract functions
     // For now, we'll just update the database and log the change
     console.log('Election updated in database:', {
       electionId: updatedElection.Election_ID,
@@ -242,7 +242,7 @@ export async function DELETE(req: NextRequest) {
       });
     });
 
-    // Note: Blockchain deletion would require additional chaincode functions
+    // Note: Blockchain deletion would require additional smart contract functions
     // For now, we'll just delete from database and log the change
     console.log('Election deleted from database:', { electionId });
 

@@ -1,7 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
-import { getEthereumClient, CandidateData } from '@/lib/ethereum-client';
-import { logUpdate, logDelete, logBlockchainTx, extractUserContext } from '@/lib/audit';
 
 // GET candidates or a specific candidate by Candidate_ID
 export async function GET(req: NextRequest) {
@@ -275,59 +273,6 @@ export async function POST(req: NextRequest) {
       return candidate;
     });
 
-    // Register candidate on Ethereum blockchain
-    try {
-      const ethereumClient = await getEthereumClient();
-      
-      // Generate unique candidate ID for blockchain
-      const blockchainCandidateId = `CANDIDATE_${result.Candidate_ID}_${Date.now()}`;
-      
-      // Get election details for blockchain registration
-      const election = await prisma.elections.findUnique({
-        where: { Election_ID: data.Election_ID }
-      });
-
-      if (election) {
-        const candidateData: CandidateData = {
-          candidateId: blockchainCandidateId,
-          firstName: result.FirstName,
-          lastName: result.LastName,
-          otherName: result.Othername || '',
-          aliasName: result.AliasName || '',
-          partyId: result.Party_ID?.toString() || '',
-          wardCode: result.Ward_Code || '',
-          positionId: result.Position_ID?.toString() || '',
-          electionId: `ELECTION_${data.Election_ID}` // Use election ID format
-        };
-
-        await ethereumClient.registerCandidate(candidateData);
-
-        console.log('Candidate registered successfully on both database and Ethereum blockchain:', {
-          candidateId: result.Candidate_ID,
-          blockchainId: blockchainCandidateId,
-          name: `${result.FirstName} ${result.LastName}`
-        });
-
-        // Return candidate with blockchain info
-        return NextResponse.json({
-          ...result,
-          blockchainId: blockchainCandidateId,
-          blockchainVerified: true
-        }, { status: 201 });
-      }
-
-    } catch (blockchainError) {
-      console.error('Blockchain registration failed, but database candidate created:', blockchainError);
-      
-      // Return candidate without blockchain info (database only)
-      return NextResponse.json({
-        ...result,
-        blockchainVerified: false,
-        blockchainError: 'Failed to register on blockchain'
-      }, { status: 201 });
-    }
-
-    // Fallback if election not found
     return NextResponse.json(result, { status: 201 });
   } catch (error) {
     console.error('Error creating candidate:', error);
@@ -427,8 +372,7 @@ export async function PUT(req: NextRequest) {
     if (updateData.Othername) updateData.Othername = updateData.Othername.trim();
     if (updateData.AliasName) updateData.AliasName = updateData.AliasName.trim();
 
-    // Extract user context for audit logging
-    const userContext = await extractUserContext(req);
+
     
     const candidate = await prisma.candidates.update({
       where: { Candidate_ID: candidateId },
@@ -450,84 +394,6 @@ export async function PUT(req: NextRequest) {
         }
       }
     });
-
-    // Log the update operation
-    await logUpdate(
-      'candidates',
-      candidateId.toString(),
-      {
-        FirstName: existingCandidate.FirstName,
-        LastName: existingCandidate.LastName,
-        Othername: existingCandidate.Othername,
-        AliasName: existingCandidate.AliasName,
-        Party_ID: existingCandidate.Party_ID,
-        Position_ID: existingCandidate.Position_ID,
-        Ward_Code: existingCandidate.Ward_Code
-      },
-      {
-        FirstName: candidate.FirstName,
-        LastName: candidate.LastName,
-        Othername: candidate.Othername,
-        AliasName: candidate.AliasName,
-        Party_ID: candidate.Party_ID,
-        Position_ID: candidate.Position_ID,
-        Ward_Code: candidate.Ward_Code
-      },
-      { request: req, ...userContext }
-    );
-
-    // Try to update candidate on blockchain
-    try {
-      const ethereumClient = await getEthereumClient();
-      
-      // Generate blockchain candidate ID
-      const blockchainCandidateId = `CANDIDATE_${candidateId}_${Date.now()}`;
-      
-      const candidateData: CandidateData = {
-        candidateId: blockchainCandidateId,
-        firstName: candidate.FirstName,
-        lastName: candidate.LastName,
-        otherName: candidate.Othername || '',
-        aliasName: candidate.AliasName || '',
-        partyId: candidate.Party_ID?.toString() || '',
-        wardCode: candidate.Ward_Code || '',
-        positionId: candidate.Position_ID?.toString() || '',
-        electionId: 'ELECTION_UPDATE' // Placeholder for update tracking
-      };
-
-      await ethereumClient.registerCandidate(candidateData);
-
-      // Log blockchain transaction
-      await logBlockchainTx(
-        'UPDATE_CANDIDATE',
-        'candidates',
-        candidateId.toString(),
-        blockchainCandidateId, // Use blockchain candidate ID as transaction identifier
-        'success',
-        undefined,
-        { request: req, ...userContext }
-      );
-
-      console.log('Candidate updated successfully on both database and blockchain:', {
-        candidateId: candidateId,
-        blockchainId: blockchainCandidateId,
-        name: `${candidate.FirstName} ${candidate.LastName}`
-      });
-
-    } catch (blockchainError) {
-      console.error('Blockchain update failed, but database candidate updated:', blockchainError);
-      
-      // Log failed blockchain transaction
-      await logBlockchainTx(
-        'UPDATE_CANDIDATE',
-        'candidates',
-        candidateId.toString(),
-        'failed',
-        'failed',
-        blockchainError instanceof Error ? blockchainError.message : 'Unknown blockchain error',
-        { request: req, ...userContext }
-      );
-    }
 
 
 
@@ -593,77 +459,9 @@ export async function DELETE(req: NextRequest) {
       }, { status: 409 });
     }
 
-    // Extract user context for audit logging
-    const userContext = await extractUserContext(req);
-
-    // Log the deletion operation before deleting
-    await logDelete(
-      'candidates',
-      candidateId.toString(),
-      {
-        FirstName: existingCandidate.FirstName,
-        LastName: existingCandidate.LastName,
-        Othername: existingCandidate.Othername,
-        AliasName: existingCandidate.AliasName,
-        Party_ID: existingCandidate.Party_ID,
-        Position_ID: existingCandidate.Position_ID,
-        Ward_Code: existingCandidate.Ward_Code,
-        voteCount: existingCandidate._count.Votes
-      },
-      { request: req, ...userContext }
-    );
-
-    // Use transaction to delete candidate and related records
-    await prisma.$transaction(async (tx) => {
-      // First delete from ElectionCandidates table
-      await tx.electionCandidates.deleteMany({
-        where: { Candidate: candidateId }
-      });
-      
-      // Then delete the candidate
-      await tx.candidates.delete({ 
-        where: { Candidate_ID: candidateId } 
-      });
+    await prisma.candidates.delete({ 
+      where: { Candidate_ID: candidateId } 
     });
-
-    // Try to log deletion on blockchain
-    try {
-      const ethereumClient = await getEthereumClient();
-      
-      // Generate blockchain candidate ID for deletion tracking
-      const blockchainCandidateId = `CANDIDATE_${candidateId}_DELETED_${Date.now()}`;
-      
-      // Log blockchain deletion event
-      await logBlockchainTx(
-        'DELETE_CANDIDATE',
-        'candidates',
-        candidateId.toString(),
-        blockchainCandidateId, // Use as transaction hash for deletion tracking
-        'success',
-        undefined,
-        { request: req, ...userContext }
-      );
-
-      console.log('Candidate deleted successfully from database and logged on blockchain:', {
-        candidateId: candidateId,
-        blockchainId: blockchainCandidateId,
-        name: `${existingCandidate.FirstName} ${existingCandidate.LastName}`
-      });
-
-    } catch (blockchainError) {
-      console.error('Blockchain deletion logging failed, but database candidate deleted:', blockchainError);
-      
-      // Log failed blockchain transaction
-      await logBlockchainTx(
-        'DELETE_CANDIDATE',
-        'candidates',
-        candidateId.toString(),
-        'failed',
-        'failed',
-        blockchainError instanceof Error ? blockchainError.message : 'Unknown blockchain error',
-        { request: req, ...userContext }
-      );
-    }
 
     return NextResponse.json({ 
       message: 'Candidate deleted successfully',

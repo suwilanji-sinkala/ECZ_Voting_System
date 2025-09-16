@@ -2,7 +2,6 @@
 import { useState, useEffect } from "react";
 import styles from "./page.module.css";
 import Navbar from "../../components/Navbar";
-import ProtectedRoute from "../../components/ProtectedRoute";
 import { PieChart, BarChart, LineChart, Bar, Line, Pie, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Cell } from "recharts";
 import React from "react";
 
@@ -184,9 +183,8 @@ export default function Dashboard() {
   const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#8884d8'];
 
   return (
-    <ProtectedRoute>
-      <div className={styles.page}>
-        <Navbar title="ECZ - Online Voting System" />
+    <div className={styles.page}>
+      <Navbar title="ECZ - Online Voting System" />
       
       <div className={styles.dashboardContent}>
         <div className={styles.dashboardHeader}>
@@ -356,8 +354,7 @@ export default function Dashboard() {
         </div>
 
 
-        </div>
       </div>
-    </ProtectedRoute>
+    </div>
   );
 }

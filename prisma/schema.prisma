@@ -98,19 +98,6 @@ model Levels {
   Name     Int @unique(map: "sqlite_autoindex_Levels_1")
 }
 
-model ManagementUsers {
-  id           String   @id @default(uuid())
-  employeeId   String   @unique
-  firstName    String
-  lastName     String
-  email        String   @unique
-  passwordHash String
-  role         String   @default("admin") // admin, supervisor, operator
-  isActive     Boolean  @default(true)
-  createdAt    DateTime @default(now())
-  updatedAt    DateTime @updatedAt
-}
-
 model Parties {
   Party_ID      Int          @id @default(autoincrement())
   Party_Name    String       @unique(map: "sqlite_autoindex_Parties_1")
@@ -169,28 +156,4 @@ model Wards {
   Voters            Voters[]
   Votes             Votes[]
   Constituencies    Constituencies? @relation(fields: [Constituency_Code], references: [Constituency_Code], onDelete: NoAction, onUpdate: NoAction)
-}
-
-model AuditLogs {
-  id            Int      @id @default(autoincrement())
-  action        String   // CREATE, UPDATE, DELETE, LOGIN, LOGOUT, VOTE_SUBMIT
-  tableName     String   // Name of the database table affected
-  recordId      String?  // ID of the affected record
-  userId        String?  // ID of the user performing the action
-  userType      String?  // 'management', 'voter', 'system'
-  ipAddress     String?  // IP address of the user
-  userAgent     String?  // User agent string
-  oldValues     String?  // JSON string of old values (for updates/deletes)
-  newValues     String?  // JSON string of new values (for creates/updates)
-  changes       String?  // JSON string of specific changes made
-  blockchainTxHash String? // Transaction hash if blockchain operation
-  status        String   @default("success") // success, failed, pending
-  errorMessage  String?  // Error message if operation failed
-  timestamp     DateTime @default(now())
-  createdAt     DateTime @default(now())
-  
-  @@index([action])
-  @@index([tableName])
-  @@index([userId])
-  @@index([timestamp])
 }

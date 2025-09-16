@@ -4,7 +4,7 @@ import { AbiItem } from 'web3-utils';
 import ElectionSystemArtifact from '../build/contracts/ElectionSystem.json';
 
 // Default contract address (update this when you redeploy)
-const DEFAULT_CONTRACT_ADDRESS = '0xa2B03C9936Ca166D3b22A77FC2Aa9e7DEe7B6569';
+const DEFAULT_CONTRACT_ADDRESS = '0xddcAd0D8dD17F1468bE412d2Acd4B0e754A1dbb0';
 import { v4 as uuidv4 } from 'uuid';
 
 export interface VoteData {

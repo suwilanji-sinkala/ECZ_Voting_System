@@ -2,7 +2,6 @@
 import { useState, useRef, useEffect } from "react";
 import styles from "./Navbar.module.css";
 import Link from "next/link";
-import { useAuth } from './AuthProvider';
 
 export default function Navbar({ title }: { title: string }) {
   const [showProfileMenu, setShowProfileMenu] = useState(false);
@@ -13,8 +12,6 @@ export default function Navbar({ title }: { title: string }) {
   const profileMenuRef = useRef<HTMLDivElement>(null);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const profileButtonRef = useRef<HTMLButtonElement>(null);
-
-  const { user, logout } = useAuth();
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -60,20 +57,16 @@ export default function Navbar({ title }: { title: string }) {
           ☰
         </button>
         <h1 className={styles.title}>{title}</h1>
-        {user ? (
-          <button
-            ref={profileButtonRef}
-            className={styles.profileButton}
-            onClick={() => {
-              setShowProfileMenu(!showProfileMenu);
-              setShowNavMenu(false);
-            }}
-          >
-            👤
-          </button>
-        ) : (
-          <Link href={"/login"}>Login</Link>
-        )}
+        <button
+          ref={profileButtonRef}
+          className={styles.profileButton}
+          onClick={() => {
+            setShowProfileMenu(!showProfileMenu);
+            setShowNavMenu(false);
+          }}
+        >
+          👤
+        </button>
       </header>
 
       {showNavMenu && (
@@ -100,49 +93,14 @@ export default function Navbar({ title }: { title: string }) {
 
       {showProfileMenu && (
         <div ref={profileMenuRef} className={styles.profileMenu}>
-          <ProfileMenu />
+          <h3 className={styles.menuTitle}>Status</h3>
+          <ul>
+            <li>Profile</li>
+            <li>Settings</li>
+            <li>Sign Out</li>
+          </ul>
         </div>
       )}
-    </>
-  );
-}
-
-function ProfileMenu() {
-  const { user, logout } = useAuth();
-
-  const handleLogout = () => {
-    logout();
-  };
-
-  return (
-    <>
-      <h3 className={styles.menuTitle}>User Info</h3>
-      {user && (
-        <div style={{ padding: '10px', borderBottom: '1px solid #eee' }}>
-          <p><strong>{user.firstName} {user.lastName}</strong></p>
-          <p>ID: {user.employeeId}</p>
-          <p>Role: {user.role}</p>
-        </div>
-      )}
-      <ul>
-        <li>Profile</li>
-        <li>Settings</li>
-        <li>
-          <button 
-            onClick={handleLogout}
-            style={{
-              background: 'none',
-              border: 'none',
-              color: 'inherit',
-              cursor: 'pointer',
-              padding: 0,
-              font: 'inherit'
-            }}
-          >
-            Sign Out
-          </button>
-        </li>
-      </ul>
     </>
   );
 }

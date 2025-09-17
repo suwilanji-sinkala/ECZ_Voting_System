@@ -23,12 +23,17 @@
     "fabric:deploy": "cd blockchain && scripts\\deploy.bat"
   },
   "dependencies": {
+    "@chakra-ui/next-js": "^2.4.2",
+    "@chakra-ui/react": "^2.8.0",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
     "@grpc/grpc-js": "^1.10.1",
     "@prisma/client": "^5.7.1",
-    "@truffle/contract": "^4.6.11",
+    "@truffle/contract": "^4.6.31",
     "fabric-ca-client": "^2.2.19",
     "fabric-network": "^2.2.19",
     "fabric-protos": "^2.2.19",
+    "framer-motion": "^10.18.0",
     "ganache-cli": "^6.12.2",
     "next": "14.0.4",
     "prisma": "^5.7.1",
@@ -37,7 +42,7 @@
     "recharts": "^3.1.0",
     "truffle": "^5.11.4",
     "uuid": "^9.0.1",
-    "web3": "^4.3.0"
+    "web3": "^4.16.0"
   },
   "devDependencies": {
     "@types/node": "^20",
